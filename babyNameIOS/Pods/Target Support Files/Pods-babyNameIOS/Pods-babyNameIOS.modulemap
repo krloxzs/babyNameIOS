@@ -1,0 +1,6 @@
+framework module Pods_babyNameIOS {
+  umbrella header "Pods-babyNameIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
