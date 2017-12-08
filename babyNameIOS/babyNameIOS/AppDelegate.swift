@@ -8,15 +8,25 @@
 
 import UIKit
 import CoreData
+import Foundation
+
+var logger:GULogger = GULogger("DEBUG>> ")
+let values = Bundle.contentsOfFile(plistName: "MyData.plist")
+
+let urlBase: String! = values[Constants.Settings.service_keys.BASE_URL.rawValue]  as! String
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let AppsetupRoot = AppSetupRootVC()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        PlistManager.sharedInstance.startPlistManager()
+        AppsetupRoot.window = window
+        AppsetupRoot.installRootViewControllerIntoWindow(window!)
         return true
     }
 

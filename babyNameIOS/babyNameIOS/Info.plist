@@ -41,5 +41,37 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb844810118912803</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>CarlosRodriguezGuerrero.babyNameIOS</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>844810118912803</string>
+	<key>FacebookDisplayName</key>
+	<string>Baby Name</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<dict>
+		<key>item 0</key>
+		<string>fbapi</string>
+		<key>item 1</key>
+		<string>fb-messenger-api</string>
+		<key>item 2</key>
+		<string>fbauth2</string>
+		<key>item 3</key>
+		<string>fbshareextension</string>
+	</dict>
 </dict>
 </plist>
