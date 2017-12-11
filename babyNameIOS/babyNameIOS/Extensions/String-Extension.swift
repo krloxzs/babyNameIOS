@@ -60,7 +60,7 @@ extension String {
     }
     // localized string
     var localized: String {
-        return NSLocalizedString(self, tableName: "Loc", value: "**\(self)**", comment: "")
+        return NSLocalizedString(self, tableName: "Loc", value: "\(self)", comment: "")
     }
     
 

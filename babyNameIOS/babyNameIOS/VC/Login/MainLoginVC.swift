@@ -24,10 +24,12 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     let loginHandler = LoginHandler.sharedInstance
     var loadingNotification: MBProgressHUD! = MBProgressHUD()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
     var titlesArray = [AppStrings.WELCOME_TITLE_1.localized,AppStrings.WELCOME_TITLE_2.localized,AppStrings.WELCOME_TITLE_3,AppStrings.WELCOME_TITLE_4]
     var infoArray  = [AppStrings.WELCOME_INFO_1,AppStrings.WELCOME_INFO_2,AppStrings.WELCOME_INFO_3,AppStrings.WELCOME_INFO_4]
-    var AnimArray  = ["animated_color_options","bookmark_animation","empty_status","scan_qr_code_success"]
+    let animation1: LOTAnimationView = LOTAnimationView(name: "empty_status")
+    let animation2: LOTAnimationView = LOTAnimationView(name: "swipe_left")
+    let animation3: LOTAnimationView = LOTAnimationView(name: "bookmark_animation")
+    let animation4: LOTAnimationView = LOTAnimationView(name: "account_success")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "yolo"
@@ -43,21 +45,55 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
         for index in 0..<titlesArray.count {
-            frame.origin.x = self.scrollView.frame.size.width * CGFloat(index)
+            frame.origin.x = self.view.frame.size.width * CGFloat(index)
+            print(frame.origin.x )
             frame.size = self.scrollView.frame.size
             self.scrollView.isPagingEnabled = true
             let pageCard = UIView()
             pageCard.frame = frame
-            let animationView: LOTAnimationView = LOTAnimationView(name: AnimArray[index]);
-            animationView.contentMode = .scaleAspectFill
-            animationView.frame = CGRect(x: (frame.size.width / 2) - ((frame.size.width / 4)) , y: 0, width: frame.size.width / 2, height: frame.size.height / 6)
-            animationView.play(fromProgress: 0, toProgress: 0.5, withCompletion: nil)
-            animationView.loopAnimation = true
-            // now the text
+            var animationView: LOTAnimationView?
+            switch index{
+                
+            case 0:
+                animationView = animation1
+            case 1:
+                animationView = animation2
+            case 2:
+                animationView = animation3
+            case 3:
+                animationView = animation4
+            default:
+                break
+            }
+            animationView!.contentMode = .scaleAspectFit
+            if (UIScreen.main.bounds.size.width == 320)
+            {
+//                5,se
+               animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 2 )
+            }
+            else if (UIScreen.main.bounds.size.width == 375)
+            {
+                if UIScreen.main.bounds.size.height == 667{
+//                6
+                    animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.4 )
+                    
+                }else{
+//                iphone x
+                    animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.1 )
+                }
+            }
+            else
+            {
+                //Plus
+              animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.3 )
+            }
+            animationView!.play(fromProgress: 0, toProgress: 0.5, withCompletion: nil)
+            animationView!.loopAnimation = true
+//            text
             let Stringx = titlesArray[index]
             let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black]
             let myAttrString = NSAttributedString(string: Stringx, attributes: myAttribute)
-            let label =  UILabel(frame: CGRect(x: 0 , y: animationView.frame.origin.y +  (frame.size.height / 7) , width: frame.size.width, height: frame.size.height / 4))
+            let label =  UILabel(frame: CGRect(x: 0 , y: animationView!.frame.height +  16 , width: self.view.frame.width, height: self.scrollView.frame.height / 13))
             label.font = UIFont.boldSystemFont(ofSize: 23)
             label.attributedText = myAttrString
             label.numberOfLines = 1
@@ -65,17 +101,17 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             //----
             let Stringy = infoArray[index]
             let myAttrStringy = NSAttributedString(string: Stringy, attributes: myAttribute)
-            let label1 =  UILabel(frame: CGRect(x: 0 , y: label.frame.origin.y +  (frame.size.height / 7), width: label.frame.width, height: frame.size.height / 2))
+            let label1 =  UILabel(frame: CGRect(x: 0 , y: (label.frame.origin.y + label.frame.height) + 8, width: label.frame.width, height: self.scrollView.frame.height / 8))
             label1.attributedText = myAttrStringy
             label1.numberOfLines = 7
             label1.adjustsFontSizeToFitWidth = true
             label1.textAlignment = .center
             pageCard.addSubview(label)
             pageCard.addSubview(label1)
-            pageCard.addSubview(animationView)
+            pageCard.addSubview(animationView!)
             self.scrollView.addSubview(pageCard)
         }
-        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.size.width * CGFloat(titlesArray.count), height: self.scrollView.frame.size.height)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width * 4, height: self.scrollView.frame.size.height)
     }
    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
