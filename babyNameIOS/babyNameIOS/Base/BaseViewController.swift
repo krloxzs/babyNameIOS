@@ -74,7 +74,7 @@ class BaseViewController: UIViewController {
         logger.log(":::::::: showErrorLandingPage   ::::::::::::")
     }
     
-    fileprivate func prepareActionsForView() {
+     func prepareActionsForView() {
         // Reset UI
         resetButtonsItems()
         
@@ -101,14 +101,12 @@ class BaseViewController: UIViewController {
         switch self.navigationBarType {
         case .navigationBarTypeDefault:
             self.navigationController?.isNavigationBarHidden = false
-            self.navigationController?.navigationBar.setTransparent()
-            self.navigationController?.navigationBar.customTitleFont()
+           
             break
             
         case .navigationBarTypeHidden:
             self.navigationController?.isNavigationBarHidden = true
-            self.navigationController?.navigationBar.setTransparent()
-            self.navigationController?.navigationBar.customTitleFont()
+           
             break
         }
     }
@@ -126,7 +124,7 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackOpaque
         self.navigationController?.navigationBar.barTintColor =  UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
         self.navigationController?.navigationBar.customTitleFont()
-//        self.navigationController?.navigationBar.setTransparent()
+        self.prepareActionsForView()
     }
     
     fileprivate func setBackButtonBy(_ imgBackButton: String) {

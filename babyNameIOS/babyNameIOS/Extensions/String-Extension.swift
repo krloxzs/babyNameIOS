@@ -58,5 +58,10 @@ extension String {
         let result =  phoneTest.evaluate(with: value)
         return result
     }
+    // localized string
+    var localized: String {
+        return NSLocalizedString(self, tableName: "Loc", value: "**\(self)**", comment: "")
+    }
+    
 
 }

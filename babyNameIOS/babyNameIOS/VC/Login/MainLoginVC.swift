@@ -12,28 +12,76 @@ import MBProgressHUD
 import FBSDKCoreKit
 import SwiftyJSON
 import SwiftDate
+import Lottie
+class MainLoginVC: BaseViewController, UIScrollViewDelegate {
+    //MARK:- IBOutlets
+    @IBOutlet var scrollView : UIScrollView!
+    @IBOutlet var pageControl : UIPageControl!
+    @IBOutlet var swipeLabelOutlet : UILabel!
+    @IBOutlet weak var facebookButtonOutlet: UIButton!
 
-class MainLoginVC: BaseViewController {
     //MARK:- Variables and Constants
     let loginHandler = LoginHandler.sharedInstance
     var loadingNotification: MBProgressHUD! = MBProgressHUD()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    
+    var titlesArray = [AppStrings.WELCOME_TITLE_1.localized,AppStrings.WELCOME_TITLE_2.localized,AppStrings.WELCOME_TITLE_3,AppStrings.WELCOME_TITLE_4]
+    var infoArray  = [AppStrings.WELCOME_INFO_1,AppStrings.WELCOME_INFO_2,AppStrings.WELCOME_INFO_3,AppStrings.WELCOME_INFO_4]
+    var AnimArray  = ["animated_color_options","bookmark_animation","empty_status","scan_qr_code_success"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "yolo"
         super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
         super.navigationBarType = NavigationBarType.navigationBarTypeHidden
-//        navigationController?.navigationBar.setTransparent()
-        navigationController?.navigationBar.customTitleFont()
-       logout()
-        if let accessToken = FBSDKAccessToken.current() {
-            // User is logged in, use 'accessToken' here.
-        }else{
-           
+        prepareActionsForView()
+        setupScrollView()
+        // Setup our animaiton view
+    }
+    func setupScrollView()  {
+        self.pageControl.numberOfPages = titlesArray.count
+        self.pageControl.currentPage = 0
+        scrollView.delegate = self
+        var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
+        for index in 0..<titlesArray.count {
+            frame.origin.x = self.scrollView.frame.size.width * CGFloat(index)
+            frame.size = self.scrollView.frame.size
+            self.scrollView.isPagingEnabled = true
+            let pageCard = UIView()
+            pageCard.frame = frame
+            let animationView: LOTAnimationView = LOTAnimationView(name: AnimArray[index]);
+            animationView.contentMode = .scaleAspectFill
+            animationView.frame = CGRect(x: (frame.size.width / 2) - ((frame.size.width / 4)) , y: 0, width: frame.size.width / 2, height: frame.size.height / 6)
+            animationView.play(fromProgress: 0, toProgress: 0.5, withCompletion: nil)
+            animationView.loopAnimation = true
+            // now the text
+            let Stringx = titlesArray[index]
+            let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black]
+            let myAttrString = NSAttributedString(string: Stringx, attributes: myAttribute)
+            let label =  UILabel(frame: CGRect(x: 0 , y: animationView.frame.origin.y +  (frame.size.height / 7) , width: frame.size.width, height: frame.size.height / 4))
+            label.font = UIFont.boldSystemFont(ofSize: 23)
+            label.attributedText = myAttrString
+            label.numberOfLines = 1
+            label.textAlignment = .center
+            //----
+            let Stringy = infoArray[index]
+            let myAttrStringy = NSAttributedString(string: Stringy, attributes: myAttribute)
+            let label1 =  UILabel(frame: CGRect(x: 0 , y: label.frame.origin.y +  (frame.size.height / 7), width: label.frame.width, height: frame.size.height / 2))
+            label1.attributedText = myAttrStringy
+            label1.numberOfLines = 7
+            label1.adjustsFontSizeToFitWidth = true
+            label1.textAlignment = .center
+            pageCard.addSubview(label)
+            pageCard.addSubview(label1)
+            pageCard.addSubview(animationView)
+            self.scrollView.addSubview(pageCard)
         }
+        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.size.width * CGFloat(titlesArray.count), height: self.scrollView.frame.size.height)
+    }
+   
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
+        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(pageNumber)
         
     }
     
@@ -42,7 +90,13 @@ class MainLoginVC: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+       
         loginHandler.clearUserSession()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
+        super.navigationBarType = NavigationBarType.navigationBarTypeHidden
+        prepareActionsForView()
     }
     
     private func launchInitWithFacebook() {
@@ -171,6 +225,10 @@ class MainLoginVC: BaseViewController {
         launchInitWithFacebook()
     }
     
+    @IBAction func pageControllerChange(_ sender: UIPageControl) {
+        let x = CGFloat(sender.currentPage) * scrollView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+    }
     @IBAction func registroAction(_ sender: AnyObject) {
 //        let registrovc = self.storyboard?.instantiateViewController(withIdentifier: "registroVCID") as! registroVC
 //        self.present(registrovc, animated: true, completion: nil)
