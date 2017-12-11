@@ -202,8 +202,8 @@ class LoginHandler: BaseNSObject {
                     logger.log("nivel-----")
                     let UserDic = Data!["user"]!.dictionary!
                     let cuenta = UserDic["cuenta"]!.dictionaryObject
-                    let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
-                    let gradoInfo = cuenta!["grado"]! as! NSDictionary
+                    _ =  cuenta!["nivel"]! as! NSDictionary
+                    _ = cuenta!["grado"]! as! NSDictionary
                    if let facturacion = cuenta?["facturacion"] as? NSDictionary{
                         let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
                         let gradoInfo = cuenta!["grado"]! as! NSDictionary

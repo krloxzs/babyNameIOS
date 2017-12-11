@@ -149,13 +149,13 @@ enum Constants {
     }
     
     enum Colors: Int {
-        
-        case tabBarBackground = 0x00B7FF
-        case tabBarTitleColor = 0x000000
-        case collectionViewColor = 0xf2f2f2
-        case statusBar = 0x23486C
-        case backgroundFillColor = 0x222222
-        case fillcolor = 0xFF0080
+        case NavBarBGColor          = 0x696BBD
+        case tabBarBackground       = 0x177626
+        case tabBarTitleColor       = 0x000000
+        case collectionViewColor    = 0xf2f2f2
+        case statusBar              = 0x23486C
+        case backgroundFillColor    = 0x222222
+        case fillcolor              = 0xFF0080
         
         
     }

@@ -101,36 +101,32 @@ class BaseViewController: UIViewController {
         switch self.navigationBarType {
         case .navigationBarTypeDefault:
             self.navigationController?.isNavigationBarHidden = false
-//            self.navigationController?.navigationBar.setTransparent()
-//            self.navigationController?.navigationBar.customTitleFont()
+            self.navigationController?.navigationBar.setTransparent()
+            self.navigationController?.navigationBar.customTitleFont()
             break
             
         case .navigationBarTypeHidden:
             self.navigationController?.isNavigationBarHidden = true
-//            self.navigationController?.navigationBar.setTransparent()
-//            self.navigationController?.navigationBar.customTitleFont()
+            self.navigationController?.navigationBar.setTransparent()
+            self.navigationController?.navigationBar.customTitleFont()
             break
         }
     }
     
-    fileprivate func setupUserInterface() {
+     func setupUserInterface() {
+        // TabBar appearance----
+        UINavigationBar.appearance().backgroundColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
+        UINavigationBar.appearance().barTintColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
         
-        // TabBar Background
-        //uncommit for color
-        //UINavigationBar.appearance().backgroundColor = UIColor(hex: Constants.Colors.tabBarBackground.rawValue)
-        UINavigationBar.appearance().barTintColor = UIColor(hex: Constants.Colors.tabBarBackground.rawValue)
-       
         // Title
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(hex: Constants.Colors.tabBarTitleColor.rawValue)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
-        //
-       // UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
-        self.navigationController?.navigationBar.barStyle = UIBarStyle.black
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        //TabBar Background
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackOpaque
+        self.navigationController?.navigationBar.barTintColor =  UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
+        self.navigationController?.navigationBar.customTitleFont()
 //        self.navigationController?.navigationBar.setTransparent()
-//        self.navigationController?.navigationBar.customTitleFont()
-  
-        
     }
     
     fileprivate func setBackButtonBy(_ imgBackButton: String) {
@@ -148,11 +144,8 @@ class BaseViewController: UIViewController {
     
     // MARK:- Default Behavior
     fileprivate func resetButtonsItems() {
-        
         leftButtonItems()
-        
         rightButtonItems()
-        
     }
     
     fileprivate func leftButtonItems() {
