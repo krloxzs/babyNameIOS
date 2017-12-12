@@ -10,6 +10,9 @@
 		3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */; };
 		3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E16BB141FDF3F6F00CC0E2C /* Varela.otf */; };
 		3E25721D1FDF95180072AC70 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25721C1FDF95180072AC70 /* MainTabBarController.swift */; };
+		3E2572221FDFA42F0072AC70 /* MakeMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */; };
+		3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572231FDFA4460072AC70 /* UserProfileVC.swift */; };
+		3E2572261FDFA4640072AC70 /* ListOfMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */; };
 		3E355ADF1FDA276E00CF81A0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */; };
 		3E355AE01FDA276E00CF81A0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */; };
 		3E355AE21FDA281000CF81A0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355AE11FDA280F00CF81A0 /* Bolts.framework */; };
@@ -64,6 +67,8 @@
 		3E6A3A771FDA21B6002E17D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A761FDA21B6002E17D8 /* Assets.xcassets */; };
 		3E6A3A7A1FDA21B6002E17D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A781FDA21B6002E17D8 /* LaunchScreen.storyboard */; };
 		3E6A3A851FDA21B6002E17D8 /* babyNameIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A841FDA21B6002E17D8 /* babyNameIOSTests.swift */; };
+		3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */; };
+		3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */; };
 		40BC6DCA87C0AED8D9DC710F /* Pods_babyNameIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E491BAF1D0B92A4F15059009 /* Pods_babyNameIOS.framework */; };
 		A709135B863C8A78792F94D2 /* Pods_babyNameIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EBC7F4E89371855F47D323 /* Pods_babyNameIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +87,9 @@
 		3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		3E16BB141FDF3F6F00CC0E2C /* Varela.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Varela.otf; sourceTree = "<group>"; };
 		3E25721C1FDF95180072AC70 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMatchVC.swift; sourceTree = "<group>"; };
+		3E2572231FDFA4460072AC70 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMatchesVC.swift; sourceTree = "<group>"; };
 		3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3E355AE11FDA280F00CF81A0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		3E6A3A801FDA21B6002E17D8 /* babyNameIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = babyNameIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6A3A841FDA21B6002E17D8 /* babyNameIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyNameIOSTests.swift; sourceTree = "<group>"; };
 		3E6A3A861FDA21B6002E17D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderTVCell.swift; sourceTree = "<group>"; };
+		3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileHeaderTVCell.xib; sourceTree = "<group>"; };
 		867A8C33AF406AB6E9821C3B /* Pods-babyNameIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B06A4721FC312266E5EF8920 /* Pods-babyNameIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.release.xcconfig"; sourceTree = "<group>"; };
 		E491BAF1D0B92A4F15059009 /* Pods_babyNameIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babyNameIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,15 +198,26 @@
 		3E25721E1FDF96540072AC70 /* MatchVC */ = {
 			isa = PBXGroup;
 			children = (
+				3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */,
 			);
 			path = MatchVC;
 			sourceTree = "<group>";
 		};
-		3E25721F1FDF96780072AC70 /* New Group */ = {
+		3E25721F1FDF96780072AC70 /* UserProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				3E2572231FDFA4460072AC70 /* UserProfileVC.swift */,
+				3E6CBE6F1FDFA9C400A1A445 /* Cells */,
 			);
-			path = "New Group";
+			path = UserProfileVC;
+			sourceTree = "<group>";
+		};
+		3E2572201FDF98AE0072AC70 /* MatchesVC */ = {
+			isa = PBXGroup;
+			children = (
+				3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */,
+			);
+			path = MatchesVC;
 			sourceTree = "<group>";
 		};
 		3E355ADC1FDA273700CF81A0 /* Extras */ = {
@@ -333,9 +354,10 @@
 		3E355B371FDA57F400CF81A0 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
-				3E25721F1FDF96780072AC70 /* New Group */,
-				3E25721E1FDF96540072AC70 /* MatchVC */,
 				3E25721C1FDF95180072AC70 /* MainTabBarController.swift */,
+				3E2572201FDF98AE0072AC70 /* MatchesVC */,
+				3E25721F1FDF96780072AC70 /* UserProfileVC */,
+				3E25721E1FDF96540072AC70 /* MatchVC */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -414,6 +436,15 @@
 				3E6A3A861FDA21B6002E17D8 /* Info.plist */,
 			);
 			path = babyNameIOSTests;
+			sourceTree = "<group>";
+		};
+		3E6CBE6F1FDFA9C400A1A445 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */,
+				3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		E465011CF1AC8B3FFAD2819D /* Pods */ = {
@@ -530,6 +561,7 @@
 				3E355AF81FDA306500CF81A0 /* VarelaRound-Regular.ttf in Resources */,
 				3E355B1B1FDA31B800CF81A0 /* MyData.plist in Resources */,
 				3E6A3A771FDA21B6002E17D8 /* Assets.xcassets in Resources */,
+				3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */,
 				3E6A3A721FDA21B6002E17D8 /* Main.storyboard in Resources */,
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
 				3E355B491FDE5DCD00CF81A0 /* animated_color_options.json in Resources */,
@@ -685,10 +717,12 @@
 				3E355B111FDA316C00CF81A0 /* UserProfile.swift in Sources */,
 				3E355B331FDA568100CF81A0 /* MainLoginVC.swift in Sources */,
 				3E355B151FDA319100CF81A0 /* BaseViewController.swift in Sources */,
+				3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */,
 				3E355AEF1FDA301400CF81A0 /* Storyboard-Extension.swift in Sources */,
 				3E355B201FDA325E00CF81A0 /* UIImageExtension.swift in Sources */,
 				3E355B071FDA310F00CF81A0 /* GUConfigHandler.swift in Sources */,
 				3E355AF31FDA303900CF81A0 /* UIColor-Extension.swift in Sources */,
+				3E2572221FDFA42F0072AC70 /* MakeMatchVC.swift in Sources */,
 				3E355B0E1FDA314000CF81A0 /* BaseObjects.swift in Sources */,
 				3E355B121FDA316C00CF81A0 /* UserItem.swift in Sources */,
 				3E355AFC1FDA308900CF81A0 /* LilithProgressHUD.swift in Sources */,
@@ -702,12 +736,14 @@
 				3E355B0C1FDA311C00CF81A0 /* BaseNSObject.swift in Sources */,
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
 				3E355AED1FDA300A00CF81A0 /* NSUserDefaults-Extension.swift in Sources */,
+				3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */,
 				3E355B091FDA310F00CF81A0 /* GULogger.swift in Sources */,
 				3E355B1C1FDA31B800CF81A0 /* APIConection.swift in Sources */,
 				3E355AEB1FDA2FFD00CF81A0 /* keyboard-Extension.swift in Sources */,
 				3E355AE71FDA2FD800CF81A0 /* Bundle-Extension.swift in Sources */,
 				3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */,
 				3E355B061FDA310F00CF81A0 /* Formatter.swift in Sources */,
+				3E2572261FDFA4640072AC70 /* ListOfMatchesVC.swift in Sources */,
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,

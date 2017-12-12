@@ -30,9 +30,11 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     let animation2: LOTAnimationView = LOTAnimationView(name: "swipe_left")
     let animation3: LOTAnimationView = LOTAnimationView(name: "bookmark_animation")
     let animation4: LOTAnimationView = LOTAnimationView(name: "account_success")
+    
+    //MARK:- UIviewcontrollerFunctions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "yolo"
+        self.title = ""
         super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
         super.navigationBarType = NavigationBarType.navigationBarTypeHidden
         prepareActionsForView()
@@ -42,8 +44,6 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
-     
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +52,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         prepareActionsForView()
     }
     
+     //MARK:- SetuoScrollView
     func setupView(){
         self.facebookButtonOutlet.layer.cornerRadius = 16.0
         self.facebookButtonOutlet.clipsToBounds = true
@@ -59,7 +60,6 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         self.swipeLabelOutlet.text = AppStrings.LOGIN_SWIPE_LABEL
     }
     
-     //MARK:- SetuoScrollView
     func setupScrollView()  {
         self.pageControl.numberOfPages = titlesArray.count
         self.pageControl.currentPage = 0
@@ -97,7 +97,6 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                 if UIScreen.main.bounds.size.height == 667{
 //                6
                     animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.4 )
-                    
                 }else{
 //                iphone x
                     animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.1 )
@@ -108,9 +107,9 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                 //Plus
               animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.3 )
             }
+            animationView!.animationSpeed = 0.5
             animationView!.play()
             animationView!.loopAnimation = true
-//            text
             let Stringx = titlesArray[index]
             let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)]
             let myAttribute2 = [ NSAttributedStringKey.foregroundColor: UIColor(hex: Constants.Colors.subTitleColorF.rawValue)]
@@ -121,7 +120,6 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             label.adjustsFontSizeToFitWidth = true
             label.numberOfLines = 1
             label.textAlignment = .center
-            //----
             let Stringy = infoArray[index]
             let myAttrStringy = NSAttributedString(string: Stringy, attributes: myAttribute2)
             let label1 =  UILabel(frame: CGRect(x: 0 , y: (label.frame.origin.y + label.frame.height) + 8, width: label.frame.width, height: self.scrollView.frame.height / 8))
@@ -137,6 +135,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         }
         self.scrollView.contentSize = CGSize(width: self.view.frame.width * 4, height: self.scrollView.frame.size.height)
     }
+    
     //MARK:- ScrollViewDElegates
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -153,13 +152,14 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         default:
             break
         }
-        
     }
+    
     //MARK:- LoginFunctions
     func logout() {
         self.loginHandler.clearUserSession()
     }
     
+     //MARK:- FacebookFunctions
     private func launchInitWithFacebook() {
         print("launchInitWithFacebook")
         let facebookReadPermissions = ["public_profile", "email", "user_friends"]
@@ -187,10 +187,8 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             })
     }
     
-    
     func returnUserData()
     {
-        //weak var selfWeak: MainLoginViewController! = self
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields" : "id,name,age_range,gender,email,picture.height(300).width(300)"])
         graphRequest.start(completionHandler: { (connection, result, error) -> Void in
             if ((error) != nil)
@@ -235,9 +233,8 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             }
         })
     }
-
-
     
+     //MARK:- IbActions
     @IBAction func loginFacebook(_ sender: AnyObject) {
         logger.log("facebook login")
         launchInitWithFacebook()
@@ -259,8 +256,5 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             break
         }
     }
-    @IBAction func registroAction(_ sender: AnyObject) {
-//        let registrovc = self.storyboard?.instantiateViewController(withIdentifier: "registroVCID") as! registroVC
-//        self.present(registrovc, animated: true, completion: nil)
-    }
+
 }

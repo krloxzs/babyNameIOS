@@ -1,9 +1,6 @@
 //
 //  UserItem.swift
-//  
-//
 //  Created by Carlos Rodriguez on 22/05/16.
-
 //
 
 import Foundation

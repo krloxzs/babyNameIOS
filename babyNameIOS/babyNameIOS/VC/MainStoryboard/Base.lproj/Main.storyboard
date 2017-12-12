@@ -34,10 +34,10 @@
                                 <rect key="frame" x="8" y="572.5" width="359" height="78.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-H8-AEC">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="26"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe  to continue." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgr-IJ-aEY">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="26"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                                 <color key="textColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -52,10 +52,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-bF-bmW">
-                                        <rect key="frame" x="0.0" y="26" width="359" height="13.5"/>
+                                        <rect key="frame" x="0.0" y="20" width="359" height="19.5"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="X0g-iQ-bMe">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="13.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="19.5"/>
                                                 <color key="pageIndicatorTintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="367" y="90"/>
         </scene>
-        <!--View Controller-->
+        <!--User ProfileVC-->
         <scene sceneID="Oaq-Np-RY1">
             <objects>
-                <viewController id="m6v-NS-UZ4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileVC" id="m6v-NS-UZ4" customClass="UserProfileVC" customModule="babyNameIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0k-bI-X2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,10 +144,10 @@
             </objects>
             <point key="canvasLocation" x="1070" y="2216"/>
         </scene>
-        <!--View Controller-->
+        <!--List Of MatchesVC-->
         <scene sceneID="4aL-VQ-5wk">
             <objects>
-                <viewController id="5BB-LV-DMP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOfMatchesVC" id="5BB-LV-DMP" customClass="ListOfMatchesVC" customModule="babyNameIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j7z-C7-ADo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,10 +160,10 @@
             </objects>
             <point key="canvasLocation" x="1070" y="1523"/>
         </scene>
-        <!--View Controller-->
+        <!--Make MatchVC-->
         <scene sceneID="mYY-Hj-Eh9">
             <objects>
-                <viewController id="pql-dK-HU5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MakeMatchVC" id="pql-dK-HU5" customClass="MakeMatchVC" customModule="babyNameIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S5t-dh-MEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -184,6 +184,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Xxd-ez-ujK" kind="relationship" relationship="viewControllers" id="gy8-fG-AYG"/>
@@ -217,7 +218,14 @@
         <scene sceneID="uZh-gS-o1k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xxd-ez-ujK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="WkX-bx-LW0"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="ic_thumbs_up_down" id="WkX-bx-LW0">
+                        <color key="badgeColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VbB-ab-sIN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -236,7 +244,9 @@
         <scene sceneID="d0e-yi-CDj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dRA-J9-aaq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="DFF-hK-i8w"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="ic_book" id="DFF-hK-i8w">
+                        <color key="badgeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZNw-8K-3uc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -255,7 +265,7 @@
         <scene sceneID="OsH-DC-xwQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jnZ-2p-Z5c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UUk-O8-fGL"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="ic_account_circle" id="UUk-O8-fGL"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Vk-vs-nsE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -272,6 +282,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_account_circle" width="24" height="24"/>
+        <image name="ic_book" width="24" height="24"/>
+        <image name="ic_thumbs_up_down" width="24" height="24"/>
         <image name="icon-fb-login" width="22" height="22"/>
     </resources>
 </document>

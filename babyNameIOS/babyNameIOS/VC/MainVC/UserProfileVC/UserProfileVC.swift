@@ -1,5 +1,5 @@
 //
-//  MainTabBarController.swift
+//  UserProfileVC.swift
 //  babyNameIOS
 //
 //  Created by Carlos Rodriguez on 12/11/17.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class UserProfileVC: BaseViewController {
 
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.tintColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
+
         // Do any additional setup after loading the view.
     }
 
