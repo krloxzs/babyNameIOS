@@ -73,20 +73,20 @@ class LoginHandler: BaseNSObject {
         logger.log(params)
         networkHandler.requestGETURL(completeURL!, params: params, success: { (Response:JSON) in
             let item = Response.dictionary
-            print(item!)
-            print(item!["id"]!.string!)
-            print(item!["facebook_id"]!.string!)
-            print(item!["name"]!.string!)
-            print(item!["email"]!.string!)
-            print(item!["profile_image"]!.string!)
-            print(item!["premium"]!.string!)
-            print(item!["gender"]!.string!)
-            print(item!["age"]!.string!)
-            print(item!["couple_id"]!.string!)
-            
+//            print(item!)
+//            print(item!["id"]!.string!)
+//            print(item!["facebook_id"]!.string!)
+//            print(item!["name"]!.string!)
+//            print(item!["email"]!.string!)
+//            print(profile_image)
+//            print(item!["premium"]!.string!)
+//            print(item!["gender"]!.string!)
+//            print(item!["age"]!.string!)
+//            print(item!["couple_id"]!.string!)
+//            
             UserItem(id: item?["id"]?.string ?? "" , facebook_id:  item?["facebook_id"]?.string ?? "",
                      name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
-                     profile_image: item?["profile_image"]?.string ?? "", premium: item?["premium"]?.string ?? "",
+                     profile_image: profile_image , premium: item?["premium"]?.string ?? "",
                      gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
                      couple_id: item?["couple_id"]?.string ?? "", grado: item?["grado"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
                                     // Saving USER ID
