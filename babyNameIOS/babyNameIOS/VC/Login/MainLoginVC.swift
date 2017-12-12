@@ -24,7 +24,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     let loginHandler = LoginHandler.sharedInstance
     var loadingNotification: MBProgressHUD! = MBProgressHUD()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var titlesArray = [AppStrings.WELCOME_TITLE_1.localized,AppStrings.WELCOME_TITLE_2.localized,AppStrings.WELCOME_TITLE_3,AppStrings.WELCOME_TITLE_4]
+    var titlesArray = [AppStrings.WELCOME_TITLE_1,AppStrings.WELCOME_TITLE_2,AppStrings.WELCOME_TITLE_3,AppStrings.WELCOME_TITLE_4]
     var infoArray  = [AppStrings.WELCOME_INFO_1,AppStrings.WELCOME_INFO_2,AppStrings.WELCOME_INFO_3,AppStrings.WELCOME_INFO_4]
     let animation1: LOTAnimationView = LOTAnimationView(name: "empty_status")
     let animation2: LOTAnimationView = LOTAnimationView(name: "swipe_left")
@@ -37,8 +37,29 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         super.navigationBarType = NavigationBarType.navigationBarTypeHidden
         prepareActionsForView()
         setupScrollView()
+        setupView()
         // Setup our animaiton view
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
+        super.navigationBarType = NavigationBarType.navigationBarTypeHidden
+        prepareActionsForView()
+    }
+    
+    func setupView(){
+        self.facebookButtonOutlet.layer.cornerRadius = 16.0
+        self.facebookButtonOutlet.clipsToBounds = true
+        self.facebookButtonOutlet.setTitle(AppStrings.FACEBOOK_LOGIN_BUTON, for: .normal)
+        self.swipeLabelOutlet.text = AppStrings.LOGIN_SWIPE_LABEL
+    }
+    
+     //MARK:- SetuoScrollView
     func setupScrollView()  {
         self.pageControl.numberOfPages = titlesArray.count
         self.pageControl.currentPage = 0
@@ -46,7 +67,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         var frame: CGRect = CGRect(x: 0, y: 0, width: 0, height: 0)
         for index in 0..<titlesArray.count {
             frame.origin.x = self.view.frame.size.width * CGFloat(index)
-            print(frame.origin.x )
+            
             frame.size = self.scrollView.frame.size
             self.scrollView.isPagingEnabled = true
             let pageCard = UIView()
@@ -87,22 +108,25 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                 //Plus
               animationView!.frame = CGRect(x: 0, y: 0, width: self.view.frame.width , height: self.scrollView.frame.height / 1.3 )
             }
-            animationView!.play(fromProgress: 0, toProgress: 0.5, withCompletion: nil)
+            animationView!.play()
             animationView!.loopAnimation = true
 //            text
             let Stringx = titlesArray[index]
-            let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black]
+            let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)]
+            let myAttribute2 = [ NSAttributedStringKey.foregroundColor: UIColor(hex: Constants.Colors.subTitleColorF.rawValue)]
             let myAttrString = NSAttributedString(string: Stringx, attributes: myAttribute)
             let label =  UILabel(frame: CGRect(x: 0 , y: animationView!.frame.height +  16 , width: self.view.frame.width, height: self.scrollView.frame.height / 13))
-            label.font = UIFont.boldSystemFont(ofSize: 23)
+            label.font =  UIFont (name: "ProximaNova-Bold", size: 30)
             label.attributedText = myAttrString
+            label.adjustsFontSizeToFitWidth = true
             label.numberOfLines = 1
             label.textAlignment = .center
             //----
             let Stringy = infoArray[index]
-            let myAttrStringy = NSAttributedString(string: Stringy, attributes: myAttribute)
+            let myAttrStringy = NSAttributedString(string: Stringy, attributes: myAttribute2)
             let label1 =  UILabel(frame: CGRect(x: 0 , y: (label.frame.origin.y + label.frame.height) + 8, width: label.frame.width, height: self.scrollView.frame.height / 8))
             label1.attributedText = myAttrStringy
+            label1.font = UIFont (name: "ProximaNova-Regular", size: 17)
             label1.numberOfLines = 7
             label1.adjustsFontSizeToFitWidth = true
             label1.textAlignment = .center
@@ -113,38 +137,32 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         }
         self.scrollView.contentSize = CGSize(width: self.view.frame.width * 4, height: self.scrollView.frame.size.height)
     }
-   
+    //MARK:- ScrollViewDElegates
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
+        switch pageNumber{
+        case 0:
+            animation1.play()
+        case 1:
+            animation2.play()
+        case 2:
+            animation3.play()
+        case 3:
+            animation4.play()
+        default:
+            break
+        }
         
     }
-    
+    //MARK:- LoginFunctions
     func logout() {
         self.loginHandler.clearUserSession()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-       
-        loginHandler.clearUserSession()
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
-        super.navigationBarType = NavigationBarType.navigationBarTypeHidden
-        prepareActionsForView()
     }
     
     private func launchInitWithFacebook() {
         print("launchInitWithFacebook")
         let facebookReadPermissions = ["public_profile", "email", "user_friends"]
-        if (FBSDKAccessToken.current() != nil)
-        {
-            // User is already logged in, do work such as go to next view controller.
-            
-        }
-        else
-        {
             let login: FBSDKLoginManager = FBSDKLoginManager()
             login.logIn(withReadPermissions: facebookReadPermissions,from: self, handler: {(result, error) in
                 if ((error) != nil)
@@ -159,16 +177,14 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                     // should check if specific permissions missing
                     if (result?.grantedPermissions.contains("email"))!
                     {
-                        // weak var weakSelf: MainLoginViewController! = self
-                        //                        self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
-                        //                        self.loadingNotification.mode = MBProgressHUDMode.indeterminate
-                        //                        self.loadingNotification.labelText = "Iniciando..."
+                        self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+                        self.loadingNotification.mode = MBProgressHUDMode.indeterminate
+                        self.loadingNotification.labelText = AppStrings.LOADING
                         self.returnUserData()
                         // Do work
                     }
                 }
             })
-        }
     }
     
     
@@ -184,19 +200,17 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
             }
             else
             {
-             
-                print("fetched user: \(String(describing: result))")
                 let userDic: NSDictionary = result as! NSDictionary
                 let emailFacebook = userDic["email"] as? String ?? ""
-                _ = userDic["id"] as! String
+                let FBID = userDic["id"] as! String
                 let nameFacebook = userDic["name"] as! String
                 let picture = userDic["picture"] as! NSDictionary
                 let data = picture["data"] as! NSDictionary
                 let urlFacebook = data["url"] as! String
-                print(urlFacebook)
                 var gender = userDic["gender"] as! String
                 let age_range = userDic["age_range"] as! NSDictionary
                 let edad = age_range["min"] as! Int
+                let age = String(edad)
                 if gender == "male"{
                     
                     gender = "m"
@@ -207,54 +221,22 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                 }
                 let now = Date()
                 let fecha = now - edad.years
-                print(fecha)
                 _ = fecha.string(format: DateFormat.custom("yyyy-MM-dd"))
-                // self.imageToSend = url
-                print(nameFacebook)
-//                print(FBSDKAccessToken.current())
-//                print(FBSDKAccessToken.current().userID)
-//
-//                print("el token : \(FBSDKAccessToken.current().tokenString)")
-                //                self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
-                //                self.loadingNotification.mode = MBProgressHUDMode.indeterminate
-                //                self.loadingNotification.labelText = "Iniciando..."
-//                self.InitLogin(FBToken: FBSDKAccessToken.current().tokenString, nombre: nameFacebook, email: emailFacebook, urlPhoto: urlFacebook)
+                
+                weak var weakSelf:MainLoginVC! = self
+                self.loginHandler.SignInFacebook(FBID: FBID, EMAIL: emailFacebook, PFIMAGE: urlFacebook,
+                                                 GENDER: gender, AGE: age, NAME: nameFacebook, success: { (Res:JSON) in
+                                                    print("Succes")
+                                                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+                                                    weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+                }, failure: { (ErrorString:String) in
+                    print("error")
+                })
             }
         })
     }
-    func InitLogin(FBToken: String, nombre:String,email:String,urlPhoto:String){
-        weak var weakSelf: MainLoginVC! = self
-        loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
-        loadingNotification.mode = MBProgressHUDMode.indeterminate
-        loadingNotification.labelText = "Iniciando..."
-        self.loginHandler.SignInFacebook(FBTOKEN: FBToken, success: { (Res:JSON) in
-            weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
-//            AlertHelper.ShowSuccess(Title:  ["Bienvenido a Junger"], body: "Es hora de aprender")
-            MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-            
-        }) { (ErrorString:String) in
-            if ErrorString == "Ese email ya esta registrado a una cuenta tipo profesor"{
-//                AlertHelper.ShowError(Title: ["Error en login"], body: ErrorString)
-                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-            }else{
-                MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-                logger.log("-----")
-//                let registrovc = self.storyboard?.instantiateViewController(withIdentifier: "registroVCID") as! registroVC
-//                registrovc.InitInfo = true
-//                registrovc.NombreFacebook = nombre
-//                registrovc.EmailFacebook = email
-//                registrovc.urlFacebook = urlPhoto
-//                self.present(registrovc, animated: true, completion: nil)
-            }
-        }
-    }
-    @IBAction func showLoginAction(_ sender: AnyObject) {
-        
-//        let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "iniciarSesionVCID") as! iniciarSesionVC
-//        loginvc.login = self
-//        customPresentViewController(presenter, viewController: loginvc, animated: true, completion: nil)
-        
-    }
+
+
     
     @IBAction func loginFacebook(_ sender: AnyObject) {
         logger.log("facebook login")
@@ -264,6 +246,18 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     @IBAction func pageControllerChange(_ sender: UIPageControl) {
         let x = CGFloat(sender.currentPage) * scrollView.frame.size.width
         scrollView.setContentOffset(CGPoint(x: x, y: 0), animated: true)
+        switch sender.currentPage{
+        case 0:
+            animation1.play()
+        case 1:
+            animation2.play()
+        case 2:
+            animation3.play()
+        case 3:
+            animation4.play()
+        default:
+            break
+        }
     }
     @IBAction func registroAction(_ sender: AnyObject) {
 //        let registrovc = self.storyboard?.instantiateViewController(withIdentifier: "registroVCID") as! registroVC

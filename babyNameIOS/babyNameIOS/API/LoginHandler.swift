@@ -15,6 +15,7 @@ import FBSDKLoginKit
 class LoginHandler: BaseNSObject {
     //
     static let sharedInstance = LoginHandler()
+    let networkHandler: AFWrapper! = AFWrapper()
     fileprivate override init() {} //This prevents others from using the default '()' initializer for this class.
     public typealias EstandarJson  = [String : AnyObject]
     let userId: Int! = -1
@@ -57,257 +58,49 @@ class LoginHandler: BaseNSObject {
      - returns: void
      */
     
-    
-  func requestPOSTURL(Username username: String, Password password: String, success:@escaping (JSON) -> Void, failure:@escaping (String) -> Void){
-        logger.log("login by email")
-        // Get url
-        let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
-        let completeURL = urlBase + requestedURL
-        logger.log(completeURL)
-        let params:Parameters  = ["email": username, "password": password,"token_firebase":"","device_id": UIDevice.current.identifierForVendor!.uuidString,"os":"ios","is_profesor":false]
-        logger.log(params)
-        Alamofire.request(completeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (responseObject) -> Void in
-            if responseObject.result.isSuccess {
-                let resJson = JSON(responseObject.result.value!)
-                let item = resJson.dictionary
-                logger.log(item)
-                let userstatus = item!["code"]!.int
-                // Getting 'u suario' dictionar
-                if userstatus == 200{
-                    let Data = item!["data"]!.dictionary
 
-                    logger.log("nivel-----")
-                    let UserDic = Data!["user"]!.dictionary!
-                    let cuenta = UserDic["cuenta"]!.dictionaryObject
-                   if let facturacion = cuenta?["facturacion"] as? NSDictionary{
-                        let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
-                        let gradoInfo = cuenta!["grado"]! as! NSDictionary
-                        print("------")
-                        UserItem(
-                            userId: cuenta!["id"]! as! Int,
-                            session_id: Data!["session_id"]!.string!,
-                            name: UserDic["name"]!.string!,
-                            username : UserDic["username"]!.string!,
-                            email: UserDic["email"]!.string!,
-                            tipo: UserDic["tipo"]!.string!,
-                            telefono: UserDic["telefono"]!.string!,
-                            token_dispositivo: ":D",//UserDic["token_dispositivo"]!.string!,
-                            image: UserDic["image"]!.string!,
-                            nivel: cuenta!["nivel"]! as! NSDictionary,
-                            grado: cuenta!["grado"]! as! NSDictionary,
-                            codigo_referencia: cuenta!["codigo_referencia"]! as! String,
-                            nivel_id: nivelInfo["id"]! as! Int,
-                            nivel_titulo: nivelInfo["titulo"]! as! String,
-                            grado_id: gradoInfo["id"]! as! Int,
-                            grado_titulo: gradoInfo["titulo"]! as! String,
-                            codigo_invitacion: cuenta!["codigo_invitacion"]! as! String,
-                            codigo_registro: cuenta!["codigo_registro"]! as! String,
-                            rfc: facturacion["rfc"]! as! String,
-                            calle: facturacion["calle"]! as! String,
-                            codigo_postal: facturacion["codigo_postal"]! as! Int,
-                            estado: facturacion["estado"]! as! String,
-                            municipio: facturacion["municipio"]! as! String,
-                            colonia: facturacion["colonia"]! as! String,
-                            email_facturacion: facturacion["email_facturacion"]! as! String,
-                            razon_social: facturacion["razon_social"]! as! String
-                            ).synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
-                        //
-                        // Saving USER ID
-                        let defaults = UserDefaults.standard
-                        defaults.set( Data!["session_id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
-                        defaults.synchronize()
-                        print("se termino la sincronizacion")
-                        success(resJson)
-                    
-                    
-                    
-                    }else{
-                        let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
-                        let gradoInfo = cuenta!["grado"]! as! NSDictionary
-                        print("------")
-                        UserItem(
-                            userId: cuenta!["id"]! as! Int,
-                            session_id: Data!["session_id"]!.string!,
-                            name: UserDic["name"]!.string!,
-                            username : UserDic["username"]!.string!,
-                            email: UserDic["email"]!.string!,
-                            tipo: UserDic["tipo"]!.string!,
-                            telefono: UserDic["telefono"]!.string!,
-                            token_dispositivo: ":D",//UserDic["token_dispositivo"]!.string!,
-                            image: UserDic["image"]!.string!,
-                            nivel: cuenta!["nivel"]! as! NSDictionary,
-                            grado: cuenta!["grado"]! as! NSDictionary,
-                            codigo_referencia: cuenta!["codigo_referencia"]! as! String,
-                            nivel_id: nivelInfo["id"]! as! Int,
-                            nivel_titulo: nivelInfo["titulo"]! as! String,
-                            grado_id: gradoInfo["id"]! as! Int,
-                            grado_titulo: gradoInfo["titulo"]! as! String,
-                            codigo_invitacion: cuenta!["codigo_invitacion"]! as! String ,
-                            codigo_registro: cuenta!["codigo_registro"]! as! String,
-                            rfc: "",
-                            calle: "",
-                            codigo_postal:0,
-                            estado: "",
-                            municipio: "",
-                            colonia: "",
-                            email_facturacion: "",
-                            razon_social: ""
-                            ).synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
-                        //
-                        // Saving USER ID
-                        let defaults = UserDefaults.standard
-                        defaults.set( Data!["session_id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
-                        defaults.synchronize()
-                        print("se termino la sincronizacion")
-                        success(resJson)
-                    }
-  
-                //if yes and return the data
-                }else{
-                    let ErrorString = item!["message"]!.string
-                    logger.log(ErrorString)
-                    failure(ErrorString!)
-                }
-        
-        
+    
+    func SignInFacebook(FBID facebook_id: String, EMAIL email : String, PFIMAGE profile_image : String,
+                        GENDER gender : String , AGE age : String, NAME name : String,
+                        success:@escaping (JSON) -> Void, failure:@escaping (String) -> Void){
+        logger.log("Login using FB ID//////")
+        // Get url
+        //let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
+        let completeURL = urlBase
+        logger.log(completeURL)
+        let params:Parameters  = ["type": "CreateUser","facebook_id":facebook_id, "email": email, "profile_image" : profile_image,
+                                  "gender" : gender, "age": age, "name" : name]
+        logger.log(params)
+        networkHandler.requestGETURL(completeURL!, params: params, success: { (Response:JSON) in
+            let item = Response.dictionary
+            print(item!)
+            print(item!["id"]!.string!)
+            print(item!["facebook_id"]!.string!)
+            print(item!["name"]!.string!)
+            print(item!["email"]!.string!)
+            print(item!["profile_image"]!.string!)
+            print(item!["premium"]!.string!)
+            print(item!["gender"]!.string!)
+            print(item!["age"]!.string!)
+            print(item!["couple_id"]!.string!)
+            
+            UserItem(id: item?["id"]?.string ?? "" , facebook_id:  item?["facebook_id"]?.string ?? "",
+                     name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
+                     profile_image: item?["profile_image"]?.string ?? "", premium: item?["premium"]?.string ?? "",
+                     gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
+                     couple_id: item?["couple_id"]?.string ?? "", grado: item?["grado"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
+                                    // Saving USER ID
+                                    let defaults = UserDefaults.standard
+                                    defaults.set( item!["id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
+                                    defaults.synchronize()
+                                    print("se termino la sincronizacion")
+            success(Response)
+        }) { (ErrorString: String) in
+            print(ErrorString)
         }
-            if responseObject.result.isFailure {
-                let error : Error = responseObject.result.error!
-                failure(error.localizedDescription)
-                
-            }
     }
     
-}
-    
-    func SignInFacebook(FBTOKEN FBToken: String, success:@escaping (JSON) -> Void, failure:@escaping (String) -> Void){
-        logger.log("login by email")
-        // Get url
-        let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
-        let completeURL = urlBase + requestedURL
-        logger.log(completeURL)
-        let params:Parameters  = ["token": FBToken,"token_firebase":"","device_id": UIDevice.current.identifierForVendor!.uuidString,"os":"ios","is_profesor":false]
-        logger.log(params)
-        
-        Alamofire.request(completeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (responseObject) -> Void in
-            if responseObject.result.isSuccess {
-                let resJson = JSON(responseObject.result.value!)
-                let item = resJson.dictionary
-                logger.log(item)
-                let userstatus = item!["code"]!.int
-                // Getting 'u suario' dictionar
-                if userstatus == 200{
-                    let Data = item!["data"]!.dictionary
-                    
-                    logger.log("nivel-----")
-                    let UserDic = Data!["user"]!.dictionary!
-                    let cuenta = UserDic["cuenta"]!.dictionaryObject
-                    _ =  cuenta!["nivel"]! as! NSDictionary
-                    _ = cuenta!["grado"]! as! NSDictionary
-                   if let facturacion = cuenta?["facturacion"] as? NSDictionary{
-                        let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
-                        let gradoInfo = cuenta!["grado"]! as! NSDictionary
-                        print("------")
-                        UserItem(
-                            userId: cuenta!["id"]! as! Int,
-                            session_id: Data!["session_id"]!.string!,
-                            name: UserDic["name"]!.string!,
-                            username : UserDic["username"]!.string!,
-                            email: UserDic["email"]!.string!,
-                            tipo: UserDic["tipo"]!.string!,
-                            telefono: UserDic["telefono"]!.string!,
-                            token_dispositivo: ":D",//UserDic["token_dispositivo"]!.string!,
-                            image: UserDic["image"]!.string!,
-                            nivel: cuenta!["nivel"]! as! NSDictionary,
-                            grado: cuenta!["grado"]! as! NSDictionary,
-                            codigo_referencia: cuenta!["codigo_referencia"]! as! String,
-                            nivel_id: nivelInfo["id"]! as! Int,
-                            nivel_titulo: nivelInfo["titulo"]! as! String,
-                            grado_id: gradoInfo["id"]! as! Int,
-                            grado_titulo: gradoInfo["titulo"]! as! String,
-                            codigo_invitacion: cuenta!["codigo_invitacion"]! as! String,
-                            codigo_registro: cuenta!["codigo_registro"]! as! String,
-                            rfc: facturacion["rfc"]! as! String,
-                            calle: facturacion["calle"]! as! String,
-                            codigo_postal: facturacion["codigo_postal"]! as! Int,
-                            estado: facturacion["estado"]! as! String,
-                            municipio: facturacion["municipio"]! as! String,
-                            colonia: facturacion["colonia"]! as! String,
-                            email_facturacion: facturacion["email_facturacion"]! as! String,
-                            razon_social: facturacion["razon_social"]! as! String
-                            ).synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
-                        //
-                        // Saving USER ID
-                        let defaults = UserDefaults.standard
-                        defaults.set( Data!["session_id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
-                        defaults.synchronize()
-                        print("se termino la sincronizacion")
-                        success(resJson)
-                        
-                        
-                        
-                    }else{
-                        let nivelInfo =  cuenta!["nivel"]! as! NSDictionary
-                        let gradoInfo = cuenta!["grado"]! as! NSDictionary
-                        print("------")
-                        UserItem(
-                            userId: cuenta!["id"]! as! Int,
-                            session_id: Data!["session_id"]!.string!,
-                            name: UserDic["name"]!.string!,
-                            username : UserDic["username"]!.string!,
-                            email: UserDic["email"]!.string!,
-                            tipo: UserDic["tipo"]!.string!,
-                            telefono: UserDic["telefono"]!.string!,
-                            token_dispositivo: ":D",//UserDic["token_dispositivo"]!.string!,
-                            image: UserDic["image"]!.string!,
-                            nivel: cuenta!["nivel"]! as! NSDictionary,
-                            grado: cuenta!["grado"]! as! NSDictionary,
-                            codigo_referencia: cuenta!["codigo_referencia"]! as! String,
-                            nivel_id: nivelInfo["id"]! as! Int,
-                            nivel_titulo: nivelInfo["titulo"]! as! String,
-                            grado_id: gradoInfo["id"]! as! Int,
-                            grado_titulo: gradoInfo["titulo"]! as! String,
-                            codigo_invitacion: cuenta!["codigo_invitacion"]! as! String,
-                            codigo_registro: cuenta!["codigo_registro"]! as! String,
-                            rfc: "",
-                            calle: "",
-                            codigo_postal:0,
-                            estado: "",
-                            municipio: "",
-                            colonia: "",
-                            email_facturacion: "",
-                            razon_social: ""
-                            ).synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
-                        //
-                        // Saving USER ID
-                        let defaults = UserDefaults.standard
-                        defaults.set( Data!["session_id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
-                        defaults.synchronize()
-                        print("se termino la sincronizacion")
-                        success(resJson)
-                    }
-                    
 
-                }else{
-                    let ErrorString = item!["message"]!.string
-                    logger.log(ErrorString)
-                    failure(ErrorString!)
-                }
-                
-                
-            }
-            if responseObject.result.isFailure {
-                let error : Error = responseObject.result.error!
-                failure(error.localizedDescription)
-                
-            }
-        }
-        
-    }
-    
-    
-    
-    
     /**
      Clear user information from NSUserDefaults
      */

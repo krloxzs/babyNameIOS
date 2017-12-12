@@ -37,7 +37,7 @@ class AppSetupRootVC {
     
     fileprivate func configureDashboard(_ window: UIWindow) {
         //AlreadyLogin
-            let tabbarController:MainNavC? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+            let tabbarController:MainTabBarController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
             window.rootViewController = tabbarController
     }
     

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */; };
+		3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3E16BB141FDF3F6F00CC0E2C /* Varela.otf */; };
+		3E25721D1FDF95180072AC70 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E25721C1FDF95180072AC70 /* MainTabBarController.swift */; };
 		3E355ADF1FDA276E00CF81A0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */; };
 		3E355AE01FDA276E00CF81A0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */; };
 		3E355AE21FDA281000CF81A0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355AE11FDA280F00CF81A0 /* Bolts.framework */; };
@@ -40,7 +43,6 @@
 		3E355B231FDA333400CF81A0 /* AppSetupRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B221FDA333400CF81A0 /* AppSetupRootVC.swift */; };
 		3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B271FDA358100CF81A0 /* LoginHandler.swift */; };
 		3E355B2A1FDA362F00CF81A0 /* LoginNavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B291FDA362F00CF81A0 /* LoginNavC.swift */; };
-		3E355B2C1FDA364500CF81A0 /* MainNavC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B2B1FDA364500CF81A0 /* MainNavC.swift */; };
 		3E355B2E1FDA371600CF81A0 /* DispatchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B2D1FDA371600CF81A0 /* DispatchHelper.swift */; };
 		3E355B331FDA568100CF81A0 /* MainLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B321FDA568100CF81A0 /* MainLoginVC.swift */; };
 		3E355B391FDA5A2500CF81A0 /* UINavigationBar+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E355B381FDA5A2500CF81A0 /* UINavigationBar+Custom.swift */; };
@@ -77,6 +79,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		3E16BB141FDF3F6F00CC0E2C /* Varela.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Varela.otf; sourceTree = "<group>"; };
+		3E25721C1FDF95180072AC70 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3E355AE11FDA280F00CF81A0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -110,7 +115,6 @@
 		3E355B221FDA333400CF81A0 /* AppSetupRootVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetupRootVC.swift; sourceTree = "<group>"; };
 		3E355B271FDA358100CF81A0 /* LoginHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		3E355B291FDA362F00CF81A0 /* LoginNavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavC.swift; sourceTree = "<group>"; };
-		3E355B2B1FDA364500CF81A0 /* MainNavC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavC.swift; sourceTree = "<group>"; };
 		3E355B2D1FDA371600CF81A0 /* DispatchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchHelper.swift; sourceTree = "<group>"; };
 		3E355B321FDA568100CF81A0 /* MainLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLoginVC.swift; sourceTree = "<group>"; };
 		3E355B341FDA572500CF81A0 /* babyNameIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "babyNameIOS-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -181,6 +185,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3E25721E1FDF96540072AC70 /* MatchVC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MatchVC;
+			sourceTree = "<group>";
+		};
+		3E25721F1FDF96780072AC70 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		3E355ADC1FDA273700CF81A0 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +232,8 @@
 				3E355B531FDE6B2300CF81A0 /* LocalizatedStings */,
 				3E355B401FDE5DBE00CF81A0 /* LottieAnimations */,
 				3E6A3A761FDA21B6002E17D8 /* Assets.xcassets */,
+				3E16BB141FDF3F6F00CC0E2C /* Varela.otf */,
+				3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */,
 				3E355AF61FDA306500CF81A0 /* VarelaRound-Regular.ttf */,
 				3E355AF51FDA306500CF81A0 /* wissen.ttf */,
 			);
@@ -313,7 +333,9 @@
 		3E355B371FDA57F400CF81A0 /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
-				3E355B2B1FDA364500CF81A0 /* MainNavC.swift */,
+				3E25721F1FDF96780072AC70 /* New Group */,
+				3E25721E1FDF96540072AC70 /* MatchVC */,
+				3E25721C1FDF95180072AC70 /* MainTabBarController.swift */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -512,6 +534,8 @@
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
 				3E355B491FDE5DCD00CF81A0 /* animated_color_options.json in Resources */,
 				3E355B4A1FDE5DCD00CF81A0 /* like.json in Resources */,
+				3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */,
+				3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */,
 				3E355B4E1FDE5DCD00CF81A0 /* empty_status.json in Resources */,
 				3E355AF71FDA306500CF81A0 /* wissen.ttf in Resources */,
 				3E355B4B1FDE5DCD00CF81A0 /* exploding_heart.json in Resources */,
@@ -673,6 +697,7 @@
 				3E355B1E1FDA31B800CF81A0 /* PlistManager.swift in Sources */,
 				3E355B1D1FDA31B800CF81A0 /* AFWrapper.swift in Sources */,
 				3E355B081FDA310F00CF81A0 /* Constants.swift in Sources */,
+				3E25721D1FDF95180072AC70 /* MainTabBarController.swift in Sources */,
 				3E355B231FDA333400CF81A0 /* AppSetupRootVC.swift in Sources */,
 				3E355B0C1FDA311C00CF81A0 /* BaseNSObject.swift in Sources */,
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
@@ -680,7 +705,6 @@
 				3E355B091FDA310F00CF81A0 /* GULogger.swift in Sources */,
 				3E355B1C1FDA31B800CF81A0 /* APIConection.swift in Sources */,
 				3E355AEB1FDA2FFD00CF81A0 /* keyboard-Extension.swift in Sources */,
-				3E355B2C1FDA364500CF81A0 /* MainNavC.swift in Sources */,
 				3E355AE71FDA2FD800CF81A0 /* Bundle-Extension.swift in Sources */,
 				3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */,
 				3E355B061FDA310F00CF81A0 /* Formatter.swift in Sources */,

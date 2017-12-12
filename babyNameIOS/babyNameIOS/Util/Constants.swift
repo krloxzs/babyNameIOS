@@ -31,75 +31,7 @@ enum Constants {
             //a base url for all services
             case BASE_URL = "BASE_URL"
             
-            case LOGIN_BY_EMAIL = "LOGIN_BY_EMAIL"
-            
-            case SEND_SUGGEST = "SEND_SUGGEST"
-            
-            case REGISTER_BY_EMAIL = "REGISTER_BY_EMAIL"
-            
-            case VINCULAR_CUENTA = "VINCULAR_CUENTA"
-            
-            case RECOVER_LOGIN = "RECOVER_LOGIN"
-            
-            case GET_FILTERS = "GET_FILTERS"
-            
-            case GET_HORARIOS = "GET_HORARIOS"
-            
-            case GET_LEVELS_URL = "GET_LEVELS_URL"
-            
-            case RECOVER_REQUEST = "RECOVER_REQUEST"
-            
-            case GET_PROFESORS = "GET_PROFESORS"
-            
-            case GET_CATEGORIES = "GET_CATEGORIES"
-            
-            case GET_PROGAMS_CLASSES = "GET_PROGAMS_CLASSES"
-            
-            case CANCEL_CLASS = "CANCEL_CLASS"
-            
-            case DESVINCULAR = "DESVINCULAR"
-            
-            case GET_VINCULATED_ACCOUNTS = "GET_VINCULATED_ACCOUNTS"
-            
-            case GET_DISP = "GET_DISP"
-            
-            case REGISTER = "REGISTER"
-            
-            case PROGRAM_CLASS = "PROGRAM_CLASS"
-            
-            case UPDATE_CLASS = "UPDATE_CLASS"
-            
-            case GET_PAYMENT_METHOD = "GET_PAYMENT_METHOD"
-            
-            case SEND_TOKEN_REFRESH = "SEND_TOKEN_REFRESH"
-            
-            case GET_CLASS_BY_ID = "GET_CLASS_BY_ID"
-            
-            case GET_HISTORIAL = "GET_HISTORIAL"
-            
-            case GET_CREDITS_NUMBER = "GET_CREDITS_NUMBER"
-            
-            case BUY_CREDITS = "BUY_CREDITS"
-            
-            case UPDATE_ACCOUNT = "UPDATE_ACCOUNT"
-            
-            case UPDATE_FACT = "UPDATE_FACT"
-            
-            case FACTURAR = "FACTURAR"
-            
-            case CALIFICAR = "CALIFICAR"
-            
-            case RECURRENCIA = "RECURRENCIA"
-            
-            case SOLTAR_CLASE = "SOLTAR_CLASE"
-            
-            case GET_CREDIT_PRICE = "GET_CREDIT_PRICE"
-            
-            case REVISAR_USUARIO_DEBE = "REVISAR_USUARIO_DEBE"
-            
-            case INTENTAR_PAGAR = "INTENTAR_PAGAR"
-            
-            case PROMOTIONS = "PROMOTIONS"
+          
         }
         
         
@@ -156,6 +88,7 @@ enum Constants {
         case statusBar              = 0x23486C
         case backgroundFillColor    = 0x222222
         case fillcolor              = 0xFF0080
+        case subTitleColorF          = 0x7E8B98
         
         
     }
