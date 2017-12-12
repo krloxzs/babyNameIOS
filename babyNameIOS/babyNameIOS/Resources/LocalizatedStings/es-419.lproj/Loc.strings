@@ -16,3 +16,10 @@
 "FACEBOOK_LOGIN_BUTON"       = "Acceder con Facebook";
 "LOGIN_SWIPE_LABEL"          = "Desliza para continuar";
 "LOADING"                    = "Cargando...";
+"PROFILE_TITLE"              = "Perfil";
+"LOG_OUT"                    = "Cerrar sesion";
+"CHANGE_YOUR_BABY_GENDER"    = "Cambiar el genero de tu bebe";
+"ABOUT_US"                   = "Quienes somos";
+"SHARE"                      = "Comparte la app";
+"RATE_US"                    = "Calificanos";
+"ADD_COMMENT"                = "Ayudanos a mejorar";

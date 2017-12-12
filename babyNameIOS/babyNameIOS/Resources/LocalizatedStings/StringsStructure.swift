@@ -20,5 +20,11 @@ struct AppStrings
     static let FACEBOOK_LOGIN_BUTON      = "FACEBOOK_LOGIN_BUTON".localized
     static let LOGIN_SWIPE_LABEL         = "LOGIN_SWIPE_LABEL".localized
     static let LOADING                   = "LOADING".localized
-
+    static let PROFILE_TITLE             = "PROFILE_TITLE".localized
+    static let LOG_OUT                   = "LOG_OUT".localized
+    static let CHANGE_YOUR_BABY_GENDER   = "CHANGE_YOUR_BABY_GENDER".localized
+    static let ABOUT_US                  = "ABOUT_US".localized
+    static let SHARE                     = "SHARE".localized
+    static let RATE_US                   = "RATE_US".localized
+    static let ADD_COMMENT               = "ADD_COMMENT".localized
 }

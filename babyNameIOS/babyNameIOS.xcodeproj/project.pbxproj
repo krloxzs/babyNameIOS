@@ -61,6 +61,12 @@
 		3E355B681FDE710600CF81A0 /* Loc.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B6A1FDE710600CF81A0 /* Loc.strings */; };
 		3E355B6D1FDF11C500CF81A0 /* account_success.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B6C1FDF11C400CF81A0 /* account_success.json */; };
 		3E355B6F1FDF11D000CF81A0 /* swipe_left.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E355B6E1FDF11D000CF81A0 /* swipe_left.json */; };
+		3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2161FE0534C008C17D8 /* BackgroundTVCell.swift */; };
+		3E35F2191FE0534C008C17D8 /* BackgroundTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F2171FE0534C008C17D8 /* BackgroundTVCell.xib */; };
+		3E35F21C1FE057BB008C17D8 /* ProfileOptionsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F21A1FE057BB008C17D8 /* ProfileOptionsTVCell.swift */; };
+		3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F21B1FE057BB008C17D8 /* ProfileOptionsTVCell.xib */; };
+		3E35F2201FE06B68008C17D8 /* ManagePartnerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F21E1FE06B68008C17D8 /* ManagePartnerTVCell.swift */; };
+		3E35F2211FE06B68008C17D8 /* ManagePartnerTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F21F1FE06B68008C17D8 /* ManagePartnerTVCell.xib */; };
 		3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A6C1FDA21B6002E17D8 /* AppDelegate.swift */; };
 		3E6A3A721FDA21B6002E17D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A701FDA21B6002E17D8 /* Main.storyboard */; };
 		3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A731FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld */; };
@@ -143,6 +149,12 @@
 		3E355B6B1FDE710A00CF81A0 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Loc.strings"; sourceTree = "<group>"; };
 		3E355B6C1FDF11C400CF81A0 /* account_success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = account_success.json; sourceTree = "<group>"; };
 		3E355B6E1FDF11D000CF81A0 /* swipe_left.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swipe_left.json; sourceTree = "<group>"; };
+		3E35F2161FE0534C008C17D8 /* BackgroundTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTVCell.swift; sourceTree = "<group>"; };
+		3E35F2171FE0534C008C17D8 /* BackgroundTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackgroundTVCell.xib; sourceTree = "<group>"; };
+		3E35F21A1FE057BB008C17D8 /* ProfileOptionsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionsTVCell.swift; sourceTree = "<group>"; };
+		3E35F21B1FE057BB008C17D8 /* ProfileOptionsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOptionsTVCell.xib; sourceTree = "<group>"; };
+		3E35F21E1FE06B68008C17D8 /* ManagePartnerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnerTVCell.swift; sourceTree = "<group>"; };
+		3E35F21F1FE06B68008C17D8 /* ManagePartnerTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagePartnerTVCell.xib; sourceTree = "<group>"; };
 		3E6A3A691FDA21B6002E17D8 /* babyNameIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyNameIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6A3A6C1FDA21B6002E17D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E6A3A711FDA21B6002E17D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -250,9 +262,9 @@
 		3E355AF41FDA305600CF81A0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E6A3A761FDA21B6002E17D8 /* Assets.xcassets */,
 				3E355B531FDE6B2300CF81A0 /* LocalizatedStings */,
 				3E355B401FDE5DBE00CF81A0 /* LottieAnimations */,
-				3E6A3A761FDA21B6002E17D8 /* Assets.xcassets */,
 				3E16BB141FDF3F6F00CC0E2C /* Varela.otf */,
 				3E16BB131FDF3F6E00CC0E2C /* ProximaNova-Regular.otf */,
 				3E355AF61FDA306500CF81A0 /* VarelaRound-Regular.ttf */,
@@ -443,6 +455,12 @@
 			children = (
 				3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */,
 				3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */,
+				3E35F2161FE0534C008C17D8 /* BackgroundTVCell.swift */,
+				3E35F2171FE0534C008C17D8 /* BackgroundTVCell.xib */,
+				3E35F21A1FE057BB008C17D8 /* ProfileOptionsTVCell.swift */,
+				3E35F21B1FE057BB008C17D8 /* ProfileOptionsTVCell.xib */,
+				3E35F21E1FE06B68008C17D8 /* ManagePartnerTVCell.swift */,
+				3E35F21F1FE06B68008C17D8 /* ManagePartnerTVCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -554,9 +572,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */,
 				3E355B501FDE5DCD00CF81A0 /* bookmark_animation.json in Resources */,
 				3E355B6D1FDF11C500CF81A0 /* account_success.json in Resources */,
 				3E355B6F1FDF11D000CF81A0 /* swipe_left.json in Resources */,
+				3E35F2191FE0534C008C17D8 /* BackgroundTVCell.xib in Resources */,
 				3E6A3A7A1FDA21B6002E17D8 /* LaunchScreen.storyboard in Resources */,
 				3E355AF81FDA306500CF81A0 /* VarelaRound-Regular.ttf in Resources */,
 				3E355B1B1FDA31B800CF81A0 /* MyData.plist in Resources */,
@@ -566,6 +586,7 @@
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
 				3E355B491FDE5DCD00CF81A0 /* animated_color_options.json in Resources */,
 				3E355B4A1FDE5DCD00CF81A0 /* like.json in Resources */,
+				3E35F2211FE06B68008C17D8 /* ManagePartnerTVCell.xib in Resources */,
 				3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */,
 				3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */,
 				3E355B4E1FDE5DCD00CF81A0 /* empty_status.json in Resources */,
@@ -720,6 +741,7 @@
 				3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */,
 				3E355AEF1FDA301400CF81A0 /* Storyboard-Extension.swift in Sources */,
 				3E355B201FDA325E00CF81A0 /* UIImageExtension.swift in Sources */,
+				3E35F2201FE06B68008C17D8 /* ManagePartnerTVCell.swift in Sources */,
 				3E355B071FDA310F00CF81A0 /* GUConfigHandler.swift in Sources */,
 				3E355AF31FDA303900CF81A0 /* UIColor-Extension.swift in Sources */,
 				3E2572221FDFA42F0072AC70 /* MakeMatchVC.swift in Sources */,
@@ -727,6 +749,7 @@
 				3E355B121FDA316C00CF81A0 /* UserItem.swift in Sources */,
 				3E355AFC1FDA308900CF81A0 /* LilithProgressHUD.swift in Sources */,
 				3E355AFA1FDA307A00CF81A0 /* GradientView.swift in Sources */,
+				3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */,
 				3E355B391FDA5A2500CF81A0 /* UINavigationBar+Custom.swift in Sources */,
 				3E355B1E1FDA31B800CF81A0 /* PlistManager.swift in Sources */,
 				3E355B1D1FDA31B800CF81A0 /* AFWrapper.swift in Sources */,
@@ -747,6 +770,7 @@
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,
+				3E35F21C1FE057BB008C17D8 /* ProfileOptionsTVCell.swift in Sources */,
 				3E355AF11FDA301F00CF81A0 /* String-Extension.swift in Sources */,
 				3E355B2A1FDA362F00CF81A0 /* LoginNavC.swift in Sources */,
 				3E355B2E1FDA371600CF81A0 /* DispatchHelper.swift in Sources */,

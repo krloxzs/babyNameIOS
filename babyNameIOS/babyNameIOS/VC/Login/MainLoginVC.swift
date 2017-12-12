@@ -229,6 +229,8 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                                                     weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
                 }, failure: { (ErrorString:String) in
                     print("error")
+                    MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+                    weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
                 })
             }
         })

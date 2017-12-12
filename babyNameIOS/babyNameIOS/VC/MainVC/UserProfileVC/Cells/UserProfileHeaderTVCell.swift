@@ -10,11 +10,13 @@ import UIKit
 import SDWebImage
 
 class UserProfileHeaderTVCell: UITableViewCell {
+    @IBOutlet weak var logOutLabel: UILabel!
     @IBOutlet weak var viewForRounded: UIView!
     @IBOutlet weak var profileImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUIImage()
+        self.logOutLabel.text = AppStrings.LOG_OUT
         // Initialization code
     }
     
