@@ -23,3 +23,32 @@
 "SHARE"                   = "Share the app";
 "RATE_US"                 = "Rate us";
 "ADD_COMMENT"             = "Feedback";
+"ADD_PARTNER"             = "Add your partner";
+"MANAGE_PARTNER"          = "Manage your partner";
+"NO_ADS"                  = "Remove ads";
+"SWIPE"                   = "Swipe to continue";
+"LOGOUT_MESSAGES"         = "Do you want to log out? Don't worry, we can save the names for the next time";
+"LOGOUT_GOODBYE"          = "it's time to say goodbye?";
+"SETUP_PARTNER_QUESTION"  = "This app is better as a team";
+"SCAN_QR"                 = "Scan the QR from your new partner";
+"SHOW_QR"                 = "Show me my QR code";
+"CANCEL"                  = "Cancel";
+"SHOW_QR_TITLE"           = "Your QR code";
+"SHOW_QR_INFO_LABEL"      = "Share your QR code and start searching for the perfect name as a couple. Below is your personal QR code.";
+"SHARE_BUTTON_PRESS"      = "Share";
+"SCAN_QR_TITLE"           = "QR scan";
+"SCAN_QR_INFO_LABEL"      = "Put the QR code in front of the camera so you can scan it as seen here";
+"DONE"                    = "OK";
+"QR_MESSAGE_DETECTED"     = "No QR is detected";
+
+
+
+
+
+
+
+
+
+
+
+

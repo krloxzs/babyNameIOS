@@ -17,7 +17,7 @@ class LoginHandler: BaseNSObject {
     static let sharedInstance = LoginHandler()
     let networkHandler: AFWrapper! = AFWrapper()
     fileprivate override init() {} //This prevents others from using the default '()' initializer for this class.
-    public typealias EstandarJson  = [String : AnyObject]
+    public typealias standarJson  = [String : AnyObject]
     let userId: Int! = -1
     /**
      Validate if user has valid information on this device.

@@ -12,6 +12,8 @@ class MakeMatchVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Baby Names"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
 
         // Do any additional setup after loading the view.
     }

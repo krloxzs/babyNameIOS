@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, UIGestureRecognizerDelegate{
     
     enum NavigationBackButton: Int {
         case navigationBackButtonNone
@@ -35,10 +35,14 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         // User Interface
         setupUserInterface()
         
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
     // Before rendering - UI
@@ -68,6 +72,12 @@ class BaseViewController: UIViewController {
         // Go back to the previous ViewController
          _ = self.navigationController?.popViewController(animated: true)
     }
+    func back() {
+        // Perform your custom actions
+        // ...
+        // Go back to the previous ViewController
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
     //MARK:- Default funcionality
     func showErrorLandingPage(_ notification: Notification) {
@@ -85,14 +95,14 @@ class BaseViewController: UIViewController {
         case .navigationBackButtonDefault:
             
             //
-            setBackButtonBy("close")
+            setBackButtonBy("ic_arrow_back_white")
             
             break
             
         case .navigationBackButtonX:
             
             //
-            setBackButtonBy("close")
+            setBackButtonBy("ic_arrow_back_white")
             
             break
             
@@ -111,6 +121,13 @@ class BaseViewController: UIViewController {
         }
     }
     
+    func pushViewController(_ viewController: UIViewController )
+    {
+        Run.onMain()
+            {
+                self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
      func setupUserInterface() {
         // TabBar appearance----
         UINavigationBar.appearance().backgroundColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
@@ -129,7 +146,7 @@ class BaseViewController: UIViewController {
     
     fileprivate func setBackButtonBy(_ imgBackButton: String) {
         let backButton: UIButton = UIButton(type: .custom)
-        backButton.setImage(UIImage(named: "close"), for: UIControlState())
+        backButton.setImage(UIImage(named: "ic_arrow_back_white"), for: UIControlState())
         backButton.addTarget(self, action: #selector(BaseViewController.back(_:)), for: .touchUpInside)
         
         backButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)

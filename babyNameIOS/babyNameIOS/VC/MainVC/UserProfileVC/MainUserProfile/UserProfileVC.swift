@@ -41,18 +41,12 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     //MARK:- ScrollViewDElegates
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-//        let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
-       print(scrollView.contentOffset.x)
-    }
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 8
     }
     
     
@@ -67,6 +61,7 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             if (cell == nil){ cell = UserProfileHeaderTVCell() }
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             cell?.SetupImage(userInfo!.profile_image)
+            cell?.setupUI(userInfo!.name)
             return cell!
         case 1:
             //            Partner
@@ -79,7 +74,7 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             }else{
                  coupleFlag = true
             }
-            cell?.SetupHiddenViews(coupleFlag!)
+            cell?.SetupHiddenViews(coupleFlag!, CoupleId: userInfo!.couple_id)
             return cell!
         case 2:
 //            changeBabyGender
@@ -117,8 +112,15 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             cell?.setupUI("ic_message", optionTitle: AppStrings.ADD_COMMENT)
             return cell!
-        
-        
+            
+        case 7:
+            //Comments
+            var cell = tableView.dequeueReusableCell(withIdentifier: "ProfileOptionsTVCell", for: indexPath) as? ProfileOptionsTVCell
+            if (cell == nil){ cell = ProfileOptionsTVCell() }
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.setupUI("ic_credit_card", optionTitle: AppStrings.NO_ADS)
+            return cell!
+            
         default:
             var cell = tableView.dequeueReusableCell(withIdentifier: "ProfileOptionsTVCell", for: indexPath) as? ProfileOptionsTVCell
             if (cell == nil){ cell = ProfileOptionsTVCell() }
@@ -130,11 +132,55 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-//            logOut
-            weak var weakSelf:UserProfileVC! = self
-             self.loginHandler.clearUserSession()
-             weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+            // logOut
+            // create the alert
+            let alert = UIAlertController(title: AppStrings.LOGOUT_GOODBYE, message: AppStrings.LOGOUT_MESSAGES, preferredStyle: UIAlertControllerStyle.alert)
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: AppStrings.LOG_OUT, style: UIAlertActionStyle.destructive, handler: { action in
+                weak var weakSelf:UserProfileVC! = self
+                self.loginHandler.clearUserSession()
+                weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+            }))
+            alert.addAction(UIAlertAction(title: AppStrings.CANCEL, style: UIAlertActionStyle.cancel, handler: nil))
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        case 1:
+            let alert = UIAlertController(title: AppStrings.MANAGE_PARTNER, message: AppStrings.SETUP_PARTNER_QUESTION, preferredStyle: .actionSheet) // 1
+            let firstAction = UIAlertAction(title: AppStrings.SCAN_QR, style: .default) { (alert: UIAlertAction!) -> Void in
+                self.ScanQRCode()
+            } // 2
+            let secondAction = UIAlertAction(title: AppStrings.SHOW_QR, style: .default) { (alert: UIAlertAction!) -> Void in
+                self.ShowQR()
+            } // 3
+            let cancel = UIAlertAction(title:  AppStrings.CANCEL, style: .cancel) { (alert: UIAlertAction!) -> Void in
+            } // 3
+            alert.addAction(firstAction) // 4
+            alert.addAction(secondAction)
+            alert.addAction(cancel)
+//            present(alert, animated: true, completion:nil) // 6
+            alert.popoverPresentationController?.sourceView = self.tableView.cellForRow(at: indexPath) // works for both iPhone & iPad
             
+            present(alert, animated: true) {
+                print("option menu presented")
+            }
+        case 2:
+            print("change gender")
+            
+        case 3:
+            let vc: AboutUSViewController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+            self.pushViewController(vc!)
+//            pushViewController(vc!, animated: true)
+            
+        case 4:
+            print("Share")
+            
+        case 5:
+            print("rate us")
+        case 6:
+            print("comment us")
+            
+        case 7:
+            print("remove add")
         default:
             break
         }
@@ -151,26 +197,19 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       
-        if scrollView.contentOffset.y > 20{
-            UIView.animate(withDuration: 0.1, animations: {
-                self.navigationController?.navigationBar.prefersLargeTitles = false
-            }, completion: nil)
-        }else{
-            UIView.animate(withDuration: 0.1, animations: {
-                 self.navigationController?.navigationBar.prefersLargeTitles = true
-            }, completion: nil)
-        }
-    }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+    func ShowQR()  {
+        
+        let vc: ShowQRViewController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+        vc?.ID = self.userInfo!.id
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
-    */
+    
+    func ScanQRCode()  {
+      
+        let vc: ScanerViewController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+        self.navigationController?.pushViewController(vc!, animated: true)
+    }
 
 }

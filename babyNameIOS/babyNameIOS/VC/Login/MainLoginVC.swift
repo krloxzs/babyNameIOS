@@ -35,6 +35,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ""
+        self.swipeLabelOutlet.text = AppStrings.SWIPE
         super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
         super.navigationBarType = NavigationBarType.navigationBarTypeHidden
         prepareActionsForView()

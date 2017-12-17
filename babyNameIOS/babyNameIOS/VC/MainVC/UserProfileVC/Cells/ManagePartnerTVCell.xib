@@ -36,7 +36,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpG-as-OXz">
                                                 <rect key="frame" x="0.0" y="0.0" width="186" height="50.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carlos Rodriguez" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS3-iW-euB">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NS3-iW-euB">
                                                         <rect key="frame" x="16" y="4" width="170" height="46.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="19"/>
                                                         <nil key="textColor"/>
@@ -54,7 +54,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qU-H1-a1c">
                                                 <rect key="frame" x="0.0" y="40.5" width="186" height="50.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your partner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-JW-auy">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGW-JW-auy">
                                                         <rect key="frame" x="16" y="0.0" width="170" height="46.5"/>
                                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                                         <color key="textColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -146,7 +146,12 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="ManagePartnerView" destination="CYl-7r-d3V" id="KTx-wf-sn0"/>
+                <outlet property="addYourPartnerLabel" destination="y6W-OK-XiF" id="Uoy-ob-sIE"/>
+                <outlet property="managePartnerLabel" destination="OGW-JW-auy" id="qQR-3I-vsL"/>
+                <outlet property="nameLabel" destination="NS3-iW-euB" id="7E4-xf-fFO"/>
+                <outlet property="profileImage" destination="och-iG-cwR" id="Gak-Bq-i09"/>
                 <outlet property="viewForPartner" destination="cMo-yM-nC5" id="8lK-Fc-nwf"/>
+                <outlet property="viewForRounded" destination="CEw-r6-oaa" id="jei-Fa-qAS"/>
             </connections>
             <point key="canvasLocation" x="25" y="75.5"/>
         </tableViewCell>

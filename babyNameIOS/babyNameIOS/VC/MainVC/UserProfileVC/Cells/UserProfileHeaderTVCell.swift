@@ -13,11 +13,18 @@ class UserProfileHeaderTVCell: UITableViewCell {
     @IBOutlet weak var logOutLabel: UILabel!
     @IBOutlet weak var viewForRounded: UIView!
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUIImage()
         self.logOutLabel.text = AppStrings.LOG_OUT
         // Initialization code
+    }
+    func setupUI(_ UserName: String) {
+        UIView.animate(withDuration: 0.1, animations: {
+             self.nameLabel.text = UserName
+        }, completion: nil)
     }
     
     func SetupImage(_ URLString : String)  {
@@ -31,8 +38,10 @@ class UserProfileHeaderTVCell: UITableViewCell {
                                         fromPlaceHolderImage: PlaceHolderImage!,
                                         forimage: self.profileImage,
                                         success: { (image:UIImage) in
-                                            self.profileImage.contentMode = .scaleAspectFill
-                                            self.profileImage.clipsToBounds = true
+                                            UIView.animate(withDuration: 0.1, animations: {
+                                                self.profileImage.contentMode = .scaleAspectFill
+                                                self.profileImage.clipsToBounds = true
+                                            }, completion: nil)
         }, failure: { (ErrorStringString) in
             
         })

@@ -56,10 +56,8 @@ class BaseNSObject: NSObject {
      - parameter forKey: string key
      */
     func setObjectValue(_ value: JSON, forKey: String) {
-        
         // If property exists
         if (self.responds(to: NSSelectorFromString(forKey))) {
-            
             if !value.stringValue.isEmpty {
                 if !reserver_words.contains(forKey) {
                     self.setValue(value.stringValue, forKey: forKey)
@@ -67,9 +65,9 @@ class BaseNSObject: NSObject {
                     self.setValue(value.stringValue, forKey: "\(forKey)_string")
                 }
             }
-            
+        }else{
+            print("Error Getting Data for \(forKey)")
         }
-        
     }
     
     func constructRootProperties(_ JSONObject: JSON) -> Self {
@@ -77,9 +75,8 @@ class BaseNSObject: NSObject {
         // Loop
         for (key, value) in JSONObject {
             let keyName = key
-            
             // Save single properties
-            self.setObjectValue(value, forKey: keyName)
+            _ = self.setObjectValue(value, forKey: keyName)
         }
         
         return self

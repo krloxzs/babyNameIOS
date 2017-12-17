@@ -67,6 +67,23 @@
 		3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F21B1FE057BB008C17D8 /* ProfileOptionsTVCell.xib */; };
 		3E35F2201FE06B68008C17D8 /* ManagePartnerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F21E1FE06B68008C17D8 /* ManagePartnerTVCell.swift */; };
 		3E35F2211FE06B68008C17D8 /* ManagePartnerTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F21F1FE06B68008C17D8 /* ManagePartnerTVCell.xib */; };
+		3E35F2231FE0977C008C17D8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2221FE0977C008C17D8 /* UserData.swift */; };
+		3E35F2321FE102D7008C17D8 /* ScanerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2301FE102D7008C17D8 /* ScanerViewController.swift */; };
+		3E35F2371FE1BC44008C17D8 /* ShowQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2361FE1BC44008C17D8 /* ShowQRViewController.swift */; };
+		3E35F23A1FE1C60C008C17D8 /* AboutUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2391FE1C60C008C17D8 /* AboutUSViewController.swift */; };
+		3E35F23F1FE46C3A008C17D8 /* 5_stars.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F23B1FE46C38008C17D8 /* 5_stars.json */; };
+		3E35F2401FE46C3A008C17D8 /* iphone_x_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F23C1FE46C39008C17D8 /* iphone_x_loading.json */; };
+		3E35F2411FE46C3A008C17D8 /* spirit_geek.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F23D1FE46C39008C17D8 /* spirit_geek.json */; };
+		3E35F2421FE46C3A008C17D8 /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F23E1FE46C39008C17D8 /* empty_list.json */; };
+		3E35F2441FE46C45008C17D8 /* android.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F2431FE46C45008C17D8 /* android.json */; };
+		3E35F2481FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F2461FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift */; };
+		3E35F2491FE46CF1008C17D8 /* iosDeveloperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F2471FE46CF1008C17D8 /* iosDeveloperTableViewCell.xib */; };
+		3E35F24C1FE474C1008C17D8 /* androidDeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F24A1FE474C1008C17D8 /* androidDeveloperTableViewCell.swift */; };
+		3E35F24D1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F24B1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib */; };
+		3E35F2501FE47CF9008C17D8 /* webDeveloperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E35F24E1FE47CF9008C17D8 /* webDeveloperTableViewCell.swift */; };
+		3E35F2511FE47CF9008C17D8 /* webDeveloperTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F24F1FE47CF9008C17D8 /* webDeveloperTableViewCell.xib */; };
+		3E35F2531FE48030008C17D8 /* animated_laptop_.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F2521FE48030008C17D8 /* animated_laptop_.json */; };
+		3E35F2551FE48035008C17D8 /* skeleton_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E35F2541FE48035008C17D8 /* skeleton_loading.json */; };
 		3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A6C1FDA21B6002E17D8 /* AppDelegate.swift */; };
 		3E6A3A721FDA21B6002E17D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A701FDA21B6002E17D8 /* Main.storyboard */; };
 		3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A731FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld */; };
@@ -155,6 +172,23 @@
 		3E35F21B1FE057BB008C17D8 /* ProfileOptionsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileOptionsTVCell.xib; sourceTree = "<group>"; };
 		3E35F21E1FE06B68008C17D8 /* ManagePartnerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePartnerTVCell.swift; sourceTree = "<group>"; };
 		3E35F21F1FE06B68008C17D8 /* ManagePartnerTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManagePartnerTVCell.xib; sourceTree = "<group>"; };
+		3E35F2221FE0977C008C17D8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		3E35F2301FE102D7008C17D8 /* ScanerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanerViewController.swift; sourceTree = "<group>"; };
+		3E35F2361FE1BC44008C17D8 /* ShowQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQRViewController.swift; sourceTree = "<group>"; };
+		3E35F2391FE1C60C008C17D8 /* AboutUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUSViewController.swift; sourceTree = "<group>"; };
+		3E35F23B1FE46C38008C17D8 /* 5_stars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 5_stars.json; sourceTree = "<group>"; };
+		3E35F23C1FE46C39008C17D8 /* iphone_x_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iphone_x_loading.json; sourceTree = "<group>"; };
+		3E35F23D1FE46C39008C17D8 /* spirit_geek.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spirit_geek.json; sourceTree = "<group>"; };
+		3E35F23E1FE46C39008C17D8 /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_list.json; sourceTree = "<group>"; };
+		3E35F2431FE46C45008C17D8 /* android.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = android.json; sourceTree = "<group>"; };
+		3E35F2461FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosDeveloperTableViewCell.swift; sourceTree = "<group>"; };
+		3E35F2471FE46CF1008C17D8 /* iosDeveloperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iosDeveloperTableViewCell.xib; sourceTree = "<group>"; };
+		3E35F24A1FE474C1008C17D8 /* androidDeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = androidDeveloperTableViewCell.swift; sourceTree = "<group>"; };
+		3E35F24B1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = androidDeveloperTableViewCell.xib; sourceTree = "<group>"; };
+		3E35F24E1FE47CF9008C17D8 /* webDeveloperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webDeveloperTableViewCell.swift; sourceTree = "<group>"; };
+		3E35F24F1FE47CF9008C17D8 /* webDeveloperTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = webDeveloperTableViewCell.xib; sourceTree = "<group>"; };
+		3E35F2521FE48030008C17D8 /* animated_laptop_.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animated_laptop_.json; sourceTree = "<group>"; };
+		3E35F2541FE48035008C17D8 /* skeleton_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton_loading.json; sourceTree = "<group>"; };
 		3E6A3A691FDA21B6002E17D8 /* babyNameIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = babyNameIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6A3A6C1FDA21B6002E17D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E6A3A711FDA21B6002E17D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,7 +252,10 @@
 		3E25721F1FDF96780072AC70 /* UserProfileVC */ = {
 			isa = PBXGroup;
 			children = (
-				3E2572231FDFA4460072AC70 /* UserProfileVC.swift */,
+				3E35F2381FE1C5F5008C17D8 /* About Us */,
+				3E35F22A1FE0F28F008C17D8 /* MainUserProfile */,
+				3E35F2351FE1B873008C17D8 /* ShowQR */,
+				3E35F22B1FE0F298008C17D8 /* ScanQR */,
 				3E6CBE6F1FDFA9C400A1A445 /* Cells */,
 			);
 			path = UserProfileVC;
@@ -288,6 +325,7 @@
 		3E355B001FDA30F700CF81A0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3E355B1A1FDA31B800CF81A0 /* PlistManager.swift */,
 				3E355B1F1FDA325E00CF81A0 /* UIImageExtension.swift */,
 				3E355B031FDA310E00CF81A0 /* Constants.swift */,
 				3E355B011FDA310E00CF81A0 /* Formatter.swift */,
@@ -310,11 +348,11 @@
 		3E355B161FDA319B00CF81A0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				3E355B271FDA358100CF81A0 /* LoginHandler.swift */,
 				3E355B191FDA31B800CF81A0 /* AFWrapper.swift */,
 				3E355B181FDA31B700CF81A0 /* APIConection.swift */,
 				3E355B171FDA31B700CF81A0 /* MyData.plist */,
-				3E355B1A1FDA31B800CF81A0 /* PlistManager.swift */,
+				3E35F2251FE09798008C17D8 /* Users */,
+				3E35F2241FE09783008C17D8 /* Login */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -377,8 +415,15 @@
 		3E355B401FDE5DBE00CF81A0 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				3E35F2431FE46C45008C17D8 /* android.json */,
+				3E35F2521FE48030008C17D8 /* animated_laptop_.json */,
 				3E355B411FDE5DCC00CF81A0 /* animated_color_options.json */,
+				3E35F2541FE48035008C17D8 /* skeleton_loading.json */,
 				3E355B6C1FDF11C400CF81A0 /* account_success.json */,
+				3E35F23B1FE46C38008C17D8 /* 5_stars.json */,
+				3E35F23E1FE46C39008C17D8 /* empty_list.json */,
+				3E35F23C1FE46C39008C17D8 /* iphone_x_loading.json */,
+				3E35F23D1FE46C39008C17D8 /* spirit_geek.json */,
 				3E355B6E1FDF11D000CF81A0 /* swipe_left.json */,
 				3E355B481FDE5DCD00CF81A0 /* bookmark_animation.json */,
 				3E355B461FDE5DCD00CF81A0 /* empty_status.json */,
@@ -398,6 +443,68 @@
 				3E355B6A1FDE710600CF81A0 /* Loc.strings */,
 			);
 			path = LocalizatedStings;
+			sourceTree = "<group>";
+		};
+		3E35F2241FE09783008C17D8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3E355B271FDA358100CF81A0 /* LoginHandler.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3E35F2251FE09798008C17D8 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				3E35F2221FE0977C008C17D8 /* UserData.swift */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		3E35F22A1FE0F28F008C17D8 /* MainUserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				3E2572231FDFA4460072AC70 /* UserProfileVC.swift */,
+			);
+			path = MainUserProfile;
+			sourceTree = "<group>";
+		};
+		3E35F22B1FE0F298008C17D8 /* ScanQR */ = {
+			isa = PBXGroup;
+			children = (
+				3E35F2301FE102D7008C17D8 /* ScanerViewController.swift */,
+			);
+			path = ScanQR;
+			sourceTree = "<group>";
+		};
+		3E35F2351FE1B873008C17D8 /* ShowQR */ = {
+			isa = PBXGroup;
+			children = (
+				3E35F2361FE1BC44008C17D8 /* ShowQRViewController.swift */,
+			);
+			path = ShowQR;
+			sourceTree = "<group>";
+		};
+		3E35F2381FE1C5F5008C17D8 /* About Us */ = {
+			isa = PBXGroup;
+			children = (
+				3E35F2391FE1C60C008C17D8 /* AboutUSViewController.swift */,
+				3E35F2451FE46CD5008C17D8 /* Cells */,
+			);
+			path = "About Us";
+			sourceTree = "<group>";
+		};
+		3E35F2451FE46CD5008C17D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E35F2461FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift */,
+				3E35F2471FE46CF1008C17D8 /* iosDeveloperTableViewCell.xib */,
+				3E35F24A1FE474C1008C17D8 /* androidDeveloperTableViewCell.swift */,
+				3E35F24B1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib */,
+				3E35F24E1FE47CF9008C17D8 /* webDeveloperTableViewCell.swift */,
+				3E35F24F1FE47CF9008C17D8 /* webDeveloperTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3E6A3A601FDA21B6002E17D8 = {
@@ -574,21 +681,31 @@
 			files = (
 				3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */,
 				3E355B501FDE5DCD00CF81A0 /* bookmark_animation.json in Resources */,
+				3E35F24D1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib in Resources */,
 				3E355B6D1FDF11C500CF81A0 /* account_success.json in Resources */,
 				3E355B6F1FDF11D000CF81A0 /* swipe_left.json in Resources */,
 				3E35F2191FE0534C008C17D8 /* BackgroundTVCell.xib in Resources */,
+				3E35F2401FE46C3A008C17D8 /* iphone_x_loading.json in Resources */,
+				3E35F2551FE48035008C17D8 /* skeleton_loading.json in Resources */,
 				3E6A3A7A1FDA21B6002E17D8 /* LaunchScreen.storyboard in Resources */,
 				3E355AF81FDA306500CF81A0 /* VarelaRound-Regular.ttf in Resources */,
 				3E355B1B1FDA31B800CF81A0 /* MyData.plist in Resources */,
 				3E6A3A771FDA21B6002E17D8 /* Assets.xcassets in Resources */,
+				3E35F2491FE46CF1008C17D8 /* iosDeveloperTableViewCell.xib in Resources */,
 				3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */,
 				3E6A3A721FDA21B6002E17D8 /* Main.storyboard in Resources */,
+				3E35F2531FE48030008C17D8 /* animated_laptop_.json in Resources */,
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
 				3E355B491FDE5DCD00CF81A0 /* animated_color_options.json in Resources */,
+				3E35F23F1FE46C3A008C17D8 /* 5_stars.json in Resources */,
+				3E35F2511FE47CF9008C17D8 /* webDeveloperTableViewCell.xib in Resources */,
 				3E355B4A1FDE5DCD00CF81A0 /* like.json in Resources */,
 				3E35F2211FE06B68008C17D8 /* ManagePartnerTVCell.xib in Resources */,
 				3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */,
+				3E35F2411FE46C3A008C17D8 /* spirit_geek.json in Resources */,
+				3E35F2421FE46C3A008C17D8 /* empty_list.json in Resources */,
 				3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */,
+				3E35F2441FE46C45008C17D8 /* android.json in Resources */,
 				3E355B4E1FDE5DCD00CF81A0 /* empty_status.json in Resources */,
 				3E355AF71FDA306500CF81A0 /* wissen.ttf in Resources */,
 				3E355B4B1FDE5DCD00CF81A0 /* exploding_heart.json in Resources */,
@@ -733,6 +850,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E35F24C1FE474C1008C17D8 /* androidDeveloperTableViewCell.swift in Sources */,
 				3E355B0A1FDA310F00CF81A0 /* Imagen_resize.swift in Sources */,
 				3E355AFF1FDA30CF00CF81A0 /* User.swift in Sources */,
 				3E355B111FDA316C00CF81A0 /* UserProfile.swift in Sources */,
@@ -741,6 +859,7 @@
 				3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */,
 				3E355AEF1FDA301400CF81A0 /* Storyboard-Extension.swift in Sources */,
 				3E355B201FDA325E00CF81A0 /* UIImageExtension.swift in Sources */,
+				3E35F2481FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift in Sources */,
 				3E35F2201FE06B68008C17D8 /* ManagePartnerTVCell.swift in Sources */,
 				3E355B071FDA310F00CF81A0 /* GUConfigHandler.swift in Sources */,
 				3E355AF31FDA303900CF81A0 /* UIColor-Extension.swift in Sources */,
@@ -748,6 +867,7 @@
 				3E355B0E1FDA314000CF81A0 /* BaseObjects.swift in Sources */,
 				3E355B121FDA316C00CF81A0 /* UserItem.swift in Sources */,
 				3E355AFC1FDA308900CF81A0 /* LilithProgressHUD.swift in Sources */,
+				3E35F2501FE47CF9008C17D8 /* webDeveloperTableViewCell.swift in Sources */,
 				3E355AFA1FDA307A00CF81A0 /* GradientView.swift in Sources */,
 				3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */,
 				3E355B391FDA5A2500CF81A0 /* UINavigationBar+Custom.swift in Sources */,
@@ -761,12 +881,16 @@
 				3E355AED1FDA300A00CF81A0 /* NSUserDefaults-Extension.swift in Sources */,
 				3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */,
 				3E355B091FDA310F00CF81A0 /* GULogger.swift in Sources */,
+				3E35F23A1FE1C60C008C17D8 /* AboutUSViewController.swift in Sources */,
 				3E355B1C1FDA31B800CF81A0 /* APIConection.swift in Sources */,
 				3E355AEB1FDA2FFD00CF81A0 /* keyboard-Extension.swift in Sources */,
+				3E35F2231FE0977C008C17D8 /* UserData.swift in Sources */,
 				3E355AE71FDA2FD800CF81A0 /* Bundle-Extension.swift in Sources */,
+				3E35F2321FE102D7008C17D8 /* ScanerViewController.swift in Sources */,
 				3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */,
 				3E355B061FDA310F00CF81A0 /* Formatter.swift in Sources */,
 				3E2572261FDFA4640072AC70 /* ListOfMatchesVC.swift in Sources */,
+				3E35F2371FE1BC44008C17D8 /* ShowQRViewController.swift in Sources */,
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,

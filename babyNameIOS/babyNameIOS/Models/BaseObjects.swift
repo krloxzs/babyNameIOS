@@ -1,9 +1,6 @@
 //
 //  BaseObjects.swift
-//  NutriwenApp
-//
 //  Created by Carlos Rodriguez on 19/07/16.
-
 //
 
 import Foundation
@@ -35,6 +32,35 @@ class ExampleOfUsage: BaseNSObject {
     
     
 }
+
+class UserInformation: BaseNSObject {
+//    Key value coding-compliant properties must be marked as dynamic
+//    and in Swift 4 even as @objc
+    @objc dynamic var couple_id:   String = ""
+    @objc dynamic var name:        String = ""
+    @objc dynamic var email:       String = ""
+    @objc dynamic var premium:     String = ""
+    @objc dynamic  var id:          String = ""
+    @objc dynamic var gender:      String = ""
+    @objc dynamic  var facebook_id: String = ""
+    @objc dynamic var age:         String = ""
+    @objc dynamic var profile_image : String  = ""
+    
+    
+    
+    // Initialization
+    init(JSONObject: JSON) {
+        super.init()
+        _ =  self.constructRootProperties(JSONObject)
+    }
+    
+    
+}
+
+
+
+
+
 
 
 
