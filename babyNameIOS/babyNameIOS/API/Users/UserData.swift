@@ -35,13 +35,18 @@ class UserData: NSObject {
         logger.log(params)
         //get process
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
-            //
-            let thisUserInfo = res[0]
-            let coupleUser = res[1]
-            // Root respons
-            let _: UserInformation = UserInformation(JSONObject: thisUserInfo)
-            let coupleUserInfoObject: UserInformation = UserInformation(JSONObject: coupleUser)
-            success(coupleUserInfoObject)
+            let itemD = res.dictionary
+            if let _ = itemD?["data"] {
+                let itemArray  =  itemD!["data"]!.array
+                let thisUserInfo = itemArray![0]
+                let coupleUser = itemArray![1]
+                // Root respons
+                let _: UserInformation = UserInformation(JSONObject: thisUserInfo)
+                let coupleUserInfoObject: UserInformation = UserInformation(JSONObject: coupleUser)
+                success(coupleUserInfoObject)
+            }else{
+                failure(itemD!["data"]!.string!)
+            }
         }) { (String) in
             //
             failure(String)

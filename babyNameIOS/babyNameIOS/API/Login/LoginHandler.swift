@@ -72,31 +72,27 @@ class LoginHandler: BaseNSObject {
                                   "gender" : gender, "age": age, "name" : name]
         logger.log(params)
         networkHandler.requestGETURL(completeURL!, params: params, success: { (Response:JSON) in
-            let item = Response.dictionary
-//            print(item!)
-//            print(item!["id"]!.string!)
-//            print(item!["facebook_id"]!.string!)
-//            print(item!["name"]!.string!)
-//            print(item!["email"]!.string!)
-//            print(profile_image)
-//            print(item!["premium"]!.string!)
-//            print(item!["gender"]!.string!)
-//            print(item!["age"]!.string!)
-//            print(item!["couple_id"]!.string!)
-//            
-            UserItem(id: item?["id"]?.string ?? "" , facebook_id:  item?["facebook_id"]?.string ?? "",
-                     name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
-                     profile_image: profile_image , premium: item?["premium"]?.string ?? "",
-                     gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
-                     couple_id: item?["couple_id"]?.string ?? "", grado: item?["grado"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
-                                    // Saving USER ID
-                                    let defaults = UserDefaults.standard
-                                    defaults.set( item!["id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
-                                    defaults.synchronize()
-                                    print("se termino la sincronizacion")
-            success(Response)
+            let itemD = Response.dictionary
+            if let _ = itemD?["data"] {
+                let itemArray  =  itemD!["data"]!.array
+                let item = itemArray![0].dictionary
+                UserItem(id: item?["id"]?.string ?? "" , facebook_id:  item?["facebook_id"]?.string ?? "",
+                         name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
+                         profile_image: profile_image , premium: item?["premium"]?.string ?? "",
+                         gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
+                         couple_id: item?["couple_id"]?.string ?? "", grado: item?["grado"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
+                // Saving USER ID
+                let defaults = UserDefaults.standard
+                defaults.set( item!["id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
+                defaults.synchronize()
+                print("se termino la sincronizacion")
+                success(Response)
+                
+            }else{
+                failure("Unespected error")
+            }
         }) { (ErrorString: String) in
-            print(ErrorString)
+            failure(ErrorString)
         }
     }
     
