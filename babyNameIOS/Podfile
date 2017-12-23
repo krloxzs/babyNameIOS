@@ -19,6 +19,7 @@ target 'babyNameIOS' do
   pod 'MBProgressHUD', '~> 0.9'
   pod 'SwiftDate'
   pod 'lottie-ios'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   target 'babyNameIOSTests' do
     inherit! :search_paths
     # Pods for testing
