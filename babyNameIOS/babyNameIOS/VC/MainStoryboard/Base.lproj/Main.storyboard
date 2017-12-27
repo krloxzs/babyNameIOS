@@ -75,7 +75,7 @@
                                         <rect key="frame" x="0.0" y="39.5" width="359" height="39"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkn-jj-f94">
-                                                <rect key="frame" x="18" y="2" width="323" height="35.5"/>
+                                                <rect key="frame" x="18" y="1.5" width="323" height="36"/>
                                                 <color key="backgroundColor" red="0.1140421927" green="0.268917501" blue="0.52885884049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                 <inset key="imageEdgeInsets" minX="-30" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -465,14 +465,29 @@
                     <view key="view" contentMode="scaleToFill" id="S5t-dh-MEb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCc-oT-A62">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K6A-ia-cTD" firstAttribute="bottom" secondItem="PCc-oT-A62" secondAttribute="bottom" id="J8B-ph-nIh"/>
+                            <constraint firstItem="PCc-oT-A62" firstAttribute="leading" secondItem="K6A-ia-cTD" secondAttribute="leading" id="Jz2-iX-Pdm"/>
+                            <constraint firstItem="PCc-oT-A62" firstAttribute="top" secondItem="K6A-ia-cTD" secondAttribute="top" id="Q9b-go-D7c"/>
+                            <constraint firstItem="K6A-ia-cTD" firstAttribute="trailing" secondItem="PCc-oT-A62" secondAttribute="trailing" id="xuy-DJ-akx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="K6A-ia-cTD"/>
                     </view>
                     <navigationItem key="navigationItem" id="npg-AI-wmA"/>
+                    <connections>
+                        <outlet property="viewForSwippe" destination="PCc-oT-A62" id="MCV-66-8ti"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXd-V9-g1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="787"/>
+            <point key="canvasLocation" x="1069.5999999999999" y="786.65667166416802"/>
         </scene>
         <!--Select Gender View Controller-->
         <scene sceneID="0yW-np-tda">
@@ -528,7 +543,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="2aN-WH-WJ0" firstAttribute="leading" secondItem="KAs-6d-c8n" secondAttribute="leading" id="5Ic-fs-jvc"/>
                                                     <constraint firstAttribute="bottom" secondItem="2aN-WH-WJ0" secondAttribute="bottom" id="GLI-yl-DRb"/>
@@ -549,7 +564,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.18431372549019609" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="LQL-aO-PSu" firstAttribute="top" secondItem="6kQ-ET-GYR" secondAttribute="top" id="6kv-ea-GAY"/>
                                                     <constraint firstAttribute="bottom" secondItem="LQL-aO-PSu" secondAttribute="bottom" id="Ah4-6C-Ab6"/>
@@ -570,7 +585,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.83137254901960778" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="IRB-o9-egz" firstAttribute="leading" secondItem="WM9-EG-HkU" secondAttribute="leading" id="3pi-y1-ijj"/>
                                                     <constraint firstAttribute="bottom" secondItem="IRB-o9-egz" secondAttribute="bottom" id="dMc-xU-anT"/>

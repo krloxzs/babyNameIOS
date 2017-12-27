@@ -93,7 +93,6 @@ class UserData: NSObject {
                 self.namesArray.removeAllObjects()
                 let  names = res["data"].array!
                 for name in names{
-                    
                         let nameOBJ: NameObject = NameObject(JSONObject: name)
                         self.namesArray.add(nameOBJ)
                 }

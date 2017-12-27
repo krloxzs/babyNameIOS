@@ -93,6 +93,12 @@
 		3E6A3A851FDA21B6002E17D8 /* babyNameIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A841FDA21B6002E17D8 /* babyNameIOSTests.swift */; };
 		3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */; };
 		3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */; };
+		3E885C591FF239CA00BB4BB5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C551FF239C900BB4BB5 /* Direction.swift */; };
+		3E885C5A1FF239CA00BB4BB5 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C561FF239C900BB4BB5 /* ZLSwipeableView.swift */; };
+		3E885C5B1FF239CA00BB4BB5 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C571FF239CA00BB4BB5 /* ViewManager.swift */; };
+		3E885C5C1FF239CA00BB4BB5 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C581FF239CA00BB4BB5 /* Scheduler.swift */; };
+		3E885C5E1FF23D5200BB4BB5 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */; };
+		3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C5F1FF23D6400BB4BB5 /* CardView.swift */; };
 		40BC6DCA87C0AED8D9DC710F /* Pods_babyNameIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E491BAF1D0B92A4F15059009 /* Pods_babyNameIOS.framework */; };
 		A709135B863C8A78792F94D2 /* Pods_babyNameIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EBC7F4E89371855F47D323 /* Pods_babyNameIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -203,6 +209,12 @@
 		3E6A3A861FDA21B6002E17D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderTVCell.swift; sourceTree = "<group>"; };
 		3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileHeaderTVCell.xib; sourceTree = "<group>"; };
+		3E885C551FF239C900BB4BB5 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		3E885C561FF239C900BB4BB5 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		3E885C571FF239CA00BB4BB5 /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		3E885C581FF239CA00BB4BB5 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
+		3E885C5F1FF23D6400BB4BB5 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		867A8C33AF406AB6E9821C3B /* Pods-babyNameIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B06A4721FC312266E5EF8920 /* Pods-babyNameIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.release.xcconfig"; sourceTree = "<group>"; };
 		E491BAF1D0B92A4F15059009 /* Pods_babyNameIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_babyNameIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */,
+				3E885C5F1FF23D6400BB4BB5 /* CardView.swift */,
+				3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */,
 				3E4E1DCA1FEA53BF00DBE53C /* SelectGenderVC */,
 			);
 			path = MatchVC;
@@ -275,6 +289,7 @@
 		3E355ADC1FDA273700CF81A0 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				3E885C541FF239AF00BB4BB5 /* ZLSwippe */,
 				3E355AFB1FDA308900CF81A0 /* LilithProgressHUD.swift */,
 				3E355AF91FDA307A00CF81A0 /* GradientView.swift */,
 				3E355AE11FDA280F00CF81A0 /* Bolts.framework */,
@@ -575,6 +590,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		3E885C541FF239AF00BB4BB5 /* ZLSwippe */ = {
+			isa = PBXGroup;
+			children = (
+				3E885C551FF239C900BB4BB5 /* Direction.swift */,
+				3E885C581FF239CA00BB4BB5 /* Scheduler.swift */,
+				3E885C571FF239CA00BB4BB5 /* ViewManager.swift */,
+				3E885C561FF239C900BB4BB5 /* ZLSwipeableView.swift */,
+			);
+			path = ZLSwippe;
+			sourceTree = "<group>";
+		};
 		E465011CF1AC8B3FFAD2819D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +708,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E885C5E1FF23D5200BB4BB5 /* CardContentView.xib in Resources */,
 				3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */,
 				3E355B501FDE5DCD00CF81A0 /* bookmark_animation.json in Resources */,
 				3E35F24D1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib in Resources */,
@@ -766,27 +793,35 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
 				"${PODS_ROOT}/Instabug/Instabug.framework",
 				"${PODS_ROOT}/Instabug/Instabug.framework.dSYM",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework",
+				"${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor+FlatColors/UIColor_FlatColors.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instabug.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Instabug.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstabugCore.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/InstabugCore.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_FlatColors.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -863,6 +898,7 @@
 				3E355B151FDA319100CF81A0 /* BaseViewController.swift in Sources */,
 				3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */,
 				3E355AEF1FDA301400CF81A0 /* Storyboard-Extension.swift in Sources */,
+				3E885C5C1FF239CA00BB4BB5 /* Scheduler.swift in Sources */,
 				3E355B201FDA325E00CF81A0 /* UIImageExtension.swift in Sources */,
 				3E35F2481FE46CF1008C17D8 /* iosDeveloperTableViewCell.swift in Sources */,
 				3E35F2201FE06B68008C17D8 /* ManagePartnerTVCell.swift in Sources */,
@@ -877,9 +913,12 @@
 				3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */,
 				3E355B391FDA5A2500CF81A0 /* UINavigationBar+Custom.swift in Sources */,
 				3E355B1E1FDA31B800CF81A0 /* PlistManager.swift in Sources */,
+				3E885C5A1FF239CA00BB4BB5 /* ZLSwipeableView.swift in Sources */,
 				3E355B1D1FDA31B800CF81A0 /* AFWrapper.swift in Sources */,
+				3E885C591FF239CA00BB4BB5 /* Direction.swift in Sources */,
 				3E355B081FDA310F00CF81A0 /* Constants.swift in Sources */,
 				3E25721D1FDF95180072AC70 /* MainTabBarController.swift in Sources */,
+				3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */,
 				3E355B231FDA333400CF81A0 /* AppSetupRootVC.swift in Sources */,
 				3E355B0C1FDA311C00CF81A0 /* BaseNSObject.swift in Sources */,
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
@@ -899,6 +938,7 @@
 				3E35F2371FE1BC44008C17D8 /* ShowQRViewController.swift in Sources */,
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
+				3E885C5B1FF239CA00BB4BB5 /* ViewManager.swift in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,
 				3E35F21C1FE057BB008C17D8 /* ProfileOptionsTVCell.swift in Sources */,
 				3E355AF11FDA301F00CF81A0 /* String-Extension.swift in Sources */,

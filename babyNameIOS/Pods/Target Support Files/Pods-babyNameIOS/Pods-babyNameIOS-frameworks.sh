@@ -103,26 +103,34 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework"
   install_framework "${PODS_ROOT}/Instabug/Instabug.framework"
   install_dsym "${PODS_ROOT}/Instabug/Instabug.framework.dSYM"
+  install_framework "${PODS_ROOT}/Instabug/InstabugCore.framework"
+  install_dsym "${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Spring/Spring.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIColor+FlatColors/UIColor_FlatColors.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework"
   install_framework "${PODS_ROOT}/Instabug/Instabug.framework"
   install_dsym "${PODS_ROOT}/Instabug/Instabug.framework.dSYM"
+  install_framework "${PODS_ROOT}/Instabug/InstabugCore.framework"
+  install_dsym "${PODS_ROOT}/Instabug/InstabugCore.framework.dSYM"
   install_framework "${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Spring/Spring.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIColor+FlatColors/UIColor_FlatColors.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
