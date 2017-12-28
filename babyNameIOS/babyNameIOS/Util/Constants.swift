@@ -84,6 +84,7 @@ enum Constants {
         case neutralColor           = 0xFFD479
         case femaleColor            = 0xFF2F92
         case maleColor              = 0x0096FF
+        case maleSecondary          = 0x00BEFF
         case NavBarBGColor          = 0x696BBD
         case tabBarBackground       = 0x177626
         case tabBarTitleColor       = 0x000000

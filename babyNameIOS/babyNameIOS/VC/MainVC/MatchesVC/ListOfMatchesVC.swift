@@ -12,7 +12,7 @@ class ListOfMatchesVC: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "List of matches"
+        self.title =  AppStrings.FAVOURITES_TITLE
         self.navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
     }

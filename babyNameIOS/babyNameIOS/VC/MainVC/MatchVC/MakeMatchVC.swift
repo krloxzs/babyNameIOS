@@ -30,7 +30,7 @@ class MakeMatchVC: BaseViewController {
     //MARK:- BasicFunctions
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Baby Names"
+        self.title = AppStrings.MAKE_MATCH_TITLE
         self.navigationController?.navigationBar.prefersLargeTitles = true
         SetBabyGender()
         // Do any additional setup after loading the view.
@@ -153,6 +153,7 @@ class MakeMatchVC: BaseViewController {
             self.nameIndex += 1
             let contentView = Bundle.main.loadNibNamed("CardContentView", owner: self, options: nil)?.first! as! CardView
             contentView.initWithInfo(obj)
+            contentView.setupTV()
             contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.backgroundColor = cardView.backgroundColor
             cardView.addSubview(contentView)

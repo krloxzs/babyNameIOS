@@ -13,6 +13,10 @@
 		3E2572221FDFA42F0072AC70 /* MakeMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */; };
 		3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572231FDFA4460072AC70 /* UserProfileVC.swift */; };
 		3E2572261FDFA4640072AC70 /* ListOfMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */; };
+		3E27B47D1FF4EAAD007D48AA /* titleCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27B47B1FF4EAAD007D48AA /* titleCardTableViewCell.swift */; };
+		3E27B47E1FF4EAAD007D48AA /* titleCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */; };
+		3E27B4811FF4ED73007D48AA /* InfoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */; };
+		3E27B4821FF4ED73007D48AA /* InfoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */; };
 		3E355ADF1FDA276E00CF81A0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */; };
 		3E355AE01FDA276E00CF81A0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */; };
 		3E355AE21FDA281000CF81A0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355AE11FDA280F00CF81A0 /* Bolts.framework */; };
@@ -120,6 +124,10 @@
 		3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeMatchVC.swift; sourceTree = "<group>"; };
 		3E2572231FDFA4460072AC70 /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
 		3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfMatchesVC.swift; sourceTree = "<group>"; };
+		3E27B47B1FF4EAAD007D48AA /* titleCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titleCardTableViewCell.swift; sourceTree = "<group>"; };
+		3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = titleCardTableViewCell.xib; sourceTree = "<group>"; };
+		3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardTableViewCell.swift; sourceTree = "<group>"; };
+		3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCardTableViewCell.xib; sourceTree = "<group>"; };
 		3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3E355AE11FDA280F00CF81A0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -261,6 +269,7 @@
 				3E2572211FDFA42F0072AC70 /* MakeMatchVC.swift */,
 				3E885C5F1FF23D6400BB4BB5 /* CardView.swift */,
 				3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */,
+				3E27B47A1FF4EA81007D48AA /* Cells */,
 				3E4E1DCA1FEA53BF00DBE53C /* SelectGenderVC */,
 			);
 			path = MatchVC;
@@ -284,6 +293,17 @@
 				3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */,
 			);
 			path = MatchesVC;
+			sourceTree = "<group>";
+		};
+		3E27B47A1FF4EA81007D48AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E27B47B1FF4EAAD007D48AA /* titleCardTableViewCell.swift */,
+				3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */,
+				3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */,
+				3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		3E355ADC1FDA273700CF81A0 /* Extras */ = {
@@ -709,11 +729,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E885C5E1FF23D5200BB4BB5 /* CardContentView.xib in Resources */,
+				3E27B47E1FF4EAAD007D48AA /* titleCardTableViewCell.xib in Resources */,
 				3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */,
 				3E355B501FDE5DCD00CF81A0 /* bookmark_animation.json in Resources */,
 				3E35F24D1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib in Resources */,
 				3E355B6D1FDF11C500CF81A0 /* account_success.json in Resources */,
 				3E355B6F1FDF11D000CF81A0 /* swipe_left.json in Resources */,
+				3E27B4821FF4ED73007D48AA /* InfoCardTableViewCell.xib in Resources */,
 				3E35F2191FE0534C008C17D8 /* BackgroundTVCell.xib in Resources */,
 				3E35F2401FE46C3A008C17D8 /* iphone_x_loading.json in Resources */,
 				3E35F2551FE48035008C17D8 /* skeleton_loading.json in Resources */,
@@ -921,6 +943,7 @@
 				3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */,
 				3E355B231FDA333400CF81A0 /* AppSetupRootVC.swift in Sources */,
 				3E355B0C1FDA311C00CF81A0 /* BaseNSObject.swift in Sources */,
+				3E27B4811FF4ED73007D48AA /* InfoCardTableViewCell.swift in Sources */,
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
 				3E355AED1FDA300A00CF81A0 /* NSUserDefaults-Extension.swift in Sources */,
 				3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */,
@@ -938,6 +961,7 @@
 				3E35F2371FE1BC44008C17D8 /* ShowQRViewController.swift in Sources */,
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
+				3E27B47D1FF4EAAD007D48AA /* titleCardTableViewCell.swift in Sources */,
 				3E885C5B1FF239CA00BB4BB5 /* ViewManager.swift in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,
 				3E35F21C1FE057BB008C17D8 /* ProfileOptionsTVCell.swift in Sources */,

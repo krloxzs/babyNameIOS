@@ -63,5 +63,23 @@ extension String {
         return NSLocalizedString(self, tableName: "Loc", value: "\(self)", comment: "")
     }
     
+    func heightForWithFont(_ font: UIFont, width: CGFloat) -> CGFloat {
+        
+        let label:UILabel = UILabel(frame: CGRect(x:0,y:0,width:width,height:CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = font
+        label.text = self
+        
+        label.sizeToFit()
+        return label.frame.height
+    }
+    
+    func setBodyFont() -> UIFont
+    {
+        let pSize = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize - (UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).pointSize / 5)
+        return UIFont(name: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body).fontName, size: pSize)!
+    }
+    
 
 }

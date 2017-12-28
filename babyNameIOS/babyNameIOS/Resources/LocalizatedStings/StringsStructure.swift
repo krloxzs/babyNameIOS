@@ -44,6 +44,9 @@ struct AppStrings
     static let SCAN_QR_INFO_LABEL        = "SCAN_QR_INFO_LABEL".localized
     static let DONE                      = "DONE".localized
     static let QR_MESSAGE_DETECTED       = "QR_MESSAGE_DETECTED".localized
-    
+    static let MAKE_MATCH_TITLE          = "MAKE_MATCH_TITLE".localized
+    static let FAVOURITES_TITLE          = "FAVOURITES_TITLE".localized
+    static let MEANING                   = "MEANING".localized
+    static let ORIGIN                    = "ORIGIN".localized
 
 }

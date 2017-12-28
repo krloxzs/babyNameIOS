@@ -16,6 +16,14 @@ class MainTabBarController: UITabBarController {
         self.tabBar.tintColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let items = tabBar.items else { return }
+        
+        items[0].title = AppStrings.MAKE_MATCH_TITLE
+        items[1].title = AppStrings.FAVOURITES_TITLE
+        items[2].title = AppStrings.PROFILE_TITLE
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

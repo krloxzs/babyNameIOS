@@ -17,22 +17,19 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
     let loginHandler = LoginHandler.sharedInstance
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = AppStrings.PROFILE_TITLE
         setupTV()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         userInfo = appDelegate.AppsetupRoot.loginHandler.getUserInfo()
         // Do any additional setup after loading the view.
     }
     func setupTV() {
-        self.title = AppStrings.PROFILE_TITLE
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.tableView?.keyboardDismissMode = .none
         self.tableView?.register(UINib(nibName: "UserProfileHeaderTVCell", bundle: nil), forCellReuseIdentifier: "UserProfileHeaderTVCell")
         self.tableView?.register(UINib(nibName: "ProfileOptionsTVCell", bundle: nil), forCellReuseIdentifier: "ProfileOptionsTVCell")
         self.tableView?.register(UINib(nibName: "ManagePartnerTVCell", bundle: nil), forCellReuseIdentifier: "ManagePartnerTVCell")
-        
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

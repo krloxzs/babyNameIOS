@@ -40,7 +40,10 @@
 "SCAN_QR_INFO_LABEL"      = "Pon el codigo QR en frente de la camara para poder escanearlo como se ve aqui";
 "DONE"                    = "De acuerdo";
 "QR_MESSAGE_DETECTED"     = "No se detecta ningun codigo QR";
-
+"MAKE_MATCH_TITLE"        = "Nombres de bebes";
+"FAVOURITES_TITLE"        = "Favoritos";
+"MEANING"                 = "Significado";
+"ORIGIN"                  = "Origen";
 
 
 
