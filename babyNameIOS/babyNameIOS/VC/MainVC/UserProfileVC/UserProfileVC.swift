@@ -20,6 +20,7 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         self.title = AppStrings.PROFILE_TITLE
         setupTV()
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.tableView.contentInsetAdjustmentBehavior = .never
         userInfo = appDelegate.AppsetupRoot.loginHandler.getUserInfo()
         // Do any additional setup after loading the view.
     }
@@ -194,6 +195,10 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         }
     }
     
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+//        self.navigationController?.navigationBar.prefersLargeTitles = false
+       
+    }
 
 
     func ShowQR()  {
