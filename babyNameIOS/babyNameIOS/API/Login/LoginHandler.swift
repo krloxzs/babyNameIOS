@@ -30,6 +30,13 @@ class LoginHandler: BaseNSObject {
         }
         return false
     }
+    func gotGender() -> Bool {
+        
+        if (UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as? Int != nil) {
+            return true
+        }
+        return false
+    }
       /*
      Get User Profile information
      
@@ -106,6 +113,7 @@ class LoginHandler: BaseNSObject {
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         _ = BaseNSObject().deleteObjectKey(Constants.UserDefaultsKeys.UserObject.rawValue)
+        _ = BaseNSObject().deleteObjectKey(Constants.UserDefaultsKeys.Gender.rawValue)
         // Removing user ID
         let defaults = UserDefaults.standard
         defaults.removeObject(forKey: Constants.UserDefaultsKeys.UserId.rawValue)

@@ -17,6 +17,8 @@
 		3E27B47E1FF4EAAD007D48AA /* titleCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */; };
 		3E27B4811FF4ED73007D48AA /* InfoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */; };
 		3E27B4821FF4ED73007D48AA /* InfoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */; };
+		3E27B4871FF600A0007D48AA /* FavCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27B4851FF600A0007D48AA /* FavCollectionViewCell.swift */; };
+		3E27B4881FF600A0007D48AA /* FavCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B4861FF600A0007D48AA /* FavCollectionViewCell.xib */; };
 		3E355ADF1FDA276E00CF81A0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */; };
 		3E355AE01FDA276E00CF81A0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */; };
 		3E355AE21FDA281000CF81A0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355AE11FDA280F00CF81A0 /* Bolts.framework */; };
@@ -128,6 +130,8 @@
 		3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = titleCardTableViewCell.xib; sourceTree = "<group>"; };
 		3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCardTableViewCell.swift; sourceTree = "<group>"; };
 		3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCardTableViewCell.xib; sourceTree = "<group>"; };
+		3E27B4851FF600A0007D48AA /* FavCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCollectionViewCell.swift; sourceTree = "<group>"; };
+		3E27B4861FF600A0007D48AA /* FavCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavCollectionViewCell.xib; sourceTree = "<group>"; };
 		3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3E355AE11FDA280F00CF81A0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -291,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				3E2572251FDFA4640072AC70 /* ListOfMatchesVC.swift */,
+				3E27B4841FF6001F007D48AA /* Cells */,
 			);
 			path = MatchesVC;
 			sourceTree = "<group>";
@@ -302,6 +307,15 @@
 				3E27B47C1FF4EAAD007D48AA /* titleCardTableViewCell.xib */,
 				3E27B47F1FF4ED73007D48AA /* InfoCardTableViewCell.swift */,
 				3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3E27B4841FF6001F007D48AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3E27B4851FF600A0007D48AA /* FavCollectionViewCell.swift */,
+				3E27B4861FF600A0007D48AA /* FavCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -752,6 +766,7 @@
 				3E35F23F1FE46C3A008C17D8 /* 5_stars.json in Resources */,
 				3E35F2511FE47CF9008C17D8 /* webDeveloperTableViewCell.xib in Resources */,
 				3E355B4A1FDE5DCD00CF81A0 /* like.json in Resources */,
+				3E27B4881FF600A0007D48AA /* FavCollectionViewCell.xib in Resources */,
 				3E35F2211FE06B68008C17D8 /* ManagePartnerTVCell.xib in Resources */,
 				3E16BB151FDF3F7000CC0E2C /* ProximaNova-Regular.otf in Resources */,
 				3E35F2411FE46C3A008C17D8 /* spirit_geek.json in Resources */,
@@ -930,6 +945,7 @@
 				3E355B0E1FDA314000CF81A0 /* BaseObjects.swift in Sources */,
 				3E355B121FDA316C00CF81A0 /* UserItem.swift in Sources */,
 				3E355AFC1FDA308900CF81A0 /* LilithProgressHUD.swift in Sources */,
+				3E27B4871FF600A0007D48AA /* FavCollectionViewCell.swift in Sources */,
 				3E35F2501FE47CF9008C17D8 /* webDeveloperTableViewCell.swift in Sources */,
 				3E355AFA1FDA307A00CF81A0 /* GradientView.swift in Sources */,
 				3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */,

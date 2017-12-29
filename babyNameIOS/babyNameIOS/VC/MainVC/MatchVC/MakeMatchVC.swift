@@ -32,8 +32,16 @@ class MakeMatchVC: BaseViewController {
         super.viewDidLoad()
         self.title = AppStrings.MAKE_MATCH_TITLE
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        SetBabyGender()
+        checkGender()
         // Do any additional setup after loading the view.
+    }
+    
+    func checkGender()  {
+        if loginHandler.gotGender(){
+          self.getBabynameFromServer()
+        }else {
+            SetBabyGender()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -50,6 +58,9 @@ class MakeMatchVC: BaseViewController {
         vc?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         vc!.completion = { (component) in
             print(component)
+            let defaults = UserDefaults.standard
+            defaults.set( component, forKey: Constants.UserDefaultsKeys.Gender.rawValue)
+            defaults.synchronize()
             self.getBabynameFromServer()
         }
         self.present(vc!, animated: false, completion: {

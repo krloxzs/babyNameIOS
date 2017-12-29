@@ -76,14 +76,15 @@ enum Constants {
        
         case UserObject = "UserObject"
         case UserId = "UserId"
+        case Gender = "Gender"
         case UltimaHora = "ultimahora"
         case promos = "promos"
     }
     
     enum Colors: Int {
-        case neutralColor           = 0xFFD479
-        case femaleColor            = 0xFF2F92
-        case maleColor              = 0x0096FF
+        case neutralColor           = 0xF2C06C
+        case femaleColor            = 0xFA8997
+        case maleColor              = 0x62BCD4
         case maleSecondary          = 0x00BEFF
         case NavBarBGColor          = 0x696BBD
         case tabBarBackground       = 0x177626
