@@ -44,7 +44,12 @@
 "FAVOURITES_TITLE"        = "Favoritos";
 "MEANING"                 = "Significado";
 "ORIGIN"                  = "Origen";
-
+"MATCH"                   = "Matches";
+"EMPTY_STATE_TITLE"       = "Ouhh... esta muy vacio aqui!";
+"EMPTY_STATE_INFO"        = "Aun no has agregado favoritos, agrega el primero y miralos aqui.";
+"NO_COUPLE_EMPTY_STATE_TITLE"       = "Todo es mejor en pareja";
+"NO_COUPLE_EMPTY_STATE_INFO"        = "Parece que aun no has agregado a tu pareja, no te preocupes, eso se soluciona en un segundo...";
+"SET_MY_PARTNER"                   = "Vamos";
 
 
 

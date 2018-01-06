@@ -17,7 +17,7 @@ import Alamofire
 class UserData: NSObject {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let networkHandler: AFWrapper! = AFWrapper()
-    var namesArray: NSMutableArray = []
+    var namesArray: Array = [NameObject]()
     
     
     override init() {
@@ -90,11 +90,16 @@ class UserData: NSObject {
         //get process
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
             if let _ : String = res["success"].string{
-                self.namesArray.removeAllObjects()
+                self.namesArray.removeAll()
+                let gender = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as! String
+                print(gender)
                 let  names = res["data"].array!
                 for name in names{
+                   
                         let nameOBJ: NameObject = NameObject(JSONObject: name)
-                        self.namesArray.add(nameOBJ)
+                        if nameOBJ.gender == gender || nameOBJ.gender == "unisex"{
+                            self.namesArray.append(nameOBJ)
+                        }
                 }
                 success(res)
             }else{

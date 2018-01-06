@@ -23,9 +23,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let AppsetupRoot = AppSetupRootVC()
-
+    let realmDBHelper = realmHelper()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var urlString  = ""
+        #if DEBUG
+            urlString = "https://StagingURL"
+        #else
+            urlString = "https://productionURL"
+        #endif
+    
+        self.realmDBHelper.migrateBD(migrationDone: {
+            logger.log("DB is in the actual version")
+        }) { (SchemeVersion: String) in
+            logger.log("migrated from \(SchemeVersion) version")
+        }
+        print(urlString)
         
         PlistManager.sharedInstance.startPlistManager()
         AppsetupRoot.window = window

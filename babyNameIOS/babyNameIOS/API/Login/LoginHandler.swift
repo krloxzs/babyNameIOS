@@ -32,7 +32,7 @@ class LoginHandler: BaseNSObject {
     }
     func gotGender() -> Bool {
         
-        if (UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as? Int != nil) {
+        if (UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as? String != nil) {
             return true
         }
         return false

@@ -168,7 +168,7 @@ class BaseViewController: UIViewController, UIGestureRecognizerDelegate{
     }
     
     fileprivate func rightButtonItems() {
-        self.navigationItem.rightBarButtonItems = []
+//        self.navigationItem.rightBarButtonItems = []
     }
     
     

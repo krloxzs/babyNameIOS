@@ -44,6 +44,13 @@
 "FAVOURITES_TITLE"        = "Favourites";
 "MEANING"                 = "Meaning";
 "ORIGIN"                  = "Origin";
+"MATCH"                   = "Matches";
+"EMPTY_STATE_TITLE"       = "Ouhh... it's empty in here!";
+"EMPTY_STATE_INFO"        = "You don't have any favourite yet, add your first one.";
+"NO_COUPLE_EMPTY_STATE_TITLE"       = "Everything is better in a couple";
+"NO_COUPLE_EMPTY_STATE_INFO"        = "It seems that you have not added your partner yet, do not worry, that is solved in a second ...";
+"SET_MY_PARTNER"                   = "Set my partner";
+
 
 
 

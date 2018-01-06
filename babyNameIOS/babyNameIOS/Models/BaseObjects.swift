@@ -63,7 +63,7 @@ class NameObject: BaseNSObject {
     @objc dynamic  var id:           String = ""
     @objc dynamic  var meaning:      String = ""
     @objc dynamic  var name:         String = ""
-    @objc dynamic  var type:         String = ""
+    @objc dynamic  var gender:       String = ""
     @objc dynamic  var origin:       String  = ""
     
     

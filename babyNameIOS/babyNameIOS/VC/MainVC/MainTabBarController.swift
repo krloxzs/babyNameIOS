@@ -21,8 +21,9 @@ class MainTabBarController: UITabBarController {
         guard let items = tabBar.items else { return }
         
         items[0].title = AppStrings.MAKE_MATCH_TITLE
-        items[1].title = AppStrings.FAVOURITES_TITLE
-        items[2].title = AppStrings.PROFILE_TITLE
+        items[1].title = AppStrings.MATCH
+        items[2].title = AppStrings.FAVOURITES_TITLE
+        items[3].title = AppStrings.PROFILE_TITLE
     }
 
     override func didReceiveMemoryWarning() {

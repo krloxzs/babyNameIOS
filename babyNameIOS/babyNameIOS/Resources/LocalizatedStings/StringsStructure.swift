@@ -48,5 +48,13 @@ struct AppStrings
     static let FAVOURITES_TITLE          = "FAVOURITES_TITLE".localized
     static let MEANING                   = "MEANING".localized
     static let ORIGIN                    = "ORIGIN".localized
-
+    static let MATCH                     = "MATCH".localized
+    static let EMPTY_STATE_TITLE         = "EMPTY_STATE_TITLE".localized
+    static let EMPTY_STATE_INFO         = "EMPTY_STATE_INFO".localized
+    static let NO_COUPLE_EMPTY_STATE_TITLE  = "NO_COUPLE_EMPTY_STATE_TITLE".localized
+    static let NO_COUPLE_EMPTY_STATE_INFO   = "NO_COUPLE_EMPTY_STATE_INFO".localized
+     static let SET_MY_PARTNER          = "SET_MY_PARTNER".localized
+    
+    
+    
 }

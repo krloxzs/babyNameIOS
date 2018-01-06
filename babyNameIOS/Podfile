@@ -20,9 +20,10 @@ target 'babyNameIOS' do
   pod 'SwiftDate'
   pod 'lottie-ios'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
- 
+  pod 'RealmSwift'
   pod 'UIColor+FlatColors'
   pod 'Cartography'
+  pod "Popover"
   target 'babyNameIOSTests' do
     inherit! :search_paths
     # Pods for testing
