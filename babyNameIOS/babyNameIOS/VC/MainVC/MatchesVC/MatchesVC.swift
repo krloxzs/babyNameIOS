@@ -32,6 +32,7 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
         self.title =  AppStrings.MATCH
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.tableView.contentInsetAdjustmentBehavior = .never
+        userInfo =  appDelegate.AppsetupRoot.loginHandler.getUserInfo()
         registerNibs()
         // Do any additional setup after loading the view.
     }
@@ -56,7 +57,7 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
         self.tableView?.dataSource = self
         self.tableView?.keyboardDismissMode = .none
         self.tableView?.register(UINib(nibName: "noCoupleEmptyStateTableViewCell", bundle: nil), forCellReuseIdentifier: "noCoupleEmptyStateTableViewCell")
-        self.tableView?.register(UINib(nibName: "ProfileOptionsTVCell", bundle: nil), forCellReuseIdentifier: "ProfileOptionsTVCell")
+        self.tableView?.register(UINib(nibName: "emptyStateMatchesTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyStateMatchesTableViewCell")
         self.tableView?.register(UINib(nibName: "ManagePartnerTVCell", bundle: nil), forCellReuseIdentifier: "ManagePartnerTVCell")
         
     }
@@ -74,28 +75,45 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Comments
-        var cell = tableView.dequeueReusableCell(withIdentifier: "noCoupleEmptyStateTableViewCell", for: indexPath) as? noCoupleEmptyStateTableViewCell
-        if (cell == nil){ cell = noCoupleEmptyStateTableViewCell() }
-        cell?.selectionStyle = UITableViewCellSelectionStyle.none
-        cell?.parentVC = self
-        cell?.setupAnim()
-        cell?.setPartnerButton.tag = indexPath.row
-        cell?.setPartnerButton.addTarget(self, action: #selector(self.setMyPartner(sender:)), for: UIControlEvents.touchUpInside)
-        return cell!
+        if userInfo?.couple_id != "-1"{
+            var cell = tableView.dequeueReusableCell(withIdentifier: "emptyStateMatchesTableViewCell", for: indexPath) as? emptyStateMatchesTableViewCell
+            if (cell == nil){ cell = emptyStateMatchesTableViewCell() }
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.parentVC = self
+            cell?.setupAnim()
+            return cell!
+            
+        }else{
+            //            no couple...never
+            var cell = tableView.dequeueReusableCell(withIdentifier: "noCoupleEmptyStateTableViewCell", for: indexPath) as? noCoupleEmptyStateTableViewCell
+            if (cell == nil){ cell = noCoupleEmptyStateTableViewCell() }
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            cell?.parentVC = self
+            cell?.setupAnim()
+            cell?.setPartnerButton.tag = indexPath.row
+            cell?.setPartnerButton.addTarget(self, action: #selector(self.setMyPartner(sender:)), for: UIControlEvents.touchUpInside)
+            return cell!
+        }
+      
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if userInfo?.couple_id != "-1"{
+            return 1
+            
+        }else{
+//            no couple...never
+             return 1
+        }
+       
     }
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
-        case 0:
+        if userInfo?.couple_id != "-1"{
+           return self.tableView.frame.height
+            
+        }else{
             return self.tableView.frame.height
-        case 1:
-            return 75
-        default:
-            return 60
         }
     }
     

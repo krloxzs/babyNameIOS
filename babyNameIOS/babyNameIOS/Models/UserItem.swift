@@ -24,7 +24,7 @@ class UserItem: BaseNSObject, NSCoding {
          name:String,email: String,
          profile_image: String,
          premium : String, gender:String, age: String,
-         couple_id: String, grado: String) {
+         couple_id: String) {
         
         self.id             = id
         self.facebook_id    = facebook_id

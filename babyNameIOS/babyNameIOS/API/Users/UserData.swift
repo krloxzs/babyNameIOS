@@ -18,8 +18,8 @@ class UserData: NSObject {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let networkHandler: AFWrapper! = AFWrapper()
     var namesArray: Array = [NameObject]()
-    
-    
+    var userInfo: UserItem?
+   
     override init() {
         super.init()
     }
@@ -35,22 +35,33 @@ class UserData: NSObject {
         let params:Parameters  = ["couple_id":CoupleId, "type":"GetCouple"]
         logger.log(params)
         //get process
+        userInfo = self.appDelegate.AppsetupRoot.loginHandler.getUserInfo()
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
             let itemD = res.dictionary
+//            logger.log(itemD)
             if let _ = itemD?["data"] {
                 let itemArray  =  itemD!["data"]!.array
-                let thisUserInfo = itemArray![0]
-                let coupleUser = itemArray![1]
+                if itemArray!.count > 1{
+                let UserInfo1 = itemArray![0]
+                let userInfo2 = itemArray![1]
                 // Root respons
-                let _: UserInformation = UserInformation(JSONObject: thisUserInfo)
-                let coupleUserInfoObject: UserInformation = UserInformation(JSONObject: coupleUser)
-                success(coupleUserInfoObject)
+                let coupleUserInfoObject1: UserInformation = UserInformation(JSONObject: UserInfo1)
+                let coupleUserInfoObject2: UserInformation = UserInformation(JSONObject: userInfo2)
+                
+                if coupleUserInfoObject1.id == self.userInfo!.id{
+                     success(coupleUserInfoObject2)
+                }else{
+                     success(coupleUserInfoObject1)
+                    }
+                }else{
+                    failure(AppStrings.INTERNAL_SERVER_ERROR)
+                }
             }else{
-                failure(itemD!["data"]!.string!)
+                failure(AppStrings.INTERNAL_SERVER_ERROR)
             }
         }) { (String) in
             //
-            failure(String)
+            failure(AppStrings.INTERNAL_SERVER_ERROR)
         }
         
     }
@@ -69,11 +80,29 @@ class UserData: NSObject {
         logger.log(params)
         //get process
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
-            print(res)
-            success(res)
+            let responseDict = res.dictionary
+            var userInfo: UserItem?
+            userInfo = self.appDelegate.AppsetupRoot.loginHandler.getUserInfo()
+            if var _ = responseDict?["success"]?.string{
+                let responseId = responseDict?["id"]?.string
+                UserItem(id: userInfo?.id ?? "" , facebook_id: userInfo?.facebook_id ?? "",
+                         name: userInfo?.name ?? "", email: userInfo?.email ?? "",
+                         profile_image: userInfo?.profile_image ?? "" , premium: userInfo?.premium ?? "",
+                         gender: userInfo?.gender ?? "", age: userInfo?.age ?? "",
+                         couple_id: responseId  ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
+                // Saving USER ID
+                let defaults = UserDefaults.standard
+                defaults.set( userInfo!.id, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
+                defaults.synchronize()
+                print("se termino la sincronizacion")
+                success(res)
+            }else{
+               failure(AppStrings.INTERNAL_SERVER_ERROR)
+                
+            }
         }) { (String) in
             //
-            failure(String)
+            failure(AppStrings.INTERNAL_SERVER_ERROR)
         }
         
     }
@@ -103,13 +132,13 @@ class UserData: NSObject {
                 }
                 success(res)
             }else{
-                 failure("Unespected error")
+                 failure(AppStrings.INTERNAL_SERVER_ERROR)
             }
             
            
         }) { (String) in
             //
-            failure(String)
+            failure(AppStrings.INTERNAL_SERVER_ERROR)
         }
         
     }

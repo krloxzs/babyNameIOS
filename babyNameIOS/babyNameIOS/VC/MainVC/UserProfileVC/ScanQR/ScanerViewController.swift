@@ -29,8 +29,9 @@ class ScanerViewController: BaseViewController, AVCaptureMetadataOutputObjectsDe
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var isLoading = false
     
-    let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
+    let supportedCodeTypes = [/*AVMetadataObject.ObjectType.upce,
                               AVMetadataObject.ObjectType.code39,
                               AVMetadataObject.ObjectType.code39Mod43,
                               AVMetadataObject.ObjectType.code93,
@@ -38,7 +39,7 @@ class ScanerViewController: BaseViewController, AVCaptureMetadataOutputObjectsDe
                               AVMetadataObject.ObjectType.ean8,
                               AVMetadataObject.ObjectType.ean13,
                               AVMetadataObject.ObjectType.aztec,
-                              AVMetadataObject.ObjectType.pdf417,
+                              AVMetadataObject.ObjectType.pdf417,*/
                               AVMetadataObject.ObjectType.qr]
     let animation1: LOTAnimationView = LOTAnimationView(name: "scan_qr_code_success")
     
@@ -133,7 +134,7 @@ class ScanerViewController: BaseViewController, AVCaptureMetadataOutputObjectsDe
         // Get the metadata object.
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
-        if supportedCodeTypes.contains(metadataObj.type) {
+        if supportedCodeTypes.contains(metadataObj.type) && !isLoading {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
@@ -142,16 +143,21 @@ class ScanerViewController: BaseViewController, AVCaptureMetadataOutputObjectsDe
             self.loadingNotification.labelText = AppStrings.LOADING
             if metadataObj.stringValue != nil {
 //                call the
+                isLoading = true
                 self.dataHelper.SetCouple(self.userInfo!.id, USER_TWO: metadataObj.stringValue!, success: { (JSON) in
                      MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+                     self.isLoading = true
                      self.back()
                 }, failure: { (String) in
+                     self.isLoading = true
                      MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
                 })
-                messageLabel.text = metadataObj.stringValue
+                messageLabel.text = AppStrings.LOADING
             }
         }
     }
+    
+    
    
     
     @IBAction func doneButtonPress(_ sender: UIButton) {

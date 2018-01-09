@@ -99,6 +99,11 @@
 		3E6A3A771FDA21B6002E17D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A761FDA21B6002E17D8 /* Assets.xcassets */; };
 		3E6A3A7A1FDA21B6002E17D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E6A3A781FDA21B6002E17D8 /* LaunchScreen.storyboard */; };
 		3E6A3A851FDA21B6002E17D8 /* babyNameIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6A3A841FDA21B6002E17D8 /* babyNameIOSTests.swift */; };
+		3E6AD9632001F3CF0061EE2A /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AD9612001F3CF0061EE2A /* MatchTableViewCell.swift */; };
+		3E6AD9642001F3CF0061EE2A /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6AD9622001F3CF0061EE2A /* MatchTableViewCell.xib */; };
+		3E6AD9672002D46C0061EE2A /* emptyStateMatchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6AD9652002D46C0061EE2A /* emptyStateMatchesTableViewCell.swift */; };
+		3E6AD9682002D46C0061EE2A /* emptyStateMatchesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6AD9662002D46C0061EE2A /* emptyStateMatchesTableViewCell.xib */; };
+		3E6AD96A200300330061EE2A /* emoji_wink.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E6AD969200300330061EE2A /* emoji_wink.json */; };
 		3E6CBE721FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */; };
 		3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */; };
 		3E885C591FF239CA00BB4BB5 /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C551FF239C900BB4BB5 /* Direction.swift */; };
@@ -232,6 +237,11 @@
 		3E6A3A801FDA21B6002E17D8 /* babyNameIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = babyNameIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E6A3A841FDA21B6002E17D8 /* babyNameIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = babyNameIOSTests.swift; sourceTree = "<group>"; };
 		3E6A3A861FDA21B6002E17D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E6AD9612001F3CF0061EE2A /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		3E6AD9622001F3CF0061EE2A /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
+		3E6AD9652002D46C0061EE2A /* emptyStateMatchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emptyStateMatchesTableViewCell.swift; sourceTree = "<group>"; };
+		3E6AD9662002D46C0061EE2A /* emptyStateMatchesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = emptyStateMatchesTableViewCell.xib; sourceTree = "<group>"; };
+		3E6AD969200300330061EE2A /* emoji_wink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji_wink.json; sourceTree = "<group>"; };
 		3E6CBE701FDFA9ED00A1A445 /* UserProfileHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeaderTVCell.swift; sourceTree = "<group>"; };
 		3E6CBE711FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileHeaderTVCell.xib; sourceTree = "<group>"; };
 		3E885C551FF239C900BB4BB5 /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
@@ -502,6 +512,7 @@
 				3EB591621FFF46C4009DB357 /* drink.json */,
 				3EB5915D1FFEFCC6009DB357 /* empty_list.json */,
 				3E35F2541FE48035008C17D8 /* skeleton_loading.json */,
+				3E6AD969200300330061EE2A /* emoji_wink.json */,
 				3E355B6C1FDF11C400CF81A0 /* account_success.json */,
 				3E35F23B1FE46C38008C17D8 /* 5_stars.json */,
 				3E35F23E1FE46C39008C17D8 /* empty_list.json */,
@@ -690,6 +701,10 @@
 			children = (
 				3EB591661FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.swift */,
 				3EB591671FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.xib */,
+				3E6AD9612001F3CF0061EE2A /* MatchTableViewCell.swift */,
+				3E6AD9622001F3CF0061EE2A /* MatchTableViewCell.xib */,
+				3E6AD9652002D46C0061EE2A /* emptyStateMatchesTableViewCell.swift */,
+				3E6AD9662002D46C0061EE2A /* emptyStateMatchesTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -814,6 +829,7 @@
 				3E35F2191FE0534C008C17D8 /* BackgroundTVCell.xib in Resources */,
 				3E35F2401FE46C3A008C17D8 /* iphone_x_loading.json in Resources */,
 				3E35F2551FE48035008C17D8 /* skeleton_loading.json in Resources */,
+				3E6AD96A200300330061EE2A /* emoji_wink.json in Resources */,
 				3E6A3A7A1FDA21B6002E17D8 /* LaunchScreen.storyboard in Resources */,
 				3E355AF81FDA306500CF81A0 /* VarelaRound-Regular.ttf in Resources */,
 				3E355B1B1FDA31B800CF81A0 /* MyData.plist in Resources */,
@@ -826,6 +842,7 @@
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
 				3E355B491FDE5DCD00CF81A0 /* animated_color_options.json in Resources */,
 				3E35F23F1FE46C3A008C17D8 /* 5_stars.json in Resources */,
+				3E6AD9642001F3CF0061EE2A /* MatchTableViewCell.xib in Resources */,
 				3E35F2511FE47CF9008C17D8 /* webDeveloperTableViewCell.xib in Resources */,
 				3E355B4A1FDE5DCD00CF81A0 /* like.json in Resources */,
 				3E27B4881FF600A0007D48AA /* FavCollectionViewCell.xib in Resources */,
@@ -839,6 +856,7 @@
 				3E35F2441FE46C45008C17D8 /* android.json in Resources */,
 				3E355B4E1FDE5DCD00CF81A0 /* empty_status.json in Resources */,
 				3E355AF71FDA306500CF81A0 /* wissen.ttf in Resources */,
+				3E6AD9682002D46C0061EE2A /* emptyStateMatchesTableViewCell.xib in Resources */,
 				3E355B4B1FDE5DCD00CF81A0 /* exploding_heart.json in Resources */,
 				3E355B4C1FDE5DCD00CF81A0 /* shrug.json in Resources */,
 				3E355B4F1FDE5DCD00CF81A0 /* scan_qr_code_success.json in Resources */,
@@ -1032,8 +1050,10 @@
 				3E25721D1FDF95180072AC70 /* MainTabBarController.swift in Sources */,
 				3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */,
 				3E355B231FDA333400CF81A0 /* AppSetupRootVC.swift in Sources */,
+				3E6AD9632001F3CF0061EE2A /* MatchTableViewCell.swift in Sources */,
 				3E355B0C1FDA311C00CF81A0 /* BaseNSObject.swift in Sources */,
 				3E27B4811FF4ED73007D48AA /* InfoCardTableViewCell.swift in Sources */,
+				3E6AD9672002D46C0061EE2A /* emptyStateMatchesTableViewCell.swift in Sources */,
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
 				3E355AED1FDA300A00CF81A0 /* NSUserDefaults-Extension.swift in Sources */,
 				3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */,

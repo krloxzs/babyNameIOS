@@ -10,6 +10,7 @@ import UIKit
 import SwiftDate
 import SwiftyJSON
 import Alamofire
+import MBProgressHUD
 
 class ManagePartnerTVCell: UITableViewCell {
     @IBOutlet weak var ManagePartnerView: UIView!
@@ -19,6 +20,7 @@ class ManagePartnerTVCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var viewForRounded: UIView!
     
+    var parentVC : UserProfileVC?
     @IBOutlet weak var nameLabel: UILabel!
     var dataHelper: UserData = UserData()
     
@@ -33,14 +35,26 @@ class ManagePartnerTVCell: UITableViewCell {
         if haveApartner{
             self.viewForPartner.isHidden = false
             self.ManagePartnerView.isHidden = true
+            
+            parentVC?.loadingNotification = MBProgressHUD.showAdded(to: parentVC!.view, animated: true)
+            parentVC?.loadingNotification.mode = MBProgressHUDMode.indeterminate
+            parentVC?.loadingNotification.labelText = AppStrings.LOADING
             self.dataHelper.GetCouple(CoupleId, success: { (info:UserInformation) in
                 UIView.animate(withDuration: 0.1, animations: {
                      self.nameLabel.text = info.name
                 }, completion: nil)
 //                self.managePartnerLabel.text = 
                 self.SetupImage(info.profile_image)
+                MBProgressHUD.hideAllHUDs(for: self.parentVC!.view, animated: true)
+                //            show empty state and reload button
             }, failure: { (ErrorString:String) in
-                
+//                when that happends, the user change the couple...
+                self.addYourPartnerLabel.text    =  AppStrings.ADD_PARTNER
+                self.managePartnerLabel.text     =  AppStrings.MANAGE_PARTNER
+                self.ManagePartnerView.isHidden = false
+                self.viewForPartner.isHidden = true
+                MBProgressHUD.hideAllHUDs(for: self.parentVC!.view, animated: true)
+                //            show empty state and reload button
             })
         }else{
              self.ManagePartnerView.isHidden = false

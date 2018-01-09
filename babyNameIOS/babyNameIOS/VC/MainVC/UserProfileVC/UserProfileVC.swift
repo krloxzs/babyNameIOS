@@ -8,11 +8,13 @@
 
 import UIKit
 
+import MBProgressHUD
 class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     /// User information
     var userInfo: UserItem?
+     var loadingNotification: MBProgressHUD! = MBProgressHUD()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let loginHandler = LoginHandler.sharedInstance
     override func viewDidLoad() {
@@ -31,6 +33,10 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         self.tableView?.register(UINib(nibName: "UserProfileHeaderTVCell", bundle: nil), forCellReuseIdentifier: "UserProfileHeaderTVCell")
         self.tableView?.register(UINib(nibName: "ProfileOptionsTVCell", bundle: nil), forCellReuseIdentifier: "ProfileOptionsTVCell")
         self.tableView?.register(UINib(nibName: "ManagePartnerTVCell", bundle: nil), forCellReuseIdentifier: "ManagePartnerTVCell")
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        userInfo = appDelegate.AppsetupRoot.loginHandler.getUserInfo()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,6 +71,7 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             //            Partner
             var cell = tableView.dequeueReusableCell(withIdentifier: "ManagePartnerTVCell", for: indexPath) as? ManagePartnerTVCell
             if (cell == nil){ cell = ManagePartnerTVCell() }
+            cell?.parentVC = self
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             var coupleFlag : Bool?
             if userInfo!.couple_id == "-1"{
@@ -72,6 +79,7 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             }else{
                  coupleFlag = true
             }
+            logger.log("searching for the coumple\(userInfo!.couple_id)")
             cell?.SetupHiddenViews(coupleFlag!, CoupleId: userInfo!.couple_id)
             return cell!
         case 2:

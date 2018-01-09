@@ -50,6 +50,6 @@
 "NO_COUPLE_EMPTY_STATE_TITLE"       = "Todo es mejor en pareja";
 "NO_COUPLE_EMPTY_STATE_INFO"        = "Parece que aun no has agregado a tu pareja, no te preocupes, eso se soluciona en un segundo...";
 "SET_MY_PARTNER"                   = "Vamos";
-
+"INTERNAL_SERVER_ERROR"                   = "Internal server error...no te preocupes, nuetro equipo de shinobis esta trabajando en solucionarlo ahora";
 
 

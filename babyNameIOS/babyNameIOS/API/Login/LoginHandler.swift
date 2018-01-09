@@ -87,7 +87,7 @@ class LoginHandler: BaseNSObject {
                          name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
                          profile_image: profile_image , premium: item?["premium"]?.string ?? "",
                          gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
-                         couple_id: item?["couple_id"]?.string ?? "", grado: item?["grado"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
+                         couple_id: item?["couple_id"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
                 // Saving USER ID
                 let defaults = UserDefaults.standard
                 defaults.set( item!["id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)

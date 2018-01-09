@@ -54,6 +54,7 @@ struct AppStrings
     static let NO_COUPLE_EMPTY_STATE_TITLE  = "NO_COUPLE_EMPTY_STATE_TITLE".localized
     static let NO_COUPLE_EMPTY_STATE_INFO   = "NO_COUPLE_EMPTY_STATE_INFO".localized
      static let SET_MY_PARTNER          = "SET_MY_PARTNER".localized
+     static let INTERNAL_SERVER_ERROR   = "INTERNAL_SERVER_ERROR".localized
     
     
     
