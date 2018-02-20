@@ -121,6 +121,7 @@
 		3EB591641FFF46C4009DB357 /* drink.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EB591621FFF46C4009DB357 /* drink.json */; };
 		3EB591681FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB591661FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.swift */; };
 		3EB591691FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB591671FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.xib */; };
+		3EED6322203A611700130119 /* genderSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EED6321203A611700130119 /* genderSingleton.swift */; };
 		40BC6DCA87C0AED8D9DC710F /* Pods_babyNameIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E491BAF1D0B92A4F15059009 /* Pods_babyNameIOS.framework */; };
 		A709135B863C8A78792F94D2 /* Pods_babyNameIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6EBC7F4E89371855F47D323 /* Pods_babyNameIOSTests.framework */; };
 /* End PBXBuildFile section */
@@ -259,6 +260,7 @@
 		3EB591621FFF46C4009DB357 /* drink.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = drink.json; sourceTree = "<group>"; };
 		3EB591661FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noCoupleEmptyStateTableViewCell.swift; sourceTree = "<group>"; };
 		3EB591671FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = noCoupleEmptyStateTableViewCell.xib; sourceTree = "<group>"; };
+		3EED6321203A611700130119 /* genderSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderSingleton.swift; sourceTree = "<group>"; };
 		3EF6AC1C1FF7588900EE5D23 /* babyNameIOSRelease-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "babyNameIOSRelease-Info.plist"; path = "/Users/carlosrodriguez/Documents/GitHub/babyNameIOS/babyNameIOS/babyNameIOS/babyNameIOSRelease-Info.plist"; sourceTree = "<absolute>"; };
 		867A8C33AF406AB6E9821C3B /* Pods-babyNameIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B06A4721FC312266E5EF8920 /* Pods-babyNameIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyNameIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-babyNameIOS/Pods-babyNameIOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				3E355B041FDA310F00CF81A0 /* GULogger.swift */,
 				3E355B051FDA310F00CF81A0 /* Imagen_resize.swift */,
 				3E355B2D1FDA371600CF81A0 /* DispatchHelper.swift */,
+				3EED6321203A611700130119 /* genderSingleton.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1065,6 +1068,7 @@
 				3E355AEB1FDA2FFD00CF81A0 /* keyboard-Extension.swift in Sources */,
 				3E35F2231FE0977C008C17D8 /* UserData.swift in Sources */,
 				3E355AE71FDA2FD800CF81A0 /* Bundle-Extension.swift in Sources */,
+				3EED6322203A611700130119 /* genderSingleton.swift in Sources */,
 				3E35F2321FE102D7008C17D8 /* ScanerViewController.swift in Sources */,
 				3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */,
 				3E355B061FDA310F00CF81A0 /* Formatter.swift in Sources */,

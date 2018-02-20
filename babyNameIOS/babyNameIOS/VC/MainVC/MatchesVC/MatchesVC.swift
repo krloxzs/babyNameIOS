@@ -39,6 +39,7 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
     
     override func viewDidAppear(_ animated: Bool) {
         getBabysFromDB()
+        self.tableView.reloadData()
     }
     
     func getBabysFromDB()  {
@@ -82,7 +83,6 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
             cell?.parentVC = self
             cell?.setupAnim()
             return cell!
-            
         }else{
             //            no couple...never
             var cell = tableView.dequeueReusableCell(withIdentifier: "noCoupleEmptyStateTableViewCell", for: indexPath) as? noCoupleEmptyStateTableViewCell

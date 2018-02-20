@@ -171,6 +171,21 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             }
         case 2:
             print("change gender")
+            let vc: SelectGenderViewController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+            vc?.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+            vc!.completion = { (component) in
+                print(component)
+                genderSingleton.actualGender.gender = component
+                genderSingleton.actualGender.genderHasBeenChange = true
+                let defaults = UserDefaults.standard
+                defaults.set( component, forKey: Constants.UserDefaultsKeys.Gender.rawValue)
+                defaults.synchronize()
+//                make a listener for all the scenes
+                
+            }
+            self.present(vc!, animated: false, completion: {
+                
+            })
             
         case 3:
             let vc: AboutUSViewController? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()

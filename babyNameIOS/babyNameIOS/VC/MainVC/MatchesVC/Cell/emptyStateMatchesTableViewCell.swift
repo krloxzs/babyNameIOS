@@ -32,10 +32,10 @@ class emptyStateMatchesTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     func setupAnim()  {
-        titleLabel.text = AppStrings.NO_COUPLE_EMPTY_STATE_TITLE
-        infoLabel.text = AppStrings.NO_COUPLE_EMPTY_STATE_INFO
+        self.titleLabel.text = AppStrings.EMPTY_STATE_TITLE
+        self.infoLabel.text = AppStrings.EMPTY_STATE_INFO
         let animationView: LOTAnimationView?
         animationView = animation1
         animationView!.contentMode = .scaleAspectFit

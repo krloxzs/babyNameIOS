@@ -27,6 +27,7 @@ class MakeMatchVC: BaseViewController {
     var nameIndex = 0
     var loadCardsFromXib = false
     var isInit = false
+    var gender = ""
 
     //MARK:- BasicFunctions
     override func viewDidLoad() {
@@ -38,12 +39,22 @@ class MakeMatchVC: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if genderSingleton.actualGender.genderHasBeenChange{
+            genderSingleton.actualGender.genderHasBeenChange =  false
+//            clean the actual cardViewNames and show the new name list
+            
+            self.getBabynameFromServer()
+        }
+    }
+    
     func checkGender()  {
-        if loginHandler.gotGender(){
-      
-          self.getBabynameFromServer()
-        }else {
-            SetBabyGender()
+        if genderSingleton.actualGender.gender != ""{
+            gender = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as! String
+            self.getBabynameFromServer()
+        }else{
+             SetBabyGender()
         }
     }
     
@@ -62,6 +73,7 @@ class MakeMatchVC: BaseViewController {
         vc!.completion = { (component) in
             print(component)
             let defaults = UserDefaults.standard
+            self.gender = component
             defaults.set( component, forKey: Constants.UserDefaultsKeys.Gender.rawValue)
             defaults.synchronize()
             self.getBabynameFromServer()
@@ -72,12 +84,12 @@ class MakeMatchVC: BaseViewController {
     }
     
     func getBabynameFromServer() {
-          self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
         self.loadingNotification.mode = MBProgressHUDMode.indeterminate
         self.loadingNotification.labelText = AppStrings.LOADING
         self.dataHelper.getBabyNames(success: { (Res:JSON) in
             //  show all the baby names
-            
+           self.nameIndex = 0
            self.swipeInit()
         }) { (ErrorSttring:String) in
              MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
@@ -87,8 +99,16 @@ class MakeMatchVC: BaseViewController {
     
     //MARK:- swipeInit
     func swipeInit()  {
-        isInit = true
+        if isInit{
+            
+            self.swipeableView.discardViews()
+            self.swipeableView.updateViews()
+        }else{
+            isInit = true
+        }
         swipeableView = ZLSwipeableView()
+        self.swipeableView.discardViews()
+        self.swipeableView.loadViews()
         swipeableView.frame = viewForSwippe.frame
         viewForSwippe.addSubview(swipeableView)
         swipeableView.didStart = {view, location in
@@ -163,6 +183,9 @@ class MakeMatchVC: BaseViewController {
             }
             return cardView
         }else{
+            print(nameIndex)
+            print(self.dataHelper.namesArray.count)
+            
             return nil
         }
     }
