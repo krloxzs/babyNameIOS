@@ -13,6 +13,7 @@ import Cartography
 import RealmSwift
 import Realm
 import Lottie
+
 class MakeMatchVC: BaseViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var viewForSwippe: UIView!
@@ -48,13 +49,43 @@ class MakeMatchVC: BaseViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func reloadCardsGesturePress(_ sender: UITapGestureRecognizer) {
-        logger.log("me presionaron weon")
+    func rightNavButton()  {
+        let backButton: UIButton = UIButton(type: .custom)
+        let origImage = UIImage(named: "ic_autorenew")
+        let tintedImage = origImage?.withRenderingMode(.alwaysTemplate)
+        backButton.setImage(tintedImage, for: UIControlState())
+        backButton.tintColor = UIColor.white
+        backButton.imageView?.tintColor = UIColor.white
+        
+        backButton.addTarget(self, action: #selector(self.RefreshTapped(_:)), for: .touchUpInside)
+        
+        backButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        backButton.imageView?.contentMode = .scaleAspectFit
+        
+        let backButtonItem = UIBarButtonItem(customView: backButton)
+        
+        navigationItem.rightBarButtonItem = backButtonItem
     }
     
-    @IBAction func reloadButtonPress(_ sender: UIButton) {
-           logger.log("me presionaron weon")
+    func sendLike(nameId: String){
+        self.userInfo = loginHandler.getUserInfo()
+        if self.userInfo?.id != "-1"{
+            self.dataHelper.sendlikeBabyName(self.userInfo!.id, COUPLE_ID: self.userInfo!.couple_id, NAME_ID: nameId, success: { (JSON) in
+                
+            }, failure: { (ErrorString:String) in
+//                make a queue for the ids that fails
+            })
+        }else{
+//            only save in local
+        }
+       
     }
+    
+    @objc func RefreshTapped(_ sender: UIBarButtonItem)  {
+        viewForReload.isHidden = true
+        getBabynameFromServer()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         if genderSingleton.actualGender.genderHasBeenChange{
             genderSingleton.actualGender.genderHasBeenChange =  false
@@ -67,6 +98,7 @@ class MakeMatchVC: BaseViewController {
         if genderSingleton.actualGender.gender != ""{
             gender = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as! String
             self.getBabynameFromServer()
+            rightNavButton()
         }else{
              SetBabyGender()
         }
@@ -91,6 +123,7 @@ class MakeMatchVC: BaseViewController {
             defaults.set( component, forKey: Constants.UserDefaultsKeys.Gender.rawValue)
             defaults.synchronize()
             self.getBabynameFromServer()
+            self.rightNavButton()
         }
         self.present(vc!, animated: false, completion: {
             
@@ -161,21 +194,51 @@ class MakeMatchVC: BaseViewController {
             logger.log("Did swipe view in direction: \(direction), vector: \(vector)   the view  \(String(view.tag))")
             let BN = babyNameRO()
             
-//            checr si y se tiene un objeto con esa key
-            if let filterOBJ = self.dataHelper.namesArray.first(where: {$0.id == "\(String(view.tag))"}) {
-                BN.setNameObjInfo(BabyOBJ: filterOBJ)
-                if realmData.checkIfBabyNameExist(BN){
-                    realmData.updateBabyName(BN)
-                }else{
-//                    is a new baby name...add it
-                    realmData.addBabyName(BN)
+            switch "\(direction)"{
+                
+            case "Left":
+                logger.log("Dislike")
+                if let filterOBJ = self.dataHelper.namesArray.first(where: {$0.id == "\(String(view.tag))"}) {
+                    filterOBJ.like = false
+                    BN.setNameObjInfo(BabyOBJ: filterOBJ)
+                    logger.log(BN.like)
+                    if realmData.checkIfBabyNameExist(BN){
+                        realmData.updateBabyName(BN)
+                    }else{
+                        //                    is a new baby name...add it
+                        realmData.addBabyName(BN)
+                    }
+                    // do something with foo
+                } else {
+                    logger.log("error checking the baby id.... check with ivan D:")
+                    // item could not be found
                 }
-               
-                // do something with foo
-            } else {
-                logger.log("error checking the baby id.... check with ivan D:")
-                // item could not be found
+            case "Right":
+                logger.log("like")
+                //            search for the sake key in the local array
+                if let filterOBJ = self.dataHelper.namesArray.first(where: {$0.id == "\(String(view.tag))"}) {
+                    filterOBJ.like = true
+                    BN.setNameObjInfo(BabyOBJ: filterOBJ)
+                    //                sand it to the server
+                    logger.log(BN.like)
+                    self.sendLike(nameId: "\(String(view.tag))")
+                    if realmData.checkIfBabyNameExist(BN){
+                        realmData.updateBabyName(BN)
+                    }else{
+                        //                    is a new baby name...add it
+                        realmData.addBabyName(BN)
+                        
+                    }
+                    
+                    // do something with foo
+                } else {
+                    logger.log("error checking the baby id.... check with ivan D:")
+                    // item could not be found
+                }
+            default:
+                break
             }
+
             
         }
         swipeableView.didCancel = {view in

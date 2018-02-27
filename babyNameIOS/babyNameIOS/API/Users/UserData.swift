@@ -175,16 +175,16 @@ class UserData: NSObject {
 
         logger.log(params)
         //get process
+        logger.log("se va a dar de alta el name con id \(NAME_ID) para el usuario \(USER_ID) con la pareja numero \(COUPLE_ID)")
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
             let responseDict = res.dictionary
-            var userInfo: UserItem?
-            userInfo = self.appDelegate.AppsetupRoot.loginHandler.getUserInfo()
+            logger.log(responseDict)
             if var _ = responseDict?["success"]?.string{
 //                var matchID = responseDict?["match_id"]?.string
                 success(res)
             }else{
 //                the match is already in the DB
-                failure(AppStrings.INTERNAL_SERVER_ERROR)
+                success(res)
             }
         }) { (String) in
             //

@@ -60,12 +60,13 @@ class UserInformation: BaseNSObject {
 class NameObject: BaseNSObject {
     //    Key value coding-compliant properties must be marked as dynamic
     //    and in Swift 4 even as @objc
-    @objc dynamic  var id:           String = ""
-    @objc dynamic  var meaning:      String = ""
-    @objc dynamic  var name:         String = ""
-    @objc dynamic  var gender:       String = ""
+    @objc dynamic  var id:           String  = ""
+    @objc dynamic  var meaning:      String  = ""
+    @objc dynamic  var name:         String  = ""
+    @objc dynamic  var gender:       String  = ""
     @objc dynamic  var origin:       String  = ""
     @objc dynamic  var image:        String  = ""
+    @objc dynamic  var like:         Bool    = false
     
     
     
