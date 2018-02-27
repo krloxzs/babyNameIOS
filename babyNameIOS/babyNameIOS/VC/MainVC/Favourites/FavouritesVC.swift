@@ -33,7 +33,7 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babys = realm.objects(babyNameRO.self)
+        self.reloadInfo()
         self.title =  AppStrings.FAVOURITES_TITLE
         self.navigationController?.navigationBar.prefersLargeTitles = true
         registerNibs()
@@ -45,6 +45,29 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     override func viewDidAppear(_ animated: Bool) {
         getBabysFromDB()
     }
+    func reloadInfo()  {
+        babys = realm.objects(babyNameRO.self)
+        self.collectionView.reloadData()
+    }
+    
+    @objc func optionButtonPress(sender: UIButton) {
+       let babyOBJ = self.babys[sender.tag]
+        // create the alert
+        let alert = UIAlertController(title: AppStrings.FAV_OPT_BUTTON_TITLE, message: AppStrings.LOGOUT_MESSAGES, preferredStyle: UIAlertControllerStyle.alert)
+        // add the actions (buttons)
+        alert.addAction(UIAlertAction(title: AppStrings.FAV_OPT_BUTTON_ONE, style: UIAlertActionStyle.destructive, handler: { action in
+            self.realmData.deletObjectFromBD(babyOBJ, success: {
+                print("success the baby has been deleted")
+                self.reloadInfo()
+            })
+        }))
+        alert.addAction(UIAlertAction(title: AppStrings.CANCEL, style: UIAlertActionStyle.cancel, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    
     
     func getBabysFromDB()  {
         babys = realm.objects(babyNameRO.self).sorted(byKeyPath: "id", ascending: true)
@@ -100,6 +123,8 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
             case "male","female","unisex":
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FavCollectionViewCell().reuseIdentifierString(), for: indexPath) as! FavCollectionViewCell
                 cell.SetupCell(babyOBJ)
+                cell.optionsButton.tag = indexPath.row
+                cell.optionsButton.addTarget(self, action: #selector(self.optionButtonPress(sender:)), for: UIControlEvents.touchUpInside)
                 return cell
             // ads
             default:

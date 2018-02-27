@@ -16,7 +16,7 @@ class babyNameRO: Object {
     @objc dynamic var gender = ""
     @objc dynamic var meaning = ""
     @objc dynamic var origin = ""
-    
+    @objc dynamic var image = ""
     
     override static func primaryKey() -> String? {
         return "id"
@@ -25,9 +25,10 @@ class babyNameRO: Object {
     func setNameObjInfo(BabyOBJ: NameObject) {
         self.id         = BabyOBJ.id
         self.name       = BabyOBJ.name
-        self.gender       = BabyOBJ.gender
+        self.gender     = BabyOBJ.gender
         self.meaning    = BabyOBJ.meaning
         self.origin     = BabyOBJ.origin
+        self.image      = BabyOBJ.image
         
     }
 }

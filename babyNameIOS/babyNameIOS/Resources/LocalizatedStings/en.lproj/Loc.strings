@@ -51,8 +51,11 @@
 "NO_COUPLE_EMPTY_STATE_INFO"        = "It seems that you have not added your partner yet, do not worry, that is solved in a second ...";
 "SET_MY_PARTNER"                   = "Set my partner";
 "INTERNAL_SERVER_ERROR"                   = "Internal server error...dont worry, a team of shinobis is working to fix that";
-
-
+"FAV_OPT_BUTTON_TITLE"                 = "What do you want to do?";
+"FAV_OPT_BUTTON_MESSAGE"               = "What do you want to do?";
+"FAV_OPT_BUTTON_ONE"                   = "Delet name from favourites";
+"VFR_TITLE_LABEL"                      = "Oh oh .. it looks like it's over ...";
+"VFR_INFO_LABEL"                         = "But do not worry, touch the whale and we'll show you the names that are not yet on your favorites list.";
 
 
 

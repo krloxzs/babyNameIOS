@@ -12,10 +12,14 @@ import SwiftyJSON
 import Cartography
 import RealmSwift
 import Realm
-
+import Lottie
 class MakeMatchVC: BaseViewController {
     //MARK:- IBOutlet
     @IBOutlet weak var viewForSwippe: UIView!
+    @IBOutlet weak var viewForEmptyState: UIView!
+    @IBOutlet weak var viewForReload: UIView!
+    @IBOutlet weak var VFRLabelTitle: UILabel!
+    @IBOutlet weak var VFRLabelInfo: UILabel!
     
     //MARK:- Variables and Constants
     var userInfo: UserItem?
@@ -28,23 +32,33 @@ class MakeMatchVC: BaseViewController {
     var loadCardsFromXib = false
     var isInit = false
     var gender = ""
-
+    let animationEmpty: LOTAnimationView = LOTAnimationView(name: "empty_box")
+    let animationNoMore: LOTAnimationView = LOTAnimationView(name: "empty_status")
+    
+    
     //MARK:- BasicFunctions
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = AppStrings.MAKE_MATCH_TITLE
+        self.VFRLabelTitle.text = AppStrings.VFR_TITLE_LABEL
+        self.VFRLabelInfo.text = AppStrings.VFR_INFO_LABEL
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        
+        viewForReload.isHidden = true
         checkGender()
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func reloadCardsGesturePress(_ sender: UITapGestureRecognizer) {
+        logger.log("me presionaron weon")
+    }
     
+    @IBAction func reloadButtonPress(_ sender: UIButton) {
+           logger.log("me presionaron weon")
+    }
     override func viewDidAppear(_ animated: Bool) {
         if genderSingleton.actualGender.genderHasBeenChange{
             genderSingleton.actualGender.genderHasBeenChange =  false
 //            clean the actual cardViewNames and show the new name list
-            
             self.getBabynameFromServer()
         }
     }
@@ -91,12 +105,33 @@ class MakeMatchVC: BaseViewController {
             //  show all the baby names
            self.nameIndex = 0
            self.swipeInit()
+           self.setupViewForEmptyState(status: true)
         }) { (ErrorSttring:String) in
              MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+             self.setupViewForEmptyState(status: false)
 //            show empty state and reload button
         }
     }
     
+    func setupViewForEmptyState(status:Bool){
+       
+        if status{
+            animationNoMore.contentMode = .scaleAspectFit
+            animationNoMore.frame = CGRect(x: 0, y: 0, width: self.viewForEmptyState.frame.width , height: self.viewForEmptyState.frame.height)
+            animationNoMore.animationSpeed = 0.5
+            animationNoMore.play()
+            animationNoMore.loopAnimation = true
+            self.viewForEmptyState.addSubview(animationNoMore)
+        }else{
+            animationEmpty.contentMode = .scaleAspectFit
+            animationEmpty.frame = CGRect(x: 0, y: 0, width: self.viewForEmptyState.frame.width , height: self.viewForEmptyState.frame.height)
+            animationEmpty.animationSpeed = 0.5
+            animationEmpty.play()
+            animationEmpty.loopAnimation = true
+            self.viewForEmptyState.addSubview(animationEmpty)
+        }
+        
+    }
     //MARK:- swipeInit
     func swipeInit()  {
         if isInit{
@@ -185,7 +220,7 @@ class MakeMatchVC: BaseViewController {
         }else{
             print(nameIndex)
             print(self.dataHelper.namesArray.count)
-            
+            viewForReload.isHidden = false
             return nil
         }
     }

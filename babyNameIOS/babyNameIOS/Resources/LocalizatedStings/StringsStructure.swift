@@ -53,9 +53,13 @@ struct AppStrings
     static let EMPTY_STATE_INFO         = "EMPTY_STATE_INFO".localized
     static let NO_COUPLE_EMPTY_STATE_TITLE  = "NO_COUPLE_EMPTY_STATE_TITLE".localized
     static let NO_COUPLE_EMPTY_STATE_INFO   = "NO_COUPLE_EMPTY_STATE_INFO".localized
-     static let SET_MY_PARTNER          = "SET_MY_PARTNER".localized
-     static let INTERNAL_SERVER_ERROR   = "INTERNAL_SERVER_ERROR".localized
-
+    static let SET_MY_PARTNER          = "SET_MY_PARTNER".localized
+    static let INTERNAL_SERVER_ERROR   = "INTERNAL_SERVER_ERROR".localized
+    static let FAV_OPT_BUTTON_TITLE    = "FAV_OPT_BUTTON_TITLE".localized
+    static let FAV_OPT_BUTTON_MESSAGE    = "FAV_OPT_BUTTON_MESSAGE".localized
+    static let FAV_OPT_BUTTON_ONE      = "FAV_OPT_BUTTON_ONE".localized
+    static let VFR_TITLE_LABEL         = "VFR_TITLE_LABEL".localized
+    static let VFR_INFO_LABEL          = "VFR_INFO_LABEL".localized
     
     
     

@@ -51,5 +51,13 @@
 "NO_COUPLE_EMPTY_STATE_INFO"        = "Parece que aun no has agregado a tu pareja, no te preocupes, eso se soluciona en un segundo...";
 "SET_MY_PARTNER"                   = "Vamos";
 "INTERNAL_SERVER_ERROR"                   = "Internal server error...no te preocupes, nuetro equipo de shinobis esta trabajando en solucionarlo ahora";
+"FAV_OPT_BUTTON_TITLE"                   = "Qué quieres hacer?";
+"FAV_OPT_BUTTON_ONE"                   = "Eliminar el nombre de favoritos";
+"VFR_TITLE_LABEL"                      = "Oh oh.. parece que se terminaron...";
+"VFR_INFO_LABEL"                         = "Pero no te preocupes, toca a la ballena y te mostraremos los nombres que aun no estan en tu lista de favoritos.";
+
+
+
+
 
 

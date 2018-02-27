@@ -39,7 +39,7 @@ class FavCollectionViewCell: UICollectionViewCell {
             self.headerView.backgroundColor  = UIColor(hex: Constants.Colors.maleColor.rawValue)
             self.meaningInfo.text = babyOBJ.meaning
             self.nameLabel.text = babyOBJ.name
-            self.iconImage.image = UIImage(named:"\(self.maleIcons.randomItem()!)")
+            self.iconImage.image = UIImage(named:"\(babyOBJ.image)")
             
         case "female":
             self.meaningLabel.textColor    = UIColor(hex: Constants.Colors.femaleColor.rawValue)
@@ -47,14 +47,14 @@ class FavCollectionViewCell: UICollectionViewCell {
             self.headerView.backgroundColor = UIColor(hex: Constants.Colors.femaleColor.rawValue)
             self.meaningInfo.text = babyOBJ.meaning
             self.nameLabel.text = babyOBJ.name
-            self.iconImage.image = UIImage(named:"\(self.femaleIcons.randomItem()!)")
+            self.iconImage.image = UIImage(named:"\(babyOBJ.image)")
         case "unisex":
             self.meaningLabel.textColor    = UIColor(hex: Constants.Colors.neutralColor.rawValue)
             self.fotterView.backgroundColor   = UIColor(hex: Constants.Colors.neutralColor.rawValue).withAlphaComponent(0.5)
             self.headerView.backgroundColor = UIColor(hex: Constants.Colors.neutralColor.rawValue)
             self.meaningInfo.text = babyOBJ.meaning
             self.nameLabel.text = babyOBJ.name
-            self.iconImage.image = UIImage(named:"\(self.unisexIcons.randomItem()!)")
+            self.iconImage.image = UIImage(named:"\(babyOBJ.image)")
         default:
             break
         }

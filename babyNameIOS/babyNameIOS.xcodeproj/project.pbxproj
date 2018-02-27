@@ -113,6 +113,8 @@
 		3E885C5E1FF23D5200BB4BB5 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */; };
 		3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C5F1FF23D6400BB4BB5 /* CardView.swift */; };
 		3E90CCDB200DC62000D1FE0D /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E90CCDA200DC62000D1FE0D /* empty_list.json */; };
+		3E944F63203D06EA00BCAC3A /* empty_box.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E944F62203D06E900BCAC3A /* empty_box.json */; };
+		3E944F65203D118200BCAC3A /* emoji_shock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E944F64203D118200BCAC3A /* emoji_shock.json */; };
 		3EB591571FFDB77E009DB357 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB591561FFDB77E009DB357 /* ArrayExtension.swift */; };
 		3EB5915B1FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB591591FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.swift */; };
 		3EB5915C1FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EB5915A1FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.xib */; };
@@ -252,6 +254,8 @@
 		3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
 		3E885C5F1FF23D6400BB4BB5 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3E90CCDA200DC62000D1FE0D /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty_list.json; path = ../../../../../../../Downloads/empty_list.json; sourceTree = "<group>"; };
+		3E944F62203D06E900BCAC3A /* empty_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_box.json; sourceTree = "<group>"; };
+		3E944F64203D118200BCAC3A /* emoji_shock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji_shock.json; sourceTree = "<group>"; };
 		3EB591561FFDB77E009DB357 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		3EB591591FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateFavCollectionViewCell.swift; sourceTree = "<group>"; };
 		3EB5915A1FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateFavCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -508,6 +512,7 @@
 		3E355B401FDE5DBE00CF81A0 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				3E944F62203D06E900BCAC3A /* empty_box.json */,
 				3E35F2431FE46C45008C17D8 /* android.json */,
 				3E35F2521FE48030008C17D8 /* animated_laptop_.json */,
 				3E355B411FDE5DCC00CF81A0 /* animated_color_options.json */,
@@ -515,6 +520,7 @@
 				3EB591621FFF46C4009DB357 /* drink.json */,
 				3E90CCDA200DC62000D1FE0D /* empty_list.json */,
 				3E35F2541FE48035008C17D8 /* skeleton_loading.json */,
+				3E944F64203D118200BCAC3A /* emoji_shock.json */,
 				3E6AD969200300330061EE2A /* emoji_wink.json */,
 				3E355B6C1FDF11C400CF81A0 /* account_success.json */,
 				3E35F23B1FE46C38008C17D8 /* 5_stars.json */,
@@ -841,6 +847,7 @@
 				3E90CCDB200DC62000D1FE0D /* empty_list.json in Resources */,
 				3E6CBE731FDFA9ED00A1A445 /* UserProfileHeaderTVCell.xib in Resources */,
 				3E6A3A721FDA21B6002E17D8 /* Main.storyboard in Resources */,
+				3E944F65203D118200BCAC3A /* emoji_shock.json in Resources */,
 				3EB591641FFF46C4009DB357 /* drink.json in Resources */,
 				3E35F2531FE48030008C17D8 /* animated_laptop_.json in Resources */,
 				3E355B681FDE710600CF81A0 /* Loc.strings in Resources */,
@@ -856,6 +863,7 @@
 				3E35F2421FE46C3A008C17D8 /* empty_list.json in Resources */,
 				3E16BB161FDF3F7000CC0E2C /* Varela.otf in Resources */,
 				3EB591691FFF46F0009DB357 /* noCoupleEmptyStateTableViewCell.xib in Resources */,
+				3E944F63203D06EA00BCAC3A /* empty_box.json in Resources */,
 				3E35F2441FE46C45008C17D8 /* android.json in Resources */,
 				3E355B4E1FDE5DCD00CF81A0 /* empty_status.json in Resources */,
 				3E355AF71FDA306500CF81A0 /* wissen.ttf in Resources */,

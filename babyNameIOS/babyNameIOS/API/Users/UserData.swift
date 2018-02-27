@@ -126,6 +126,23 @@ class UserData: NSObject {
                 for name in names{
                    
                         let nameOBJ: NameObject = NameObject(JSONObject: name)
+                    
+                    switch nameOBJ.gender{
+                    case "male":
+                        let maleIcons = ["Ball","Bathtub","Bib","Bird","Socks","Submarine","Whale"]
+                        let randomIndex = Int(arc4random_uniform(UInt32(maleIcons.count)))
+                        nameOBJ.image = maleIcons[randomIndex]
+                    case "female":
+                        let femaleIcons = ["Apple","Bear","Butterfly","Cow","Feet","Heart","Pig"]
+                        let randomIndex = Int(arc4random_uniform(UInt32(femaleIcons.count)))
+                        nameOBJ.image = femaleIcons[randomIndex]
+                    case "unisex":
+                         let unisexIcons = ["Cake","Candy","Cutlery","Diaper","Dog","Duck","Gift","Rattle","Sleepsuit"]
+                         let randomIndex = Int(arc4random_uniform(UInt32(unisexIcons.count)))
+                         nameOBJ.image = unisexIcons[randomIndex]
+                    default:
+                        break
+                    }
                         if nameOBJ.gender == gender || nameOBJ.gender == "unisex"{
                             self.namesArray.append(nameOBJ)
                         }
@@ -142,6 +159,39 @@ class UserData: NSObject {
         }
         
     }
-   
+    
+         //MARK:- saveNameByIdInLikes
+    func sendlikeBabyName(_ USER_ID:String ,COUPLE_ID:String , NAME_ID: String,
+                   success:@escaping (JSON) -> Void, failure:@escaping (String) -> Void) {
+        // Get url
+        //let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
+        let completeURL = urlBase
+        logger.log(completeURL)
+        let params:Parameters  = ["user_id"     :USER_ID,
+                                  "couple_id"   :COUPLE_ID,
+                                  "name_id"     :NAME_ID,
+                                  "type"        :"Match"]
+
+
+        logger.log(params)
+        //get process
+        self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
+            let responseDict = res.dictionary
+            var userInfo: UserItem?
+            userInfo = self.appDelegate.AppsetupRoot.loginHandler.getUserInfo()
+            if var _ = responseDict?["success"]?.string{
+//                var matchID = responseDict?["match_id"]?.string
+                success(res)
+            }else{
+//                the match is already in the DB
+                failure(AppStrings.INTERNAL_SERVER_ERROR)
+            }
+        }) { (String) in
+            //
+            failure(AppStrings.INTERNAL_SERVER_ERROR)
+        }
+
+    }
+
     
 }
