@@ -54,7 +54,7 @@
 "FAV_OPT_BUTTON_TITLE"                   = "Qué quieres hacer?";
 "FAV_OPT_BUTTON_ONE"                   = "Eliminar el nombre de favoritos";
 "VFR_TITLE_LABEL"                      = "Oh oh.. parece que se terminaron...";
-"VFR_INFO_LABEL"                         = "Pero no te preocupes, toca a la ballena y te mostraremos los nombres que aun no estan en tu lista de favoritos.";
+"VFR_INFO_LABEL"                         = "Pero no te preocupes, toca el icono de la esquina y te mostraremos los nombres que aun no estan en tu lista de favoritos.";
 
 
 

@@ -11,6 +11,8 @@ import UIKit
 import SwiftDate
 import SwiftyJSON
 import Alamofire
+import Realm
+import RealmSwift
 
 
 
@@ -19,7 +21,9 @@ class UserData: NSObject {
     let networkHandler: AFWrapper! = AFWrapper()
     var namesArray: Array = [NameObject]()
     var userInfo: UserItem?
-   
+     let realmData = realmHelper()
+    var babys : Results<babyNameRO>!
+    let realm = try! Realm()
     override init() {
         super.init()
     }
@@ -126,7 +130,7 @@ class UserData: NSObject {
                 for name in names{
                    
                         let nameOBJ: NameObject = NameObject(JSONObject: name)
-                    
+                    self.babys = self.realm.objects(babyNameRO.self).sorted(byKeyPath: "id", ascending: true).filter( "%K == true", "like")
                     switch nameOBJ.gender{
                     case "male":
                         let maleIcons = ["Ball","Bathtub","Bib","Bird","Socks","Submarine","Whale"]
@@ -144,9 +148,18 @@ class UserData: NSObject {
                         break
                     }
                         if nameOBJ.gender == gender || nameOBJ.gender == "unisex"{
-                            self.namesArray.append(nameOBJ)
+                            //on;ly add the element if the user didnot like the name or is a new name
+                            if self.realmData.checkIfBabyidExist(nameOBJ.id){
+                                if !self.realmData.checkIfBabyidIsALikeId(nameOBJ.id){
+                                    self.namesArray.append(nameOBJ)
+                                }
+                            }else{
+                                self.namesArray.append(nameOBJ)
+                            }
+                           
                         }
                 }
+                self.namesArray = self.namesArray.shuffled()
                 success(res)
             }else{
                  failure(AppStrings.INTERNAL_SERVER_ERROR)

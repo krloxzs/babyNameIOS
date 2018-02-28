@@ -70,7 +70,7 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     
     
     func getBabysFromDB()  {
-        babys = realm.objects(babyNameRO.self).sorted(byKeyPath: "id", ascending: true)
+        babys = realm.objects(babyNameRO.self).sorted(byKeyPath: "id", ascending: true).filter( "%K == true", "like")
         self.collectionView.reloadData()
     }
     

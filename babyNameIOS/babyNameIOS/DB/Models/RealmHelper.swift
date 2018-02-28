@@ -55,6 +55,35 @@ class realmHelper {
         
     }
     
+    func checkIfBabyidExist(_ id : String) -> Bool {
+        let realm = try! Realm()
+        if let flag = realm.objects(babyNameRO.self).filter("id == '\(id)'").first{
+            logger.log("object with the id \(flag.id) already exist... ")
+            return true
+        }else{
+            logger.log("object with the id \(id) doesnot exist, is going to be added")
+            return false
+        }
+        
+    }
+    
+    func checkIfBabyidIsALikeId(_ id : String) -> Bool {
+        let realm = try! Realm()
+        if let flag = realm.objects(babyNameRO.self).filter("id == '\(id)'").first{
+            logger.log("object with the id \(flag.id) already exist... ")
+            if flag.like{
+                  return true
+            }else{
+                  return false
+            }
+          
+        }else{
+            logger.log("object with the id \(id) doesnot exist, is going to be added")
+            return false
+        }
+        
+    }
+    
     func getAllBNFromDB() -> Results<babyNameRO> {
         let realm = try! Realm()
         let babys = realm.objects(babyNameRO.self)

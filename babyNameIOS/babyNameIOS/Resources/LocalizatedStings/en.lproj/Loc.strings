@@ -55,7 +55,7 @@
 "FAV_OPT_BUTTON_MESSAGE"               = "What do you want to do?";
 "FAV_OPT_BUTTON_ONE"                   = "Delet name from favourites";
 "VFR_TITLE_LABEL"                      = "Oh oh .. it looks like it's over ...";
-"VFR_INFO_LABEL"                         = "But do not worry, touch the whale and we'll show you the names that are not yet on your favorites list.";
+"VFR_INFO_LABEL"                         = "But do not worry, touch the icon in the corner and we'll show you the names that are not yet on your favorites list.";
 
 
 

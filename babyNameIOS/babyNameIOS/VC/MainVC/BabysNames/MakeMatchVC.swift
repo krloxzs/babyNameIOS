@@ -131,11 +131,13 @@ class MakeMatchVC: BaseViewController {
     }
     
     func getBabynameFromServer() {
+        
         self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
         self.loadingNotification.mode = MBProgressHUDMode.indeterminate
         self.loadingNotification.labelText = AppStrings.LOADING
         self.dataHelper.getBabyNames(success: { (Res:JSON) in
             //  show all the baby names
+           self.viewForReload.isHidden = true
            self.nameIndex = 0
            self.swipeInit()
            self.setupViewForEmptyState(status: true)
