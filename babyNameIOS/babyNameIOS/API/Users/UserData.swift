@@ -20,6 +20,7 @@ class UserData: NSObject {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let networkHandler: AFWrapper! = AFWrapper()
     var namesArray: Array = [NameObject]()
+    var MatchesArray: Array = [NameObject]()
     var userInfo: UserItem?
      let realmData = realmHelper()
     var babys : Results<babyNameRO>!
@@ -42,7 +43,7 @@ class UserData: NSObject {
         userInfo = self.appDelegate.AppsetupRoot.loginHandler.getUserInfo()
         self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
             let itemD = res.dictionary
-//            logger.log(itemD)
+            logger.log(itemD)
             if let _ = itemD?["data"] {
                 let itemArray  =  itemD!["data"]!.array
                 if itemArray!.count > 1{
@@ -166,6 +167,52 @@ class UserData: NSObject {
             }
             
            
+        }) { (String) in
+            //
+            failure(AppStrings.INTERNAL_SERVER_ERROR)
+        }
+        
+    }
+    
+    func getMatches(success:@escaping (JSON) -> Void, failure:@escaping (String) -> Void) {
+        // Get url
+        //let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
+        let completeURL = urlBase
+        logger.log(completeURL)
+        var userInfo: UserItem?
+        userInfo = appDelegate.AppsetupRoot.loginHandler.getUserInfo()
+        let params:Parameters  = ["type":"GetChosenNames","couple_id": "\(userInfo!.couple_id)"]
+        //        logger.log(params)
+        //get process
+        self.networkHandler.requestGETURL(completeURL!, params: params, success: { (res:JSON) in
+            logger.log(res)
+            if let _ : String = res["success"].string{
+                self.MatchesArray.removeAll()
+                let  names = res["data"].array!
+                for name in names{
+                    let nameOBJ: NameObject = NameObject(JSONObject: name)
+                    switch nameOBJ.gender{
+                    case "male":
+                        let maleIcons = ["Ball","Bathtub","Bib","Bird","Socks","Submarine","Whale"]
+                        let randomIndex = Int(arc4random_uniform(UInt32(maleIcons.count)))
+                        nameOBJ.image = maleIcons[randomIndex]
+                    case "female":
+                        let femaleIcons = ["Apple","Bear","Butterfly","Cow","Feet","Heart","Pig"]
+                        let randomIndex = Int(arc4random_uniform(UInt32(femaleIcons.count)))
+                        nameOBJ.image = femaleIcons[randomIndex]
+                    case "unisex":
+                        let unisexIcons = ["Cake","Candy","Cutlery","Diaper","Dog","Duck","Gift","Rattle","Sleepsuit"]
+                        let randomIndex = Int(arc4random_uniform(UInt32(unisexIcons.count)))
+                        nameOBJ.image = unisexIcons[randomIndex]
+                    default:
+                        break
+                    }
+                      self.MatchesArray.append(nameOBJ)
+                }
+                success(res)
+            }else{
+                failure(AppStrings.NO_COUPLE_EMPTY_STATE_INFO)
+            }
         }) { (String) in
             //
             failure(AppStrings.INTERNAL_SERVER_ERROR)

@@ -11,6 +11,10 @@ import CoreData
 import Foundation
 import FBSDKCoreKit
 import FBSDKLoginKit
+import AdSupport
+import GoogleMobileAds
+
+
 
 var logger:GULogger = GULogger("DEBUG>> ")
 let values = Bundle.contentsOfFile(plistName: "MyData.plist")
@@ -28,9 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         var urlString  = ""
         #if DEBUG
+//            sample admod app id
+              GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~1458002511")
             urlString = "https://StagingURL"
         #else
+//            liveStrings
             urlString = "https://productionURL"
+            GADMobileAds.configure(withApplicationID: "ca-app-pub-6757248911161141~4944175232")
+           
         #endif
     
         self.realmDBHelper.migrateBD(migrationDone: {

@@ -35,11 +35,15 @@ class MakeMatchVC: BaseViewController {
     var gender = ""
     let animationEmpty: LOTAnimationView = LOTAnimationView(name: "empty_box")
     let animationNoMore: LOTAnimationView = LOTAnimationView(name: "empty_status")
-    
+    var ISAHelper : interstitialAdversimentClass?
+
     
     //MARK:- BasicFunctions
     override func viewDidLoad() {
         super.viewDidLoad()
+        ISAHelper = interstitialAdversimentClass()
+        ISAHelper?.parentVC = self
+        
         self.title = AppStrings.MAKE_MATCH_TITLE
         self.VFRLabelTitle.text = AppStrings.VFR_TITLE_LABEL
         self.VFRLabelInfo.text = AppStrings.VFR_INFO_LABEL
@@ -48,6 +52,7 @@ class MakeMatchVC: BaseViewController {
         checkGender()
         // Do any additional setup after loading the view.
     }
+    
     
     func rightNavButton()  {
         let backButton: UIButton = UIButton(type: .custom)
@@ -96,6 +101,7 @@ class MakeMatchVC: BaseViewController {
     
     func checkGender()  {
         if genderSingleton.actualGender.gender != ""{
+//            fix thatyou
             gender = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as! String
             self.getBabynameFromServer()
             rightNavButton()

@@ -19,6 +19,7 @@
 		3E27B4821FF4ED73007D48AA /* InfoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */; };
 		3E27B4871FF600A0007D48AA /* FavCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E27B4851FF600A0007D48AA /* FavCollectionViewCell.swift */; };
 		3E27B4881FF600A0007D48AA /* FavCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E27B4861FF600A0007D48AA /* FavCollectionViewCell.xib */; };
+		3E2B8F1B204CCA3D00AFE6E9 /* AdversimentClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2B8F1A204CCA3D00AFE6E9 /* AdversimentClass.swift */; };
 		3E355ADF1FDA276E00CF81A0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */; };
 		3E355AE01FDA276E00CF81A0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */; };
 		3E355AE21FDA281000CF81A0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E355AE11FDA280F00CF81A0 /* Bolts.framework */; };
@@ -151,6 +152,7 @@
 		3E27B4801FF4ED73007D48AA /* InfoCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoCardTableViewCell.xib; sourceTree = "<group>"; };
 		3E27B4851FF600A0007D48AA /* FavCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavCollectionViewCell.swift; sourceTree = "<group>"; };
 		3E27B4861FF600A0007D48AA /* FavCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavCollectionViewCell.xib; sourceTree = "<group>"; };
+		3E2B8F1A204CCA3D00AFE6E9 /* AdversimentClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdversimentClass.swift; sourceTree = "<group>"; };
 		3E355ADD1FDA276E00CF81A0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3E355ADE1FDA276E00CF81A0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3E355AE11FDA280F00CF81A0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				3E355B051FDA310F00CF81A0 /* Imagen_resize.swift */,
 				3E355B2D1FDA371600CF81A0 /* DispatchHelper.swift */,
 				3EED6321203A611700130119 /* genderSingleton.swift */,
+				3E2B8F1A204CCA3D00AFE6E9 /* AdversimentClass.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				3E355AFC1FDA308900CF81A0 /* LilithProgressHUD.swift in Sources */,
 				3E27B4871FF600A0007D48AA /* FavCollectionViewCell.swift in Sources */,
 				3E35F2501FE47CF9008C17D8 /* webDeveloperTableViewCell.swift in Sources */,
+				3E2B8F1B204CCA3D00AFE6E9 /* AdversimentClass.swift in Sources */,
 				3E355AFA1FDA307A00CF81A0 /* GradientView.swift in Sources */,
 				3E35F2181FE0534C008C17D8 /* BackgroundTVCell.swift in Sources */,
 				3E355B391FDA5A2500CF81A0 /* UINavigationBar+Custom.swift in Sources */,
@@ -1266,13 +1270,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyNameIOS/Extras",
+					"$(PROJECT_DIR)/babyNameIOS/Resources",
 				);
 				INFOPLIST_FILE = babyNameIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b19125ba-e05a-4598-91f5-a8ffadf2b75d";
+				PROVISIONING_PROFILE = "9ba083f1-35dd-4831-ac61-83731cce6beb";
 				PROVISIONING_PROFILE_SPECIFIER = babyNamesPPDev;
 				SWIFT_OBJC_BRIDGING_HEADER = "babyNameIOS/babyNameIOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1294,6 +1299,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/babyNameIOS/Extras",
+					"$(PROJECT_DIR)/babyNameIOS/Resources",
 				);
 				INFOPLIST_FILE = babyNameIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

@@ -9,13 +9,17 @@
 import UIKit
 
 class MainTabBarController: UITabBarController {
-
+    
+    
    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         self.tabBar.tintColor = UIColor(hex: Constants.Colors.NavBarBGColor.rawValue)
         // Do any additional setup after loading the view.
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let items = tabBar.items else { return }

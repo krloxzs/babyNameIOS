@@ -43,11 +43,18 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
     }
     
     func getBabysFromDB()  {
-       
+        
+        self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.loadingNotification.mode = MBProgressHUDMode.indeterminate
+        self.loadingNotification.labelText = AppStrings.LOADING
+        self.dataHelper.getMatches(success: { (JSON) in
+             MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+        }) { (String) in
+             MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+        }
     }
     
     @objc func setMyPartner(sender: UIButton) {
-        logger.log("ow yhea")
         tabBarController?.selectedIndex = 3
     }
 
