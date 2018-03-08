@@ -12,8 +12,7 @@ import SpriteKit
 class SelectGenderViewController: UIViewController {
     
     @IBOutlet weak var popUpView: UIView!
-    
-    
+
     var completion: ((String)->Void)?
     var onExit: (()->Void)?
 

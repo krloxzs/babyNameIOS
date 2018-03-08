@@ -48,6 +48,9 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
         self.loadingNotification.mode = MBProgressHUDMode.indeterminate
         self.loadingNotification.labelText = AppStrings.LOADING
         self.dataHelper.getMatches(success: { (JSON) in
+            logger.log(self.dataHelper.MatchesArray.count)
+            logger.log(self.dataHelper.MatchesArray.first?.name)
+            self.tableView.reloadData()
              MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
         }) { (String) in
              MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
@@ -63,7 +66,9 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
         // Register xib file.
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        
         self.tableView?.keyboardDismissMode = .none
+         self.tableView?.register(UINib(nibName: "MatchTableViewCell", bundle: nil), forCellReuseIdentifier: "MatchTableViewCell")
         self.tableView?.register(UINib(nibName: "noCoupleEmptyStateTableViewCell", bundle: nil), forCellReuseIdentifier: "noCoupleEmptyStateTableViewCell")
         self.tableView?.register(UINib(nibName: "emptyStateMatchesTableViewCell", bundle: nil), forCellReuseIdentifier: "emptyStateMatchesTableViewCell")
         self.tableView?.register(UINib(nibName: "ManagePartnerTVCell", bundle: nil), forCellReuseIdentifier: "ManagePartnerTVCell")
@@ -78,18 +83,37 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
     
        //MARK:- Tableview delegates
     
+  
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Comments
         if userInfo?.couple_id != "-1"{
-            var cell = tableView.dequeueReusableCell(withIdentifier: "emptyStateMatchesTableViewCell", for: indexPath) as? emptyStateMatchesTableViewCell
-            if (cell == nil){ cell = emptyStateMatchesTableViewCell() }
-            cell?.selectionStyle = UITableViewCellSelectionStyle.none
-            cell?.parentVC = self
-            cell?.setupAnim()
-            return cell!
+            if dataHelper.MatchesArray.count > 0{
+                let babyOBJ = dataHelper.MatchesArray[indexPath.row]
+                switch babyOBJ.gender {
+                case "male","female","unisex":
+                    let cell = self.tableView.dequeueReusableCell(withIdentifier: "MatchTableViewCell", for: indexPath) as? MatchTableViewCell
+                    cell?.SetupCell(babyOBJ)
+                    cell?.optionsButton.tag = indexPath.row
+//                  cell?.optionsButton.addTarget(self, action: #selector(self.optionButtonPress(sender:)), for: UIControlEvents.touchUpInside)
+                    return cell!
+                // ads
+                default:
+                   let cell = tableView.dequeueReusableCell(withIdentifier: "MatchTableViewCell", for: indexPath) as? MatchTableViewCell
+                   return cell!
+                }
+            }else{
+                var cell = tableView.dequeueReusableCell(withIdentifier: "emptyStateMatchesTableViewCell", for: indexPath) as? emptyStateMatchesTableViewCell
+                if (cell == nil){ cell = emptyStateMatchesTableViewCell() }
+                cell?.selectionStyle = UITableViewCellSelectionStyle.none
+                cell?.parentVC = self
+                cell?.setupAnim()
+                return cell!
+            }
         }else{
             //            no couple...never
             var cell = tableView.dequeueReusableCell(withIdentifier: "noCoupleEmptyStateTableViewCell", for: indexPath) as? noCoupleEmptyStateTableViewCell
@@ -106,8 +130,11 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if userInfo?.couple_id != "-1"{
-            return 1
-            
+            if dataHelper.MatchesArray.count > 0{
+                  return dataHelper.MatchesArray.count
+            }else{
+                return 1
+            }
         }else{
 //            no couple...never
              return 1
@@ -117,8 +144,11 @@ class MatchesVC: BaseViewController,UITableViewDataSource, UITableViewDelegate, 
   
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if userInfo?.couple_id != "-1"{
-           return self.tableView.frame.height
-            
+            if dataHelper.MatchesArray.count > 0{
+                 return self.tableView.frame.height / 3
+            }else{
+                return self.tableView.frame.height
+            }
         }else{
             return self.tableView.frame.height
         }

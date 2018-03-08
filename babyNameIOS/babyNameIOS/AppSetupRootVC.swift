@@ -4,17 +4,13 @@ import UIKit
 
 
 class AppSetupRootVC {
-    
     var window: UIWindow?
     let loginHandler = LoginHandler.sharedInstance
-    
     init() {
         configureDependencies()
     }
-    
     func configureDependencies() {
         logger.log("configureDependencies")
-        
     }  
     
     func installRootViewControllerIntoWindow(_ window: UIWindow) {
@@ -27,7 +23,6 @@ class AppSetupRootVC {
      Validate if user has session and display window according of his status.
      */
     func displayWindowsAccordingSession() {
-        
         if loginHandler.isAuthenticated() {
             self.configureDashboard(self.window!)
         }else {
@@ -46,7 +41,6 @@ class AppSetupRootVC {
         logger.log("LoginNavC")
         let tabbarController:LoginNavC? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
         window.rootViewController = tabbarController
-        
     }
     
 }
