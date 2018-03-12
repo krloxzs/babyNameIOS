@@ -19,8 +19,11 @@ class LoginNavC: UINavigationController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        logger.log("lkn")
+    }
 
     /*
     // MARK: - Navigation

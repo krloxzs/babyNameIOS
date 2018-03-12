@@ -186,7 +186,16 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             alert.addAction(UIAlertAction(title: AppStrings.LOG_OUT, style: UIAlertActionStyle.destructive, handler: { action in
                 weak var weakSelf:UserProfileVC! = self
                 self.loginHandler.clearUserSession()
-                weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+                
+                
+//                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                let viewController = mainStoryboard.instantiateViewController(withIdentifier: "LoginNavC") as! LoginNavC
+//                UIApplication.shared.keyWindow?.rootViewController = viewController
+//
+//
+                
+                
+               weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
             }))
             alert.addAction(UIAlertAction(title: AppStrings.CANCEL, style: UIAlertActionStyle.cancel, handler: nil))
             // show the alert

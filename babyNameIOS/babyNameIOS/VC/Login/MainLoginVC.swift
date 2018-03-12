@@ -44,6 +44,17 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
         // Setup our animaiton view
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        logger.log("ayuda co la ram")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        logger.log("viewDidDisappear")
+    }
+    
+    deinit {
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
     }
     
@@ -227,7 +238,11 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                                                  GENDER: gender, AGE: age, NAME: nameFacebook, success: { (Res:JSON) in
                                                     print("Succes")
                                                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-                                                   weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+//                                                    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                                                    let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+//                                                    UIApplication.shared.keyWindow?.rootViewController = viewController
+                                                    
+                                                  weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
                 }, failure: { (ErrorString:String) in
                     print("error")
                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
