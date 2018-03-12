@@ -32,23 +32,18 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     var babys : Results<babyNameRO>!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.reloadInfo()
         self.title =  AppStrings.FAVOURITES_TITLE
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        getBabysFromDB()
         registerNibs()
         setupCollectionLayout()
-        getBabysFromDB()
         // Do any additional setup after loading the view.
     }
   
     override func viewDidAppear(_ animated: Bool) {
         getBabysFromDB()
     }
-    func reloadInfo()  {
-        babys = realm.objects(babyNameRO.self)
-        self.collectionView.reloadData()
-    }
+   
     
     @objc func optionButtonPress(sender: UIButton) {
        let babyOBJ = self.babys[sender.tag]
@@ -58,7 +53,7 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
         alert.addAction(UIAlertAction(title: AppStrings.FAV_OPT_BUTTON_ONE, style: UIAlertActionStyle.destructive, handler: { action in
             self.realmData.deletObjectFromBD(babyOBJ, success: {
                 print("success the baby has been deleted")
-                self.reloadInfo()
+                self.getBabysFromDB()
             })
         }))
         alert.addAction(UIAlertAction(title: AppStrings.CANCEL, style: UIAlertActionStyle.cancel, handler: nil))
@@ -71,6 +66,7 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     
     func getBabysFromDB()  {
         babys = realm.objects(babyNameRO.self).sorted(byKeyPath: "id", ascending: true).filter( "%K == true", "like")
+        logger.log(babys.count)
         self.collectionView.reloadData()
     }
     
@@ -115,6 +111,10 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if babys!.count > 0 {
@@ -143,8 +143,8 @@ class FavouritesVC: BaseViewController, UICollectionViewDelegate, UICollectionVi
     {
         if babys!.count > 0 {
             let babyOBJ = self.babys[indexPath.row]
-            let hei = babyOBJ.meaning.heightForWithFont("".setBodyFont(), width: self.collectionView.frame.width - 100)
-            return CGSize(width:  self.collectionView.frame.width - 4, height: (self.collectionView.frame.width / 2.5) + hei)
+            let hei = babyOBJ.meaning.heightForWithFont("".setBodyFont(), width: self.collectionView.frame.width/2)
+            return CGSize(width: ( self.collectionView.frame.width / 2 ) - 2 , height: (self.collectionView.frame.width / 2.5) + hei)
         }else{
             return CGSize(width:  self.collectionView.frame.width - 4, height: self.collectionView.frame.height)
         }

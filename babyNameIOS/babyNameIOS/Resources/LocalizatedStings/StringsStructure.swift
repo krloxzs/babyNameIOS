@@ -30,6 +30,7 @@ struct AppStrings
     static let ADD_PARTNER               = "ADD_PARTNER".localized
     static let MANAGE_PARTNER            = "MANAGE_PARTNER".localized
     static let NO_ADS                    = "NO_ADS".localized
+    static let LICENSES                  = "LICENSES".localized
     static let SWIPE                     = "SWIPE".localized
     static let LOGOUT_MESSAGES           = "LOGOUT_MESSAGES".localized
     static let LOGOUT_GOODBYE            = "LOGOUT_GOODBYE".localized
@@ -60,6 +61,8 @@ struct AppStrings
     static let FAV_OPT_BUTTON_ONE      = "FAV_OPT_BUTTON_ONE".localized
     static let VFR_TITLE_LABEL         = "VFR_TITLE_LABEL".localized
     static let VFR_INFO_LABEL          = "VFR_INFO_LABEL".localized
+    static let EMAIL_INFO              = "EMAIL_INFO".localized
+
     
     
     

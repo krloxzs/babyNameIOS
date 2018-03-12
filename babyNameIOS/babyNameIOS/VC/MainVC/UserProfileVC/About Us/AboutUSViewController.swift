@@ -16,7 +16,7 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
     var userInfo: UserItem?
     
     override func viewDidLoad() {
-        self.title = "About us"
+        self.title = "BabyNames \(self.version())"
         super.navigationBackButton = NavigationBackButton.navigationBackButtonDefault
         super.navigationBarType = NavigationBarType.navigationBarTypeDefault
         self.navigationController?.navigationBar.prefersLargeTitles = false
@@ -27,10 +27,18 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.tableView?.keyboardDismissMode = .none
+        
+         self.tableView?.register(UINib(nibName: "logoForAboutTableViewCell", bundle: nil), forCellReuseIdentifier: "logoForAboutTableViewCell")
         self.tableView?.register(UINib(nibName: "iosDeveloperTableViewCell", bundle: nil), forCellReuseIdentifier: "iosDeveloperTableViewCell")
         self.tableView?.register(UINib(nibName: "androidDeveloperTableViewCell", bundle: nil), forCellReuseIdentifier: "androidDeveloperTableViewCell")
         self.tableView?.register(UINib(nibName: "webDeveloperTableViewCell", bundle: nil), forCellReuseIdentifier: "webDeveloperTableViewCell")
          self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    func version() -> String {
+        let dictionary = Bundle.main.infoDictionary!
+        let version = dictionary["CFBundleShortVersionString"] as! String
+        let build = dictionary["CFBundleVersion"] as! String
+        return "\(version)"
     }
     
     //MARK:- ScrollViewDElegates
@@ -39,7 +47,7 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,19 +55,27 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
         case 0:
             // IOS developer
+            var cell = tableView.dequeueReusableCell(withIdentifier: "logoForAboutTableViewCell", for: indexPath) as? logoForAboutTableViewCell
+            if (cell == nil){ cell = logoForAboutTableViewCell() }
+            cell?.parentVC = self
+            cell?.setAnimation()
+            cell?.selectionStyle = UITableViewCellSelectionStyle.none
+            return cell!
+        case 1:
+            // IOS developer
             var cell = tableView.dequeueReusableCell(withIdentifier: "iosDeveloperTableViewCell", for: indexPath) as? iosDeveloperTableViewCell
             if (cell == nil){ cell = iosDeveloperTableViewCell() }
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             return cell!
             
-        case 1:
+        case 2:
             // IOS developer
             var cell = tableView.dequeueReusableCell(withIdentifier: "androidDeveloperTableViewCell", for: indexPath) as? androidDeveloperTableViewCell
             if (cell == nil){ cell = androidDeveloperTableViewCell() }
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             cell?.setup()
             return cell!
-        case 2:
+        case 3:
             // IOS developer
             var cell = tableView.dequeueReusableCell(withIdentifier: "webDeveloperTableViewCell", for: indexPath) as? webDeveloperTableViewCell
             if (cell == nil){ cell = webDeveloperTableViewCell() }
@@ -69,8 +85,8 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
             
         
         default:
-            var cell = tableView.dequeueReusableCell(withIdentifier: "ProfileOptionsTVCell", for: indexPath) as? ProfileOptionsTVCell
-            if (cell == nil){ cell = ProfileOptionsTVCell() }
+            var cell = tableView.dequeueReusableCell(withIdentifier: "logoForAboutTableViewCell", for: indexPath) as? logoForAboutTableViewCell
+            if (cell == nil){ cell = logoForAboutTableViewCell() }
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
             
             return cell!
@@ -80,6 +96,9 @@ class AboutUSViewController: BaseViewController,UITableViewDelegate,UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.row {
+        case 0:
+            return self.tableView.frame.height / 2.5
+            
         default:
             return 120
         }

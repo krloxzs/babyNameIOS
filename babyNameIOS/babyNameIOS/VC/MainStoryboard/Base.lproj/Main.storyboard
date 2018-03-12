@@ -33,10 +33,10 @@
                                 <rect key="frame" x="8" y="572.5" width="359" height="78.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pb4-H8-AEC">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="26"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe  to continue." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgr-IJ-aEY">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="26"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="17"/>
                                                 <color key="textColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -51,10 +51,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1k-bF-bmW">
-                                        <rect key="frame" x="0.0" y="20" width="359" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="26" width="359" height="13.5"/>
                                         <subviews>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="X0g-iQ-bMe">
-                                                <rect key="frame" x="0.0" y="0.0" width="359" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="359" height="13.5"/>
                                                 <color key="pageIndicatorTintColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="currentPageIndicatorTintColor" red="0.41176470588235292" green="0.41960784313725491" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
@@ -187,6 +187,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UNi-sA-ZGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1070" y="3529"/>
+        </scene>
+        <!--LicensesVC-->
+        <scene sceneID="vFO-Fv-wop">
+            <objects>
+                <viewController storyboardIdentifier="LicensesVC" id="ZBk-uL-nzh" customClass="LicensesVC" customModule="babyNameIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDs-0g-uxb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Odz-tV-ZWd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Odz-tV-ZWd" firstAttribute="trailing" secondItem="0dn-Um-KGi" secondAttribute="trailing" id="F77-77-6Zb"/>
+                            <constraint firstItem="0dn-Um-KGi" firstAttribute="bottom" secondItem="Odz-tV-ZWd" secondAttribute="bottom" id="FNp-EM-4ou"/>
+                            <constraint firstItem="Odz-tV-ZWd" firstAttribute="top" secondItem="0dn-Um-KGi" secondAttribute="top" id="Fjf-HI-3V0"/>
+                            <constraint firstItem="Odz-tV-ZWd" firstAttribute="leading" secondItem="0dn-Um-KGi" secondAttribute="leading" id="PNt-0E-GH8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0dn-Um-KGi"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Odz-tV-ZWd" id="zXV-oK-ZvM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vW3-1G-ELQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727.2" y="3532.9835082458771"/>
         </scene>
         <!--Scaner View Controller-->
         <scene sceneID="2Rw-Q4-pJn">
@@ -452,7 +482,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WAr-BX-Nvw">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DQq-ik-xVC">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="DQq-ik-xVC">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -502,9 +532,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y72-oZ-0SJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="reloadButtonPress:" destination="pql-dK-HU5" eventType="touchUpInside" id="GEN-sL-V19"/>
-                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GFE-0a-HsV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
@@ -541,7 +568,7 @@
                                                                 <rect key="frame" x="0.0" y="111" width="375" height="110.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comparte tu codigo QR y empiza a buscar el nombre perfecto en pareja. A continuacion se muestra tu codigo QR personal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nFl-de-Ecs">
-                                                                        <rect key="frame" x="20" y="1" width="335" height="100"/>
+                                                                        <rect key="frame" x="20" y="0.5" width="335" height="101"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <color key="textColor" red="0.41176470590000003" green="0.41960784309999999" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -625,7 +652,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kXd-V9-g1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="olE-sX-GwZ">
                     <connections>
-                        <action selector="reloadCardsGesturePress:" destination="pql-dK-HU5" id="H00-dj-n0t"/>
                         <outlet property="delegate" destination="g5G-bp-6FQ" id="NVG-nf-rkd"/>
                     </connections>
                 </tapGestureRecognizer>

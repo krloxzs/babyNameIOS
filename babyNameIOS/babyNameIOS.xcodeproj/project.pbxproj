@@ -114,6 +114,12 @@
 		3E885C5E1FF23D5200BB4BB5 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */; };
 		3E885C601FF23D6400BB4BB5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E885C5F1FF23D6400BB4BB5 /* CardView.swift */; };
 		3E90CCDB200DC62000D1FE0D /* empty_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E90CCDA200DC62000D1FE0D /* empty_list.json */; };
+		3E9115CE2055998C00C92018 /* logoForAboutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E9115CC2055998C00C92018 /* logoForAboutTableViewCell.swift */; };
+		3E9115CF2055998C00C92018 /* logoForAboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E9115CD2055998C00C92018 /* logoForAboutTableViewCell.xib */; };
+		3E92F7642055D58700023C3C /* ShareManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92F7632055D58700023C3C /* ShareManager.swift */; };
+		3E92F7672055DBEA00023C3C /* LicensesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92F7662055DBEA00023C3C /* LicensesVC.swift */; };
+		3E92F76B2055DCE900023C3C /* LicensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E92F7692055DCE900023C3C /* LicensesTableViewCell.swift */; };
+		3E92F76C2055DCE900023C3C /* LicensesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E92F76A2055DCE900023C3C /* LicensesTableViewCell.xib */; };
 		3E944F63203D06EA00BCAC3A /* empty_box.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E944F62203D06E900BCAC3A /* empty_box.json */; };
 		3E944F65203D118200BCAC3A /* emoji_shock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3E944F64203D118200BCAC3A /* emoji_shock.json */; };
 		3EB591571FFDB77E009DB357 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB591561FFDB77E009DB357 /* ArrayExtension.swift */; };
@@ -256,6 +262,12 @@
 		3E885C5D1FF23D5200BB4BB5 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
 		3E885C5F1FF23D6400BB4BB5 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		3E90CCDA200DC62000D1FE0D /* empty_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = empty_list.json; path = ../../../../../../../Downloads/empty_list.json; sourceTree = "<group>"; };
+		3E9115CC2055998C00C92018 /* logoForAboutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logoForAboutTableViewCell.swift; sourceTree = "<group>"; };
+		3E9115CD2055998C00C92018 /* logoForAboutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = logoForAboutTableViewCell.xib; sourceTree = "<group>"; };
+		3E92F7632055D58700023C3C /* ShareManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareManager.swift; sourceTree = "<group>"; };
+		3E92F7662055DBEA00023C3C /* LicensesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesVC.swift; sourceTree = "<group>"; };
+		3E92F7692055DCE900023C3C /* LicensesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicensesTableViewCell.swift; sourceTree = "<group>"; };
+		3E92F76A2055DCE900023C3C /* LicensesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicensesTableViewCell.xib; sourceTree = "<group>"; };
 		3E944F62203D06E900BCAC3A /* empty_box.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty_box.json; sourceTree = "<group>"; };
 		3E944F64203D118200BCAC3A /* emoji_shock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji_shock.json; sourceTree = "<group>"; };
 		3EB591561FFDB77E009DB357 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
@@ -324,10 +336,11 @@
 			isa = PBXGroup;
 			children = (
 				3E2572231FDFA4460072AC70 /* UserProfileVC.swift */,
+				3E6CBE6F1FDFA9C400A1A445 /* Cells */,
+				3E92F7652055DBBF00023C3C /* Licenses */,
 				3E35F2381FE1C5F5008C17D8 /* About Us */,
 				3E35F2351FE1B873008C17D8 /* ShowQR */,
 				3E35F22B1FE0F298008C17D8 /* ScanQR */,
-				3E6CBE6F1FDFA9C400A1A445 /* Cells */,
 			);
 			path = UserProfileVC;
 			sourceTree = "<group>";
@@ -366,6 +379,7 @@
 		3E355ADC1FDA273700CF81A0 /* Extras */ = {
 			isa = PBXGroup;
 			children = (
+				3E92F7632055D58700023C3C /* ShareManager.swift */,
 				3E885C541FF239AF00BB4BB5 /* ZLSwippe */,
 				3E355AFB1FDA308900CF81A0 /* LilithProgressHUD.swift */,
 				3E355AF91FDA307A00CF81A0 /* GradientView.swift */,
@@ -610,6 +624,8 @@
 				3E35F24B1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib */,
 				3E35F24E1FE47CF9008C17D8 /* webDeveloperTableViewCell.swift */,
 				3E35F24F1FE47CF9008C17D8 /* webDeveloperTableViewCell.xib */,
+				3E9115CC2055998C00C92018 /* logoForAboutTableViewCell.swift */,
+				3E9115CD2055998C00C92018 /* logoForAboutTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -697,6 +713,24 @@
 				3E885C561FF239C900BB4BB5 /* ZLSwipeableView.swift */,
 			);
 			path = ZLSwippe;
+			sourceTree = "<group>";
+		};
+		3E92F7652055DBBF00023C3C /* Licenses */ = {
+			isa = PBXGroup;
+			children = (
+				3E92F7662055DBEA00023C3C /* LicensesVC.swift */,
+				3E92F7682055DCCC00023C3C /* Cell */,
+			);
+			path = Licenses;
+			sourceTree = "<group>";
+		};
+		3E92F7682055DCCC00023C3C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3E92F7692055DCE900023C3C /* LicensesTableViewCell.swift */,
+				3E92F76A2055DCE900023C3C /* LicensesTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		3EB591581FFEF566009DB357 /* Favourites */ = {
@@ -832,6 +866,7 @@
 				3E27B47E1FF4EAAD007D48AA /* titleCardTableViewCell.xib in Resources */,
 				3E35F21D1FE057BB008C17D8 /* ProfileOptionsTVCell.xib in Resources */,
 				3E355B501FDE5DCD00CF81A0 /* bookmark_animation.json in Resources */,
+				3E9115CF2055998C00C92018 /* logoForAboutTableViewCell.xib in Resources */,
 				3E35F24D1FE474C1008C17D8 /* androidDeveloperTableViewCell.xib in Resources */,
 				3E355B6D1FDF11C500CF81A0 /* account_success.json in Resources */,
 				3EB5915C1FFEFBDF009DB357 /* EmptyStateFavCollectionViewCell.xib in Resources */,
@@ -874,6 +909,7 @@
 				3E355B4B1FDE5DCD00CF81A0 /* exploding_heart.json in Resources */,
 				3E355B4C1FDE5DCD00CF81A0 /* shrug.json in Resources */,
 				3E355B4F1FDE5DCD00CF81A0 /* scan_qr_code_success.json in Resources */,
+				3E92F76C2055DCE900023C3C /* LicensesTableViewCell.xib in Resources */,
 				3E355B4D1FDE5DCD00CF81A0 /* kodeqr_animation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1072,11 +1108,13 @@
 				3E355AE91FDA2FF000CF81A0 /* Generics-Extension.swift in Sources */,
 				3E355AED1FDA300A00CF81A0 /* NSUserDefaults-Extension.swift in Sources */,
 				3E2572241FDFA4460072AC70 /* UserProfileVC.swift in Sources */,
+				3E92F76B2055DCE900023C3C /* LicensesTableViewCell.swift in Sources */,
 				3E355B091FDA310F00CF81A0 /* GULogger.swift in Sources */,
 				3E4E1DCC1FEA53F000DBE53C /* SelectGenderViewController.swift in Sources */,
 				3E35F23A1FE1C60C008C17D8 /* AboutUSViewController.swift in Sources */,
 				3E355B1C1FDA31B800CF81A0 /* APIConection.swift in Sources */,
 				3EB591601FFF43EB009DB357 /* MatchesVC.swift in Sources */,
+				3E92F7642055D58700023C3C /* ShareManager.swift in Sources */,
 				3E355AEB1FDA2FFD00CF81A0 /* keyboard-Extension.swift in Sources */,
 				3E35F2231FE0977C008C17D8 /* UserData.swift in Sources */,
 				3E355AE71FDA2FD800CF81A0 /* Bundle-Extension.swift in Sources */,
@@ -1085,10 +1123,12 @@
 				3E355B281FDA358100CF81A0 /* LoginHandler.swift in Sources */,
 				3E355B061FDA310F00CF81A0 /* Formatter.swift in Sources */,
 				3E2572261FDFA4640072AC70 /* FavouritesVC.swift in Sources */,
+				3E9115CE2055998C00C92018 /* logoForAboutTableViewCell.swift in Sources */,
 				3E35F2371FE1BC44008C17D8 /* ShowQRViewController.swift in Sources */,
 				3E6A3A6D1FDA21B6002E17D8 /* AppDelegate.swift in Sources */,
 				3E6A3A751FDA21B6002E17D8 /* babyNameIOS.xcdatamodeld in Sources */,
 				3E27B47D1FF4EAAD007D48AA /* titleCardTableViewCell.swift in Sources */,
+				3E92F7672055DBEA00023C3C /* LicensesVC.swift in Sources */,
 				3E885C5B1FF239CA00BB4BB5 /* ViewManager.swift in Sources */,
 				3E355B5F1FDE6D2600CF81A0 /* StringsStructure.swift in Sources */,
 				3E35F21C1FE057BB008C17D8 /* ProfileOptionsTVCell.swift in Sources */,

@@ -7,12 +7,18 @@
 //
 
 import UIKit
-
+import MessageUI
 import MBProgressHUD
-class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate {
+class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSource, UIScrollViewDelegate , MFMailComposeViewControllerDelegate{
 
     @IBOutlet weak var tableView: UITableView!
     /// User information
+    
+
+    
+
+    
+    var shareHelper =  ShareManager()
     var userInfo: UserItem?
      var loadingNotification: MBProgressHUD! = MBProgressHUD()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -27,6 +33,21 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         // Do any additional setup after loading the view.
     }
     func setupTV() {
+        self.userInfo = loginHandler.getUserInfo()
+        self.loadingNotification = MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.loadingNotification.mode = MBProgressHUDMode.indeterminate
+        self.loadingNotification.labelText = AppStrings.LOADING
+        self.loginHandler.SerchInUserInfoForNewInfo(USER_ID: userInfo!.id, success: {
+             MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+            self.tableView.reloadData()
+        }) { (ErrorString:String) in
+             MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
+             self.tableView.reloadData()
+        }
+       configureTV()
+    }
+    
+    func configureTV() {
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
         self.tableView?.keyboardDismissMode = .none
@@ -39,11 +60,31 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
         self.tableView.reloadData()
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
         // Dispose of any resources that can be recreated.
     }
+    
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["carlosrodriguezguerreroios@gmail.com"])
+            mail.setMessageBody("<p>\(AppStrings.EMAIL_INFO)</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
     //MARK:- ScrollViewDElegates
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -120,11 +161,11 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             return cell!
             
         case 7:
-            //Comments
+            //Licenses
             var cell = tableView.dequeueReusableCell(withIdentifier: "ProfileOptionsTVCell", for: indexPath) as? ProfileOptionsTVCell
             if (cell == nil){ cell = ProfileOptionsTVCell() }
             cell?.selectionStyle = UITableViewCellSelectionStyle.none
-            cell?.setupUI("ic_credit_card", optionTitle: AppStrings.NO_ADS)
+            cell?.setupUI("ic_book", optionTitle: AppStrings.LICENSES)
             return cell!
             
         default:
@@ -194,14 +235,30 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             
         case 4:
             print("Share")
+            self.shareHelper.shareString(fromViewController: self, andMessage: AppStrings.EMAIL_INFO)
             
         case 5:
             print("rate us")
+            let appID = "576235401"
+            //    let urlStr = "itms-apps://itunes.apple.com/app/id\(appID)" // (Option 1) Open App Page
+            let urlStr = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(appID)" // (Option 2) Open App Review Tab
+            
+            if let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+            
         case 6:
             print("comment us")
-            
+            self.sendEmail()
         case 7:
-            print("remove add")
+            print("licenses")
+            let vc: LicensesVC? = UIStoryboard(name: Constants.Storyboard.Main.rawValue, bundle: Bundle.main).instantiateVC()
+            self.pushViewController(vc!)
+            
         default:
             break
         }

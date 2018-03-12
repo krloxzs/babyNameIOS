@@ -25,6 +25,7 @@
 "ADD_COMMENT"                = "Ayudanos a mejorar";
 "ADD_PARTNER"                = "Agrega a tu pareja";
 "MANAGE_PARTNER"             = "Configuracion de tu pareja";
+"LICENSES"                   = "Licencias";
 "NO_ADS"                     = "Remover ads";
 "SWIPE"                      = "Desliza para continuar";
 "LOGOUT_MESSAGES"            = "¿Quieres cerrar la sesion? No te preocupes, podemos guardar los nombres para la próxima vez";
@@ -55,6 +56,7 @@
 "FAV_OPT_BUTTON_ONE"                   = "Eliminar el nombre de favoritos";
 "VFR_TITLE_LABEL"                      = "Oh oh.. parece que se terminaron...";
 "VFR_INFO_LABEL"                         = "Pero no te preocupes, toca el icono de la esquina y te mostraremos los nombres que aun no estan en tu lista de favoritos.";
+"EMAIL_INFO"                   = "Hola\nAcabo de descargar BabyNamesApp para mi iphone.\n\nEs una app para ayudarte a buscar el nombre perfecto para tu bebe, y lo mejor es que funciona para parejas, mostrando los nombres que ambos eligieron.\n\nBabyNamesApp esta disponible para iPhone y Android, y es gratis!.\n\nQue esperas? Descargala ahora desde http://babynamesapps.com";
 
 
 

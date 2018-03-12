@@ -13,6 +13,7 @@ class webDeveloperTableViewCell: UITableViewCell {
     @IBOutlet weak var viewForAnimation: UIView!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let animation1: LOTAnimationView = LOTAnimationView(name: "animated_laptop_")

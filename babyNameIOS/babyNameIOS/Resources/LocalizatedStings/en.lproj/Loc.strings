@@ -26,6 +26,7 @@
 "ADD_PARTNER"             = "Add your partner";
 "MANAGE_PARTNER"          = "Manage your partner";
 "NO_ADS"                  = "Remove ads";
+"LICENSES"                = "Licenses";
 "SWIPE"                   = "Swipe to continue";
 "LOGOUT_MESSAGES"         = "Do you want to log out? Don't worry, we can save the names for the next time";
 "LOGOUT_GOODBYE"          = "it's time to say goodbye?";
@@ -56,6 +57,7 @@
 "FAV_OPT_BUTTON_ONE"                   = "Delet name from favourites";
 "VFR_TITLE_LABEL"                      = "Oh oh .. it looks like it's over ...";
 "VFR_INFO_LABEL"                         = "But do not worry, touch the icon in the corner and we'll show you the names that are not yet on your favorites list.";
+"EMAIL_INFO"                   = "Hello \nI just downloaded BabyNamesApp for my iphone./nis an app to help you find the perfect name for your baby, and the best thing is that it works for couples, showing the names they both chose.\n\nBabyNamesApp is available for iPhone and Android, and it's free!\nWhat are you waiting for? Download it now from http://babynamesapps.com";
 
 
 

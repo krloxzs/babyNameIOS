@@ -227,7 +227,7 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                                                  GENDER: gender, AGE: age, NAME: nameFacebook, success: { (Res:JSON) in
                                                     print("Succes")
                                                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
-                                                    weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
+                                                   weakSelf.appDelegate.AppsetupRoot.displayWindowsAccordingSession()
                 }, failure: { (ErrorString:String) in
                     print("error")
                     MBProgressHUD.hideAllHUDs(for: self.view, animated: true)

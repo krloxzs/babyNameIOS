@@ -188,6 +188,7 @@ class UserData: NSObject {
             logger.log(res)
             if let _ : String = res["success"].string{
                 self.MatchesArray.removeAll()
+                logger.log(res["data"].dictionary?.count)
                 let  names = res["data"].array!
                 for name in names{
                     let nameOBJ: NameObject = NameObject(JSONObject: name)

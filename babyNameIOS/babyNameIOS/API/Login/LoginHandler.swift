@@ -66,6 +66,43 @@ class LoginHandler: BaseNSObject {
      */
     
 
+    func SerchInUserInfoForNewInfo(USER_ID user_id: String,success:@escaping () -> Void, failure:@escaping (String) -> Void) {
+        // Get url
+        //let requestedURL: String! = values[Constants.Settings.service_keys.LOGIN_BY_EMAIL.rawValue]  as! String
+        let completeURL = urlBase
+        logger.log(completeURL)
+        let params:Parameters  = ["type": "GetUser","user_id":user_id]
+        logger.log(params)
+        networkHandler.requestGETURL(completeURL!, params: params, success: { (Response:JSON) in
+            let itemD = Response.dictionary
+            logger.log(itemD)
+            if let _ = itemD?["success"]?.string{
+                if let _ = itemD?["data"] {
+                    let itemArray  =  itemD!["data"]!.array
+                    let item = itemArray![0].dictionary
+                    UserItem(id: item?["id"]?.string ?? "" , facebook_id:  item?["facebook_id"]?.string ?? "",
+                             name: item?["name"]?.string ?? "", email: item?["email"]?.string ?? "",
+                             profile_image: item?["profile_image"]?.string ?? "" , premium: item?["premium"]?.string ?? "",
+                             gender: item?["gender"]?.string ?? "", age: item?["age"]?.string ?? "",
+                             couple_id: item?["couple_id"]?.string ?? "").synchronizeObject(Constants.UserDefaultsKeys.UserObject.rawValue)
+                    // Saving USER ID
+                    let defaults = UserDefaults.standard
+                    defaults.set( item!["id"]!.string!, forKey: Constants.UserDefaultsKeys.UserId.rawValue)
+                    defaults.synchronize()
+                    print("se termino la sincronizacion")
+                    success()
+                }else{
+                    failure("Unespected error")
+                }
+            }else{
+                failure("Unespected error")
+            }
+        }) { (ErrorString: String) in
+            failure(ErrorString)
+        }
+        
+        
+    }
     
     func SignInFacebook(FBID facebook_id: String, EMAIL email : String, PFIMAGE profile_image : String,
                         GENDER gender : String , AGE age : String, NAME name : String,
