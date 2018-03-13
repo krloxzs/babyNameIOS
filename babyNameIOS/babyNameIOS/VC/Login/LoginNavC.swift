@@ -22,7 +22,7 @@ class LoginNavC: UINavigationController {
         
     }
     override func viewDidDisappear(_ animated: Bool) {
-        logger.log("lkn")
+//        logger.log("lkn")
     }
 
     /*

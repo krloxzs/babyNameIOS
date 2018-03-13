@@ -194,16 +194,17 @@ class UserData: NSObject {
                     let nameOBJ: NameObject = NameObject(JSONObject: name)
                     switch nameOBJ.gender{
                     case "male":
-                        let maleIcons = ["Ball","Bathtub","Bib","Bird","Socks","Submarine","Whale"]
-                        let randomIndex = Int(arc4random_uniform(UInt32(maleIcons.count)))
+                        let maleIcons = ["Ball","Bathtub","Bib","Bird","Socks","Submarine","Whale","Ball","Bathtub","Bib"]
+                        let randomIndex = Int(nameOBJ.id)! % 10
                         nameOBJ.image = maleIcons[randomIndex]
                     case "female":
                         let femaleIcons = ["Apple","Bear","Butterfly","Cow","Feet","Heart","Pig"]
-                        let randomIndex = Int(arc4random_uniform(UInt32(femaleIcons.count)))
+                        let randomIndex = Int(nameOBJ.id)! % 10
+                        //                            Int(arc4random_uniform(UInt32(femaleIcons.count)))  not a good idea...ram D:
                         nameOBJ.image = femaleIcons[randomIndex]
                     case "unisex":
                         let unisexIcons = ["Cake","Candy","Cutlery","Diaper","Dog","Duck","Gift","Rattle","Sleepsuit"]
-                        let randomIndex = Int(arc4random_uniform(UInt32(unisexIcons.count)))
+                        let randomIndex = Int(nameOBJ.id)! % 10
                         nameOBJ.image = unisexIcons[randomIndex]
                     default:
                         break

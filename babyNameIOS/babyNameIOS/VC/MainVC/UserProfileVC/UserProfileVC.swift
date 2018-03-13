@@ -73,11 +73,26 @@ class UserProfileVC: BaseViewController, UITableViewDelegate,UITableViewDataSour
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["carlosrodriguezguerreroios@gmail.com"])
-            mail.setMessageBody("<p>\(AppStrings.EMAIL_INFO)</p>", isHTML: true)
+            mail.setMessageBody("<p>\(AppStrings.EMAIL_IDEA)</p>", isHTML: true)
             
             present(mail, animated: true)
         } else {
-            // show failure alert
+            // show failure alert  todo......
+//            let alert = UIAlertController(title: AppStrings.MANAGE_PARTNER, message: AppStrings.SETUP_PARTNER_QUESTION, preferredStyle: .actionSheet) // 1
+//            let firstAction = UIAlertAction(title: AppStrings.SCAN_QR, style: .default) { (alert: UIAlertAction!) -> Void in
+//                self.ScanQRCode()
+//            } // 2
+//            let secondAction = UIAlertAction(title: AppStrings.SHOW_QR, style: .default) { (alert: UIAlertAction!) -> Void in
+//                self.ShowQR()
+//            } // 3
+//            let cancel = UIAlertAction(title:  AppStrings.CANCEL, style: .cancel) { (alert: UIAlertAction!) -> Void in
+//            } // 3
+//            alert.addAction(firstAction) // 4
+//            alert.addAction(secondAction)
+//            alert.addAction(cancel)
+//            //            present(alert, animated: true, completion:nil) // 6
+//            alert.popoverPresentationController?.sourceView = self.tableView.cellForRow(at: indexPath) // works for both iPhone & iPad
+//
         }
     }
     

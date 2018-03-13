@@ -62,6 +62,7 @@ struct AppStrings
     static let VFR_TITLE_LABEL         = "VFR_TITLE_LABEL".localized
     static let VFR_INFO_LABEL          = "VFR_INFO_LABEL".localized
     static let EMAIL_INFO              = "EMAIL_INFO".localized
+     static let EMAIL_IDEA              = "EMAIL_IDEA".localized
 
     
     

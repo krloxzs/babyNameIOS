@@ -102,6 +102,7 @@ class MakeMatchVC: BaseViewController {
     func checkGender()  {
         if genderSingleton.actualGender.gender != ""{
 //            fix thatyou
+            logger.log(genderSingleton.actualGender.gender )
             gender = UserDefaults.standard.object(forKey: Constants.UserDefaultsKeys.Gender.rawValue) as! String
             self.getBabynameFromServer()
             rightNavButton()

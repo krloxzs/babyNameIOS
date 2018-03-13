@@ -5,14 +5,14 @@
   Created by Carlos Rodriguez on 12/11/17.
   Copyright © 2017 Carlos Rodriguez. All rights reserved.
 */
-"WELCOME_TITLE_1"         = "Welcome";
-"WELCOME_TITLE_2"         = "Find Local Deals";
-"WELCOME_TITLE_3"         = "Shop small. It’s huge!";
-"WELCOME_TITLE_4"         = "Check out My Favly";
-"WELCOME_INFO_1"          = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.";
-"WELCOME_INFO_2"          = "Aenean commodo ligula eget dolor. Aenean massa.";
-"WELCOME_INFO_3"          = "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.";
-"WELCOME_INFO_4"          = "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.";
+"WELCOME_TITLE_1"         = "Welcome to Baby Names";
+"WELCOME_TITLE_2"         = "A choice as a couple";
+"WELCOME_TITLE_3"         = "Choose the perfect name";
+"WELCOME_TITLE_4"         = "Show your chosen ones";
+"WELCOME_INFO_1"          = "The best list with the perfect baby names made App.";
+"WELCOME_INFO_2"          = "Connect your partner and together make the ideal choice.";
+"WELCOME_INFO_3"          = "Save your favorites easily and select the perfect name.";
+"WELCOME_INFO_4"          = "Watch and share the coincidences with your partner.";
 "FACEBOOK_LOGIN_BUTON"    = "Login with Facebook";
 "LOGIN_SWIPE_LABEL"       = "Swipe to continue";
 "LOADING"                 = "Loading...";
@@ -26,11 +26,10 @@
 "ADD_PARTNER"             = "Add your partner";
 "MANAGE_PARTNER"          = "Manage your partner";
 "NO_ADS"                  = "Remove ads";
-"LICENSES"                = "Licenses";
 "SWIPE"                   = "Swipe to continue";
-"LOGOUT_MESSAGES"         = "Do you want to log out? Don't worry, we can save the names for the next time";
+"LOGOUT_MESSAGES"         = "Don't worry, we save the names until the next time";
 "LOGOUT_GOODBYE"          = "it's time to say goodbye?";
-"SETUP_PARTNER_QUESTION"  = "This app is better as a team";
+"SETUP_PARTNER_QUESTION"  = "This app it's better as a team";
 "SCAN_QR"                 = "Scan the QR from your new partner";
 "SHOW_QR"                 = "Show me my QR code";
 "CANCEL"                  = "Cancel";
@@ -38,15 +37,15 @@
 "SHOW_QR_INFO_LABEL"      = "Share your QR code and start searching for the perfect name as a couple. Below is your personal QR code.";
 "SHARE_BUTTON_PRESS"      = "Share";
 "SCAN_QR_TITLE"           = "QR scan";
-"SCAN_QR_INFO_LABEL"      = "Put the QR code in front of the camera so you can scan it as seen here";
+"SCAN_QR_INFO_LABEL"      = "Place the QR code in front of the camera so you can scan it as it is showed here";
 "DONE"                    = "OK";
 "QR_MESSAGE_DETECTED"     = "No QR is detected";
 "MAKE_MATCH_TITLE"        = "Baby names";
-"FAVOURITES_TITLE"        = "Favourites";
+"FAVOURITES_TITLE"        = "Favorites";
 "MEANING"                 = "Meaning";
 "ORIGIN"                  = "Origin";
 "MATCH"                   = "Matches";
-"EMPTY_STATE_TITLE"       = "Ouhh... it's empty in here!";
+"EMPTY_STATE_TITLE"       = "Ops... it's empty in here!";
 "EMPTY_STATE_INFO"        = "You don't have any favourite yet, add your first one.";
 "NO_COUPLE_EMPTY_STATE_TITLE"       = "Everything is better in a couple";
 "NO_COUPLE_EMPTY_STATE_INFO"        = "It seems that you have not added your partner yet, do not worry, that is solved in a second ...";
@@ -54,10 +53,13 @@
 "INTERNAL_SERVER_ERROR"                   = "Internal server error...dont worry, a team of shinobis is working to fix that";
 "FAV_OPT_BUTTON_TITLE"                 = "What do you want to do?";
 "FAV_OPT_BUTTON_MESSAGE"               = "What do you want to do?";
-"FAV_OPT_BUTTON_ONE"                   = "Delet name from favourites";
+"FAV_OPT_BUTTON_ONE"                   = "Delete name from favorites";
 "VFR_TITLE_LABEL"                      = "Oh oh .. it looks like it's over ...";
-"VFR_INFO_LABEL"                         = "But do not worry, touch the icon in the corner and we'll show you the names that are not yet on your favorites list.";
+"VFR_INFO_LABEL"                         = "But do not worry, touch the refresh icon and we'll show you the names that are not yet on your favorites list.";
+
+"LICENSES"                = "Licenses";
 "EMAIL_INFO"                   = "Hello \nI just downloaded BabyNamesApp for my iphone./nis an app to help you find the perfect name for your baby, and the best thing is that it works for couples, showing the names they both chose.\n\nBabyNamesApp is available for iPhone and Android, and it's free!\nWhat are you waiting for? Download it now from http://babynamesapps.com";
+"EMAIL_IDEA"                   = "Hello, BabyNames team, I think it would be a good idea ...";
 
 
 
