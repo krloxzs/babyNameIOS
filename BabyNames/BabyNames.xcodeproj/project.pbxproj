@@ -53,6 +53,7 @@
 		3E765E2B219740580084EEB6 /* BabyNamesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabyNamesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E765E2F219740580084EEB6 /* BabyNamesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabyNamesUITests.swift; sourceTree = "<group>"; };
 		3E765E31219740580084EEB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EDF3BE221978BCC0045CFA6 /* BabyNames-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BabyNames-Bridging-Header.h"; sourceTree = "<group>"; };
 		6738F1814DBE0F833552C2F1 /* Pods-BabyNamesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyNamesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BabyNamesTests/Pods-BabyNamesTests.release.xcconfig"; sourceTree = "<group>"; };
 		71F7406DA8B199A00BE9AD25 /* Pods-BabyNamesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabyNamesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BabyNamesUITests/Pods-BabyNamesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7342C2AC1BBA60AF813E34A3 /* Pods_BabyNamesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BabyNamesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +121,7 @@
 				3E765E16219740580084EEB6 /* Assets.xcassets */,
 				3E765E18219740580084EEB6 /* LaunchScreen.storyboard */,
 				3E765E1B219740580084EEB6 /* Info.plist */,
+				3EDF3BE221978BCC0045CFA6 /* BabyNames-Bridging-Header.h */,
 			);
 			path = BabyNames;
 			sourceTree = "<group>";
@@ -237,6 +239,7 @@
 				TargetAttributes = {
 					3E765E0B219740560084EEB6 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					3E765E1F219740580084EEB6 = {
 						CreatedOnToolsVersion = 10.0;
@@ -578,14 +581,20 @@
 			baseConfigurationReference = FCD0765C1CD5EE364CEF6652 /* Pods-BabyNames.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGAZNAH647;
 				INFOPLIST_FILE = BabyNames/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BabyNames/BabyNames-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -596,14 +605,19 @@
 			baseConfigurationReference = 375ADC817DBAE51BB2B20239 /* Pods-BabyNames.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PGAZNAH647;
 				INFOPLIST_FILE = BabyNames/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BabyNames/BabyNames-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,7 +631,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BabyNamesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNamesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -634,7 +652,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BabyNamesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNamesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -650,7 +672,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BabyNamesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNamesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -666,7 +692,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BabyNamesUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = CarlosRodriguezGuerrero.babynames.babyNameIOS.BabyNamesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
