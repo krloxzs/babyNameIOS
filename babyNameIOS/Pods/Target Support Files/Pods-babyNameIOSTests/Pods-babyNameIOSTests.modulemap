@@ -1,6 +1,0 @@
-framework module Pods_babyNameIOSTests {
-  umbrella header "Pods-babyNameIOSTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

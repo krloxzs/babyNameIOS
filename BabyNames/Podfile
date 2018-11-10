@@ -1,0 +1,36 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.0'
+
+target 'BabyNames' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for BabyNames
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'TextFieldEffects'
+  pod 'SDWebImage'
+  pod 'Instabug'
+  pod 'Alamofire', '~> 4.5'
+  pod 'SwiftyJSON'
+  pod 'MBProgressHUD', '~> 0.9'
+  pod 'SwiftDate'
+  pod 'lottie-ios'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
+  pod 'RealmSwift'
+  pod 'UIColor+FlatColors'
+  pod 'Cartography'
+  # pod "Popover"
+  pod 'Google-Mobile-Ads-SDK'
+  
+  target 'BabyNamesTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'BabyNamesUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
