@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Varela.otf">
+            <string>ProximaNova-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CardView" customModule="babyNameIOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rPW-oI-1zN">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0Z-YM-Hvv">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucl-IB-DUU">
+                                    <rect key="frame" x="16" y="0.0" width="351" height="100"/>
+                                    <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="36"/>
+                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ucl-IB-DUU" secondAttribute="trailing" constant="8" id="Efj-bV-yVS"/>
+                                <constraint firstAttribute="bottom" secondItem="ucl-IB-DUU" secondAttribute="bottom" id="I46-64-P11"/>
+                                <constraint firstItem="ucl-IB-DUU" firstAttribute="leading" secondItem="H0Z-YM-Hvv" secondAttribute="leading" constant="16" id="OfG-hR-1UQ"/>
+                                <constraint firstItem="ucl-IB-DUU" firstAttribute="top" secondItem="H0Z-YM-Hvv" secondAttribute="top" id="h4o-6C-2Hm"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPS-OP-SYa">
+                            <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-Kl-eGM">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                                    <color key="backgroundColor" white="1" alpha="0.65868471746575341" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.58823529411764708" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="z5u-Kl-eGM" secondAttribute="bottom" id="804-9T-U04"/>
+                                <constraint firstItem="z5u-Kl-eGM" firstAttribute="top" secondItem="rPS-OP-SYa" secondAttribute="top" id="9rq-XQ-l5X"/>
+                                <constraint firstAttribute="trailing" secondItem="z5u-Kl-eGM" secondAttribute="trailing" id="9u7-TL-PFY"/>
+                                <constraint firstItem="z5u-Kl-eGM" firstAttribute="leading" secondItem="rPS-OP-SYa" secondAttribute="leading" id="ItZ-vt-3Rx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="rPS-OP-SYa" secondAttribute="trailing" id="0ku-e5-tns"/>
+                        <constraint firstItem="rPS-OP-SYa" firstAttribute="top" secondItem="H0Z-YM-Hvv" secondAttribute="bottom" id="K5N-84-ITV"/>
+                        <constraint firstItem="rPS-OP-SYa" firstAttribute="top" secondItem="H0Z-YM-Hvv" secondAttribute="bottom" id="Pfj-Wo-R9D"/>
+                        <constraint firstAttribute="trailing" secondItem="H0Z-YM-Hvv" secondAttribute="trailing" id="QFT-Li-LCd"/>
+                        <constraint firstItem="rPS-OP-SYa" firstAttribute="top" secondItem="H0Z-YM-Hvv" secondAttribute="bottom" id="RLg-iu-113"/>
+                        <constraint firstItem="rPS-OP-SYa" firstAttribute="leading" secondItem="rPW-oI-1zN" secondAttribute="leading" id="UKE-wO-nTn"/>
+                        <constraint firstItem="H0Z-YM-Hvv" firstAttribute="leading" secondItem="rPW-oI-1zN" secondAttribute="leading" id="Vo4-Ug-g94"/>
+                        <constraint firstAttribute="bottom" secondItem="rPS-OP-SYa" secondAttribute="bottom" id="XV0-AD-Tuj"/>
+                        <constraint firstItem="H0Z-YM-Hvv" firstAttribute="top" secondItem="rPW-oI-1zN" secondAttribute="top" id="ZGo-2D-zwa"/>
+                        <constraint firstAttribute="trailing" secondItem="H0Z-YM-Hvv" secondAttribute="trailing" id="ZpZ-5B-ZMa"/>
+                        <constraint firstItem="H0Z-YM-Hvv" firstAttribute="height" secondItem="rPW-oI-1zN" secondAttribute="height" multiplier="0.15" id="aKC-DR-jyl"/>
+                        <constraint firstItem="H0Z-YM-Hvv" firstAttribute="top" secondItem="rPW-oI-1zN" secondAttribute="top" id="hO9-Yg-jvi"/>
+                        <constraint firstItem="H0Z-YM-Hvv" firstAttribute="leading" secondItem="rPW-oI-1zN" secondAttribute="leading" id="lx9-6k-B9w"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rPW-oI-1zN" secondAttribute="trailing" id="1Wi-2T-2h3"/>
+                <constraint firstItem="rPW-oI-1zN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fe9-Wv-cL0"/>
+                <constraint firstAttribute="bottom" secondItem="rPW-oI-1zN" secondAttribute="bottom" id="ggO-TO-fD3"/>
+                <constraint firstItem="rPW-oI-1zN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rmT-tA-t56"/>
+            </constraints>
+            <connections>
+                <outlet property="headerView" destination="H0Z-YM-Hvv" id="JvH-W7-Vvo"/>
+                <outlet property="mainView" destination="rPS-OP-SYa" id="ABZ-sy-5mt"/>
+                <outlet property="nameLabel" destination="ucl-IB-DUU" id="c9F-Y5-cOv"/>
+                <outlet property="tableView" destination="z5u-Kl-eGM" id="kG1-WR-our"/>
+            </connections>
+            <point key="canvasLocation" x="-107.5" y="45.5"/>
+        </view>
+    </objects>
+</document>

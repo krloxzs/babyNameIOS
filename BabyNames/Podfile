@@ -20,8 +20,13 @@ target 'BabyNames' do
   pod 'RealmSwift'
   pod 'UIColor+FlatColors'
   pod 'Cartography'
-  # pod "Popover"
+  pod "Popover"
   pod 'Google-Mobile-Ads-SDK'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
+  pod 'FBSDKPlacesKit'
+  pod 'FBSDKMessengerShareKit'
   
   target 'BabyNamesTests' do
     inherit! :search_paths

@@ -1,0 +1,54 @@
+
+/* Class = "UIButton"; normalTitle = "De acuerdo"; ObjectID = "3sv-E2-key"; */
+"3sv-E2-key.normalTitle" = "De acuerdo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3xT-Jc-6tc"; */
+"3xT-Jc-6tc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Select the gender of your baby"; ObjectID = "6wI-64-Iax"; */
+"6wI-64-Iax.text" = "Select the gender of your baby";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "9hb-E1-bFZ"; */
+"9hb-E1-bFZ.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "IjP-Ac-RPr"; */
+"IjP-Ac-RPr.normalTitle" = "Share";
+
+/* Class = "UILabel"; text = "Pon el codigo QR en frente de la"; ObjectID = "OxA-m7-QLs"; */
+"OxA-m7-QLs.text" = "Pon el codigo QR en frente de la";
+
+/* Class = "UILabel"; text = "Pon el codigo QR en frente de la camara para poder escanearlo como se ve aqui"; ObjectID = "UJ3-ZX-1EJ"; */
+"UJ3-ZX-1EJ.text" = "Pon el codigo QR en frente de la camara para poder escanearlo como se ve aqui";
+
+/* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "Z01-nh-qnW"; */
+"Z01-nh-qnW.title" = "Item 2";
+
+/* Class = "UILabel"; text = "Comparte tu codigo QR y empiza a buscar el nombre perfecto en pareja. A continuacion se muestra tu codigo QR personal."; ObjectID = "aph-zJ-ktM"; */
+"aph-zJ-ktM.text" = "Comparte tu codigo QR y empiza a buscar el nombre perfecto en pareja. A continuacion se muestra tu codigo QR personal.";
+
+/* Class = "UIButton"; normalTitle = "Acceder con Facebook"; ObjectID = "bLQ-j7-MDA"; */
+"bLQ-j7-MDA.normalTitle" = "Acceder con Facebook";
+
+/* Class = "UILabel"; text = "Boy"; ObjectID = "dPI-zc-V8k"; */
+"dPI-zc-V8k.text" = "Boy";
+
+/* Class = "UILabel"; text = "Comparte tu codigo QR y empiza a buscar el nombre perfecto en pareja. A continuacion se muestra tu codigo QR personal."; ObjectID = "dnS-Kj-MZL"; */
+"dnS-Kj-MZL.text" = "Comparte tu codigo QR y empiza a buscar el nombre perfecto en pareja. A continuacion se muestra tu codigo QR personal.";
+
+/* Class = "UILabel"; text = "Surprise"; ObjectID = "gRK-ls-IhE"; */
+"gRK-ls-IhE.text" = "Surprise";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "gYg-Cf-8dM"; */
+"gYg-Cf-8dM.title" = "Item";
+
+/* Class = "UILabel"; text = "Swipe  to continue."; ObjectID = "oeo-2f-LhD"; */
+"oeo-2f-LhD.text" = "Swipe  to continue.";
+
+/* Class = "UILabel"; text = "Girl"; ObjectID = "pRP-BV-PlZ"; */
+"pRP-BV-PlZ.text" = "Girl";
+
+/* Class = "UITabBarItem"; title = "Item 1"; ObjectID = "ske-E7-dPZ"; */
+"ske-E7-dPZ.title" = "Item 1";
+
+/* Class = "UILabel"; text = "No QR code is detected"; ObjectID = "vBh-Zc-ogx"; */
+"vBh-Zc-ogx.text" = "No QR code is detected";
