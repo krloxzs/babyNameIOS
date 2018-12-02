@@ -217,21 +217,18 @@ class MainLoginVC: BaseViewController, UIScrollViewDelegate {
                 let picture = userDic["picture"] as! NSDictionary
                 let data = picture["data"] as! NSDictionary
                 let urlFacebook = data["url"] as! String
-                var gender = userDic["gender"] as! String
-                let age_range = userDic["age_range"] as! NSDictionary
+                var gender = userDic["gender"] as? String ?? "male"
+                let age_range = userDic["age_range"] as? NSDictionary ?? ["min": 18, "max": 18]
                 let edad = age_range["min"] as! Int
                 let age = String(edad)
                 if gender == "male"{
-                    
                     gender = "m"
-                    
                 }else{
-                    
                     gender = "f"
                 }
                 let now = Date()
-                let fecha = now - edad.years
-                _ = fecha.toString(DateFormats.custom("yyyy-MM-dd"))
+//                let fecha = now - edad.years
+//                _ = fecha.toString(DateFormats.custom("yyyy-MM-dd"))
                 
                 weak var weakSelf:MainLoginVC! = self
                 self.loginHandler.SignInFacebook(FBID: FBID, EMAIL: emailFacebook, PFIMAGE: urlFacebook,
