@@ -63,7 +63,7 @@ extension String {
     }
     // localized string
     var localized: String {
-        return NSLocalizedString(self, tableName: "Loc", value: "\(self)", comment: "")
+        return NSLocalizedString(self, tableName: "Localizable", value: "\(self)", comment: "")
     }
     
     func heightForWithFont(_ font: UIFont, width: CGFloat) -> CGFloat {
