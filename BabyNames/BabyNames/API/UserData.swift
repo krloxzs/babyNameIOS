@@ -199,7 +199,7 @@ class UserData: NSObject {
                         nameOBJ.image = maleIcons[randomIndex]
                     case "female":
                         let femaleIcons = ["Apple","Bear","Butterfly","Cow","Feet","Heart","Pig"]
-                        let randomIndex = Int(nameOBJ.id)! % 10
+                        let randomIndex = Int(nameOBJ.id)! % 7
                         //                            Int(arc4random_uniform(UInt32(femaleIcons.count)))  not a good idea...ram D:
                         nameOBJ.image = femaleIcons[randomIndex]
                     case "unisex":
